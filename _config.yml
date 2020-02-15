@@ -1,4 +1,21 @@
-title: "Remote theme example"
-remote_theme: pmarsceill/just-the-docs
-color_scheme: "dark"
-search_enabled: false
+title: Perfana documentation
+description: Documentattion for Perfana, the continous performance testing dashboard
+baseurl: "/perfana-docs" # the subpath of your site, e.g. /blog
+url: "https://perfana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Enable or disable the site search
+search_enabled: true
+
+# Set the search token separator for hyphenated-word search:
+search_tokenizer_separator: /[\s/]+/
+
+# Enable or disable heading anchors
+heading_anchors: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "Perfana.io":
+    - "//perfana.io"
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "Copyright &copy; 2019-2020 Perfana Software BV"
