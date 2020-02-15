@@ -1,7 +1,9 @@
 title: Perfana documentation
-description: Documentattion for Perfana, the continous performance testing dashboard
+description: Documentation for Perfana, the continous performance testing dashboard
 baseurl: "/perfana-docs" # the subpath of your site, e.g. /blog
 url: "https://perfana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+remote_theme: pmarsceill/just-the-docs
 
 # Enable or disable the site search
 search_enabled: true
