@@ -71,7 +71,7 @@ To remove all containers, use
 
 To start stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
 
-```shell script
+```
 docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
 ```
 
@@ -86,9 +86,9 @@ To log into Perfana, open [http://localhost:4000](http://localhost:4000) and use
 ### Jenkins
 {: .no_toc }
 
-To log into Jenkins, open [http://localhost:4000](http://localhost:8090) and use `perfana` as user with password `perfana` 
+To log into Jenkins, open [http://localhost:8090](http://localhost:8090) and use `perfana` as user with password `perfana` 
 
 ### Grafana
 {: .no_toc }
 
-To log into Grafana, open [http://localhost:4000](http://localhost:3000) and use `perfana` as user with password `perfana` 
+To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use `perfana` as user with password `perfana` 
