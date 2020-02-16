@@ -56,15 +56,29 @@ This will spin up a number of containers
 | afterburner     | Springboot test application  | 8080  |
 
 
+To stop all containers, run
 
-
-
-## Perfana
-
-### Login
-
-To log into Perfana
-```yaml
-# Color scheme currently only supports "dark" or nil (default)
-color_scheme: "dark"
 ```
+./stop.sh
+```
+
+To remove all containers, use
+
+```
+./clean.sh
+```
+> When you use the `clean.sh` script, all of the data inside the containers will be lost!
+
+To start stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
+
+```shell script
+docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
+```
+
+
+### Exploring the demo environment
+
+#### Perfana
+{: .no_toc }
+
+To log into Perfana, open http://localhost:4000 and use `admin@perfana.io` as user with password `admin` 
