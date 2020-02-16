@@ -92,3 +92,7 @@ To log into Jenkins, open [http://localhost:8090](http://localhost:8090) and use
 {: .no_toc }
 
 To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use `perfana` as user with password `perfana` 
+
+## Start a test
+
+The Perfana demo environment comes with a Jenkins instance preconfigured with two jobs that will trigger a Gatling script to execute a load test on [Afterburner](https://github.com/stokpop/afterburner), a springboot test application. The two job are configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
