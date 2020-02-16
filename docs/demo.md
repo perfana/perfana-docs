@@ -25,52 +25,46 @@ Perfana provides a demo environment that can be used to try out all the features
 * [Docker compose](https://docs.docker.com/compose/gettingstarted/)
 * 8Gb of RAM allocated to docker daemon
 
+## Getting started
 
-#### Example
-{: .no_toc }
+* Clone perfana-demo repository 
+  ```
+  git clone https://gitlab.com/perfana/perfana-demo.git
+  ```
+  or download [here](https://gitlab.com/perfana/perfana-demo/-/archive/master/perfana-demo-master.zip)
+* Inside the repository root run
+  ```
+  ./start.sh
+  ```
 
+This will spin up a number of containers
+
+| Container       | Description          | local port |
+|:-------------   |:------------------|:------|
+| perfana         | Perfana front end  | 4000  |
+| perfana-grafana | Perfana - Grafana integration service   | n/a  |
+| perfana-snapshot| Perfana snapshot service | n/a   |
+| perfana-check   | Perfana results check service | n/a  |
+| perfana-fixture | Loads fixture data | n/a  |
+| perfana-jenkins | Jenkins with two performance test jobs pre-configured | 8090  |
+| mongoDb         | MongoDb replicaset to store Perfana configuration | 27011 / 27012 /27013 |
+| grafana         | Grafana graphing dashboard | 3000  |
+| influxdb        | InfluxDb metrics datastore | 8086 / 2003  |
+| telegraf        | Telegraf metrics agent | n/a  |
+| prometheus      | Prometheus metrics datastore| 9090  |
+| alertmanager    | Aletmanager handles alerts from Prometheus | 9093  |
+| afterburner     | Springboot test application  | 8080  |
+
+
+
+
+
+## Perfana
+
+### Login
+
+To log into Perfana
 ```yaml
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: "dark"
-```
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
-<script type="text/javascript" src="{{ "/assets/js/dark-mode-preview.js" | absolute_url }}"></script>
-
-## Specific visual customization
-
-To customize your site’s aesthetic, open `_sass/custom/custom.scss` in your editor to see if there is a variable that you can override. Most styles like fonts, colors, spacing, etc. are derived from these variables. To override a specific variable, uncomment its line and change its value.
-
-For example, to change the link color from the purple default to blue, open `_sass/custom/custom.css` and find the `$link-color` variable on line `50`. Uncomment it, and change its value to our `$blue-000` variable, or another shade of your choosing.
-
-#### Example
-{: .no_toc }
-
-```scss
-// ...
-//
-// $body-text-color: $grey-dk-100;
-// $body-heading-color: $grey-dk-300;
-$link-color: $blue-000;
-//
-// ...
-```
-
-_Note:_ Editing the variables directly in `_sass/support/variables.scss` is not recommended and can cause other dependencies to fail.
-
-## Override styles
-
-For styles that aren't defined as a variables, you may want to modify specific CSS classes. To add your own CSS overrides at the end of the cascade, edit `_sass/overrides.scss`. This will allow for all overrides to be kept in a single file, and for any upstream changes to still be applied.
-
-For example, if you'd like to add your own styles for printing a page, you could add the following styles.
-
-#### Example
-{: .no_toc }
-
-```scss
-// Print-only styles.
-@media print {
-  .side-bar, .page-header { display: none; }
-  .main-content { max-width: auto; margin: 1em;}
-}
 ```
