@@ -76,9 +76,17 @@ docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up
 ```
 
 
-### Exploring the demo environment
+## Exploring the demo environment
 
-#### Perfana
+### Perfana
 {: .no_toc }
 
 To log into Perfana, open http://localhost:4000 and use `admin@perfana.io` as user with password `admin` 
+
+### Jenkins
+
+To log into Jenkins, open http://localhost:8090 and use `perfana` as user with password `perfana` 
+
+### Grafana
+
+To log into Grafana, open http://localhost:3000 and use `perfana` as user with password `perfana` 
