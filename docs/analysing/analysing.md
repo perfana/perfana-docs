@@ -1,10 +1,10 @@
 ---
-title: Alerting
+title: Test run analysis
 has_children: false
 nav_order: 3
 ---
 
-# Alerting
+# Test run analysis
 {: .no_toc }
 
 ## Table of contents
@@ -20,8 +20,18 @@ nav_order: 3
 
 {: .fs-6 }
 
-## Alertmanager
+## Summary
 
-## Kapacitor
+## Comments
 
-## Grafana alerts
+## Key metrics
+
+## Dashboards
+
+## Report
+
+## Compare
+
+## Trends
+
+## Manage
