@@ -69,7 +69,7 @@ To remove all containers, use
 ```
 > When you use the `clean.sh` script, all of the data inside the containers will be lost!
 
-To start stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
+To start, stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
 
 ```
 docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
@@ -96,3 +96,5 @@ To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use
 ## Start a test
 
 The Perfana demo environment comes with a Jenkins instance preconfigured with two jobs that will trigger a Gatling script to execute a load test on [Afterburner](https://github.com/stokpop/afterburner), a springboot test application. The two job are configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
+
+To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `perfana-gatling-afterburner` job and click `Build Now`. When you open the console log, you can see the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin) is building and executing the test.
