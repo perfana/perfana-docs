@@ -1,9 +1,9 @@
 ---
-title: Grafana 
+title: Teams
 parent: Configuration
 has_children: false
 nav_order: 2
 ---
 
-# Grafana configuration
+# Teams configuration
 
