@@ -1,7 +1,7 @@
 ---
 title: Navigating
 has_children: true
-nav_order: 4
+nav_order: 2
 ---
 
 # Navigating test runs
@@ -15,7 +15,6 @@ nav_order: 4
 
 ---
 
----
 
 > This page is work in progress!
 
