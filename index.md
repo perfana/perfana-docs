@@ -12,7 +12,7 @@ permalink: /
 Perfana documentation
 {: .fs-6 .fw-300 }
 
-[View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View it on GitHub](https://github.com/perfana/perfana-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
