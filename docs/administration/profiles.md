@@ -1,6 +1,6 @@
 ---
 title: Profiles
-parent: Configuration
+parent: Administration
 has_children: false
 nav_order: 3
 ---

@@ -1,6 +1,6 @@
 ---
 title: Grafana 
-parent: Configuration
+parent: Administration
 has_children: false
 nav_order: 1
 ---

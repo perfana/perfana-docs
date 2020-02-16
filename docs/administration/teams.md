@@ -1,6 +1,6 @@
 ---
 title: Teams
-parent: Configuration
+parent: Administration
 has_children: false
 nav_order: 2
 ---
