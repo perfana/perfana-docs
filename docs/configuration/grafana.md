@@ -2,7 +2,7 @@
 title: Grafana configuration
 parent: Configuration
 has_children: false
-nav_order: 1
+nav_order: 2
 ---
 
 # Grafana configuration
