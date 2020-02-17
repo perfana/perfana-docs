@@ -99,10 +99,23 @@ The Perfana demo environment comes with a Jenkins instance preconfigured with tw
 
 To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `perfana-gatling-afterburner` job and click `Build Now`. When you open the console log, you can see the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin) is building and executing the test.
 
-## Analyse test results
+## View test runs in Perfana
 
 To have a look at the test results in Perfana open [http://localhost:4000](http://localhost:4000)  and use `admin@perfana.io` as user with password `admin` to log in.
 
 In the home page click on `Afterburner` under `Your systems under test`. In the `Running tests` section you will see the test you have just triggered.
 
 ![Running test](images/running-test.png)
+
+Clicking on the test run will open the running test view. The view has two tabs:
+* Key metrics: shows the configured key metrics for this test. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
+* Dashboard: show the configured dashboards for this test. See [Grafana dashboards configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
+
+The Key metrics and Grafana dashboards can be viewed and configured via the items in the `settings` section in the sidebar.
+
+When the test has finished the test run will be displayed in the `recent test runs` section and a numbers of event will be triggered    :
+* Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
+* Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
+
+## View test run details
+
