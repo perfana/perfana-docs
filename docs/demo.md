@@ -29,9 +29,9 @@ Perfana provides a demo environment that can be used to try out all the features
 
 * Clone perfana-demo repository 
   ```
-  git clone https://gitlab.com/perfana/perfana-demo.git
+  git clone https://github.com/perfana/perfana-demo.git
   ```
-  or download [here](https://gitlab.com/perfana/perfana-demo/-/archive/master/perfana-demo-master.zip)
+  or download [here](https://github.com/perfana/perfana-demo/archive/master.zip)
 * Inside the repository root run
   ```
   ./start.sh
