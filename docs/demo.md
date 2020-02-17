@@ -119,3 +119,20 @@ When the test has finished the test run will be displayed in the `recent test ru
 
 ## View test run details
 
+To view more details for the test run you can click on the test run row, The test run details view has a number of tabs:
+
+### Summary
+
+### Comments
+
+### Key metrics
+
+### Dashboards
+
+### Report
+
+### Compare
+
+### Trends
+
+### Manage
