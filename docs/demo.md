@@ -105,4 +105,4 @@ To have a look at the test results in Perfana open [http://localhost:4000](http:
 
 In the home page click on `Afterburner` under `Your systems under test`. In the `Running tests` section you will see the test you have just triggered.
 
-![Running test](/assets/images/running-test.png)
+![Running test](images/running-test.png)
