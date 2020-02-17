@@ -98,3 +98,11 @@ To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use
 The Perfana demo environment comes with a Jenkins instance preconfigured with two jobs that will trigger a Gatling script to execute a load test on [Afterburner](https://github.com/stokpop/afterburner), a springboot test application. The two job are configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
 
 To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `perfana-gatling-afterburner` job and click `Build Now`. When you open the console log, you can see the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin) is building and executing the test.
+
+## Analyse test results
+
+To have a look at the test results in Perfana open [http://localhost:4000](http://localhost:4000)  and use `admin@perfana.io` as user with password `admin` to log in.
+
+In the home page click on `Afterburner` under `Your systems under test`. In the `Running tests` section you will see the test you have just triggered.
+
+![Running test](/assets/images/running-test.png)
