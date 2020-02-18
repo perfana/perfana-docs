@@ -123,16 +123,17 @@ To view more details for the test run you can click on the test run row, The tes
 
 [Summary](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#summary)
 
-### Comments
+[Comments](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#comments)
 
-### Key metrics
+[Key metrics](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#key-metrics)
 
-### Dashboards
+[Dashboards](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#dashboards)
 
-### Report
+[Report](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#report)
 
-### Compare
+[Compare](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#compare)
 
-### Trends
+[Trends](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#trends)
 
-### Manage
+[Manage](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#manage)
+

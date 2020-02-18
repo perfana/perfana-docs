@@ -34,7 +34,10 @@ The test properties section shows all of the key-value pairs pairs passed by the
 
 ## Comments
 
+In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
+
 ## Key metrics
+
 
 ## Dashboards
 
