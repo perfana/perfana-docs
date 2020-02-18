@@ -26,7 +26,7 @@ The test run summary view has a number of sections
 
 ### Test run information
 
-The test run information sections shows all the meta data for the test.
+The test run information sections shows all the meta data for the test. It is possible to add annotations to the test run. If required, it is also possible to manually update the `Version` property by clicking it.
 
 ### Test properties
 
