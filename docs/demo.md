@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Demo
-nav_order: 7
+nav_order: 8
 ---
 
 # Perfana demo
@@ -117,11 +117,11 @@ When the test has finished the test run will be displayed in the `recent test ru
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
 * Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
 
-## View test run details
+View test run details
 
 To view more details for the test run you can click on the test run row, The test run details view has a number of tabs:
 
-### Summary
+[Summary](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#summary)
 
 ### Comments
 

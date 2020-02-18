@@ -22,6 +22,16 @@ nav_order: 4
 
 ## Summary
 
+The test run summary view has a number of sections
+
+### Test run information
+
+The test run information sections shows all the meta data for the test.
+
+### Test properties
+
+The test properties section shows all of the key-value pairs pairs passed by the performance test. This feature can for instance be used to describe a test setup used for the test.
+
 ## Comments
 
 ## Key metrics
