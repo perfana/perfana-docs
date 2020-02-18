@@ -32,6 +32,8 @@ The test run information sections shows all the meta data for the test. It is po
 
 The test properties section shows all of the key-value pairs pairs passed by the performance test. This feature can for instance be used to describe a test setup used for the test.
 
+### Check results
+
 ## Comments
 
 In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
