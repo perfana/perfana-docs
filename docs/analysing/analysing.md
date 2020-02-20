@@ -48,6 +48,9 @@ If any [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) 
 
 In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
 
+![Comments](images/comments.png)
+
+
 ## Key metrics
 
 
