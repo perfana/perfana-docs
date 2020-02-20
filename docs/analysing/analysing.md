@@ -34,6 +34,16 @@ The test properties section shows all of the key-value pairs pairs passed by the
 
 ### Check results
 
+The check result section shows the requirements check results and, if applicable, checks on the delta's for key metrics between this and earlier test runs.
+
+![Check results](images/check-results.png)
+
+Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
+
+### Alerts
+
+If any [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) were triggered during the test they will be displayed in this section.
+
 ## Comments
 
 In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
