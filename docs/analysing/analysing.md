@@ -72,6 +72,7 @@ To do a new comparison, click on `Compare`, this will launch the `Comparison wiz
 
 ### Select baseline test run
 {: .no_toc }
+Select test run to use as baseline. This can be any test run, executed prior to or after the current test run
 ### Select comparison type
 {: .no_toc }
 * Key metrics only: Compare configured key metrics only and use comparison thresholds as specified
@@ -90,7 +91,7 @@ Select which Grafana dashboards to compare.
 Select per dashboard what panels to compare.
 ### Save comparison results
 {: .no_toc }  
-Provide a description for the comparison result.
+Provide a description for the comparison result and click `Compare`
 
 
 ![Compare results](../images/compare-results.png)
