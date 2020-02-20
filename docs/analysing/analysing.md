@@ -78,7 +78,7 @@ Select test run to use as baseline. This can be any test run, executed prior to 
 * Key metrics only: Compare configured key metrics only and use comparison thresholds as specified
 * Custom: Select what dashboards and metrics to compare
 ### Settings
-{: .no_toc }  
+{: .no_toc }
 * Exclude ramp up time: if checked, the configured ramp up time will be excluded when comapring the metrics
 * Average all metrics per panel: When comparing, metrics are matched on the series names. Sometimes the series names contain dynamic parts that vary between test runs and cannot be mapped. In that case this option can be used as workaround. In that case an average over all series will be compared.
 * Metric aggregation: configure what aggregation to use when comparing the metrics
