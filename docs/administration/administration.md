@@ -27,5 +27,7 @@ nav_order: 6
 
 ## Data retention and test run expiry
 
+## Quality gate
+
 ## Settings
 
