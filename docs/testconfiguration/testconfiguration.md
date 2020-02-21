@@ -60,7 +60,7 @@ The form has the following fields:
 * System under test
 * Workload
 * Test environment
-* Grafana: select Grafana instance than
+* Grafana: select Grafana instance
 * Dashboard label: Select dashboard to select metric from
 * Panel: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). Currently only [graph panels](https://grafana.com/docs/grafana/latest/features/panels/graph/) can be used as key metric.
 * Exclude ramp up time when evaluating test run: When this option is checked the configured `rampUpTime` will be excluded from evaluation data.
@@ -80,4 +80,12 @@ The form has the following fields:
 
 Perfana can produce a test run report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. 
 
-To add a `panel` to the report template click Add panel{: .btn .fs-5 .mb-4 .mb-md-0 }
+To add a `panel` to the report template click Add panel{: .btn .fs-5 .mb-4 .mb-md-0 }. This will open the `Add report panel` form, with the following fields:
+
+* System under test
+* Workload
+* Test environment
+* Grafana: select Grafana instance
+* Dashboard label: Select dashboard to select metric from
+* Panel: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). 
+* Annotation: add a default annotation to be displayed next to the graph
