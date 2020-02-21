@@ -89,9 +89,9 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 
 For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `key metrics` to test runs that are tagged with the `profile` name.
 
----
+--- 
 > This feature can be used to set ***enterprise-wide*** requirements for specific metrics. The check results are recorded and the results can be viewed over time aggregated by `team` and `system under test`
----
+--- 
 
 To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#add-key-metric) how to add a key metric.
 
@@ -99,9 +99,9 @@ To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://pe
 
 A `profile` can also be used to specify a reporting template for test runs with matching tags.
 
----
+--- 
 > This feature can be used to create a ***enterprise-wide uniform reporting standard***, for instance for formal release tests reports.
----
+--- 
 To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
 
 ## Data retention and test run expiry
