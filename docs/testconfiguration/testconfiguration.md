@@ -42,6 +42,7 @@ The form has the following fields:
 When one or more Grafana dashboard have been linked to the test runs, it is possible to select metrics from these dashboards as `key metrics`. 
 
 --- 
+
 > Key metrics are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
 --- 
 Key metrics can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://perfana.github.io/perfana-docs/docs/administration/ci-cd.html#quality-gate)
@@ -78,6 +79,7 @@ The form has the following fields:
 ## Reporting template
 
 --- 
+
 > The `reporting template` is set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
 --- 
 
