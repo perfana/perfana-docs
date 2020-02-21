@@ -113,7 +113,7 @@ Clicking on the test run will open the running test view. The view has two tabs:
 
 The Key metrics and Grafana dashboards can be viewed and configured via the items in the `settings` section in the sidebar.
 
-When the test has finished the test run will be displayed in the `recent test runs` section and a numbers of event will be triggered    :
+When the test has finished the test run will be displayed in the `recent test runs` section and a numbers of event will be triggered:
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
 * Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
 
