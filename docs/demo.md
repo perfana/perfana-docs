@@ -146,6 +146,8 @@ These alert rules can be found in the [prometheus.rules.yml](https://github.com/
 
 In [alertmanager.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/alertmanager.yml) Perfana has been set up as [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
 
-If one of the alerts triggers, Perfana will try to map alert labels to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) on all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
+The [Afterburner test application](https://github.com/stokpop/afterburner) has been [set up to expose JVM metrics via actuator](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/production-ready-metrics.html#production-ready-metrics-export-prometheus) and two [metric tags have been added](https://github.com/perfana/perfana-demo/blob/master/docker-compose.yml#L113) `system_under_test` and `test_environment`. 
+
+If one of the alerts triggers, Perfana will try to map alert metric tags to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
 
 Learn more on alerting [here](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html)
