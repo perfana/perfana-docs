@@ -22,7 +22,7 @@ nav_order: 7
 
 [View it on GitHub](https://github.com/perfana/perfana-java-client){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-Java libratry to ingrate with Perfana
+Java library to integrate with Perfana
 
 ## perfana-gatling-maven-plugin
 
