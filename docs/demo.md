@@ -116,7 +116,9 @@ When the test has finished the test run will be displayed in the `Recent runs` s
 
 Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
-View test run details
+### View test run details
+{: .no_toc }
+
 
 To view more details for the test run you can click on the test run row, The test run details view has a number of tabs:
 
@@ -136,3 +138,14 @@ To view more details for the test run you can click on the test run row, The tes
 
 [Manage](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#manage)
 
+## Alerts
+
+In the demo environment two Alertmanager alerts have been specified, as you can see in the [Prometheus UI](http://localhost:9090/alerts). 
+
+These alert rules can be found in the [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml) file in the [perfana-demo repo](https://github.com/perfana/perfana-demo)
+
+In [alertmanager.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/alertmanager.yml) Perfana has been set up as [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
+
+If one of the alerts triggers, Perfana will try to map alert labels to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) on all linked Grafana dashboards in each graph. This can track down root causes for bottleneck in you test runs.
+
+Learn more on alerting [here](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html)
