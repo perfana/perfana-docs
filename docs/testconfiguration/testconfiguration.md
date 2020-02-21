@@ -37,12 +37,11 @@ The form has the following fields:
 * Dashboard label: Add descriptive label, e.g. "Host metrics webserver 1"
 * Variables: If the Grafana dashboard has [templating values](https://grafana.com/docs/grafana/latest/reference/templating/), set variables and one or more values.
 
-## Key metrics
+## Key metrics  
 
 When one or more Grafana dashboard have been linked to the test runs, it is possible to select metrics from these dashboards as `key metrics`. 
 
 --- 
-
 > Key metrics are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
 --- 
 Key metrics can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://perfana.github.io/perfana-docs/docs/administration/ci-cd.html#quality-gate)
@@ -76,10 +75,9 @@ The form has the following fields:
 * Comparison: the allowed deviation between test run 
 * Update existing test runs: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
 
-## Reporting template
+## Reporting template 
 
 --- 
-
 > The `reporting template` is set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
 --- 
 
