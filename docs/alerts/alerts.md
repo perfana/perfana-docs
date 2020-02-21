@@ -16,9 +16,6 @@ nav_order: 5
 
 ---
 
-> This page is work in progress!
-
-{: .fs-6 }
 
 ## Alertmanager
 

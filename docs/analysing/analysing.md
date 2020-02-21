@@ -16,10 +16,6 @@ nav_order: 4
 
 ---
 
-> This page is work in progress!
-
-{: .fs-6 }
-
 ## Summary
 
 The test run summary view has a number of sections

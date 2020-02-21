@@ -15,9 +15,6 @@ nav_order: 6
 
 ---
 
-> This page is work in progress!
-
-{: .fs-6 }
 
 ## Grafana configuration
 
@@ -41,8 +38,9 @@ The `Grafana configuration` view will show you one or more Grafana instances and
 
 The `grafana-perfana` service will now automatically register the dashboard in Perfana and will update it when changes are made. If the dashboard is deleted from Grafana by mistake, the `grafana-perfana` will restore it. 
 
+--- 
 > If you use the `delete` icon in the `Linked dashboards` section, the dashboard will be deleted in both Perfana and Grafana!
-
+---
 ## Teams configuration
 
 Perfana allows admin users to create `Teams` to efficiently organise the test run data. `Teams` consist of one or more `team members` and a `system under test` is linked to one `team`.
@@ -61,8 +59,9 @@ A team has one or more `team members` and `users` can be member of one or more `
 
 A `team` can be responsible for one or more `systems under test`, but a `system under test` is linked to one `team` only. To link `system under tests` to the selected team, select one or more via the select box.
 
+---
 > When you link a `system under test` to a `team` that was already linked to another team, it will no longer be linked to the other team!
-
+---
 ## Profiles configuration
 
 Perfana profiles can be used to automatically configure test runs. By passing `tags` via the Gatling script [pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252) profiles can be activated for test runs with the provide properties and the following configuration can automatically be added:
@@ -80,8 +79,9 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 * **Dashboard name**: select the template dashboard
 * **Create separate dashboard for variable**: *optional* if a templating variable is selected, a separate Grafana dashboard will be created for each distinct value that is found for that templating variable.
 
+---
 > In order to make this feature work the metric data has to be labeled with tags `system_under_test` and `test_environment` and the Grafana dashboard has to use templating variables for these properties, as can be seen [here](http://localhost:3000/d/template-gatling-influx/gatling-influxdb?editview=templating&orgId=1&theme=light) (requires demo environment to be running)
-
+---
 * **Set hardcoded value for variables**: *optional* use this to set hardcoded values for the available templating variables (except for `system_under_test` and `test_environment`)
 * **Match regex for variables**: *optional* use this to only add the dashboard when a value for the selected templating value matches the provided regular expression.
 
@@ -89,7 +89,9 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 
 For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `key metrics` to test runs that are tagged with the `profile` name.
 
+---
 > This feature can be used to set ***enterprise-wide*** requirements for specific metrics. The check results are recorded and the results can be viewed over time aggregated by `team` and `system under test`
+---
 
 To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#add-key-metric) how to add a key metric.
 
@@ -97,8 +99,9 @@ To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://pe
 
 A `profile` can also be used to specify a reporting template for test runs with matching tags.
 
+---
 > This feature can be used to create a ***enterprise-wide uniform reporting standard***, for instance for formal release tests reports.
-
+---
 To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
 
 ## Data retention and test run expiry
