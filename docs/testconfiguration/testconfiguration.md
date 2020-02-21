@@ -64,7 +64,10 @@ The form has the following fields:
 * Exclude ramp up time when evaluating test run: When this option is checked the configured `rampUpTime` will be excluded from evaluation data.
 * Average all panel series when comparing test runs: if this option is checked all series produced by the panel will be averaged before evaluating the data.
 * Evaluate: select the aggregation to be used on the data when evaluating: `Average` (default), `Maximum`, `Minimum` or `Last`
-* Only apply to metrics matching regex pattern: a panel could produce multiple series. A regular expression can be provided to filter the series that the configured checks apply to.
+* Only apply to metrics matching regex pattern: a panel could produce multiple series. A regular expression can be provided to filter the series that the configured checks apply to, e.g.
+
+![Match regex](../images/match-regex.png)
+
 * Requirement: the requirment to check
 * Comparison: the allowed deviation between test run 
 * Update existing test runs: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
