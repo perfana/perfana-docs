@@ -19,13 +19,15 @@ nav_order: 2
 
 ## Landing page
 
-After logging in the user is redirected to his or her personal landig page. It has deeplinks to test runs view with preset filters on either the team(s) the user is member of or the systems under test that those teams are responsible for.
+After logging in the user is redirected to his or her personal landig page. It contains deeplinks to the `Test runs view` with preset filters on either the team(s) the user is member of or the systems under test that those teams are responsible for.
 
 It also has a section called `Test runs that may require your attention` that will show test runs with failed checks not visited yet by the user.
 
 In the top right of the screens there are notifications for the user that are created on several events, like test runs with failed checks and new comments on test runs.
 
 ## Test runs 
+
+The `Test runs view` can be opened from the sidebar by clicking on the `rocket` icon.
 
 ### Test run selector
 {: .no_toc }
