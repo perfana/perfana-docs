@@ -77,8 +77,10 @@ The form has the following fields:
 
 ## Reporting template
 
----
+--- 
+
 > The `reporting template` is set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
+
 ---
 
 Perfana can produce a test run report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. 
