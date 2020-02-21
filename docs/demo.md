@@ -107,9 +107,7 @@ In the home page click on `Afterburner` under `Your systems under test`. In the 
 
 ![Running test](images/running-test.png)
 
-Clicking on the test run will open the running test view. The view has two tabs:
-* Key metrics: shows the configured key metrics for this test. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
-* Dashboard: show the configured dashboards for this test. See [Grafana dashboards configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
+
 
 The Key metrics and Grafana dashboards can be viewed and configured via the items in the `settings` section in the sidebar.
 
