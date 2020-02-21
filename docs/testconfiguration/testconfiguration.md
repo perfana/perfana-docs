@@ -80,7 +80,7 @@ The form has the following fields:
 
 Perfana can produce a test run report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. 
 
-To add a `panel` to the report template click Add panel{: .btn .fs-5 .mb-4 .mb-md-0 }. This will open the `Add report panel` form, with the following fields:
+To add a `panel` to the report template click the `Add panel` button. This will open the `Add report panel` form, with the following fields:
 
 * System under test
 * Workload
