@@ -15,9 +15,6 @@ nav_order: 2
 
 ---
 
-
-> This page is work in progress!
-
 {: .fs-6 }
 
 ## Landing page
