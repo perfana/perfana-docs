@@ -95,7 +95,7 @@ To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://pe
 
 ### Reporting panel
 
-A profile can also be used to specify a reporting template for test runs with matching tags.
+A `profile` can also be used to specify a reporting template for test runs with matching tags.
 
 > This feature can be used to create a ***enterprise-wide uniform reporting standard***, for instance for formal release tests reports.
 

@@ -110,8 +110,8 @@ When there are multiple test runs available with the samen `environment` and `wo
 
 The `Manage` is only available for users that have a `team-admin` role for the team reponsible for the system under test and users with `admin` role. It has a number of sections for managing the test run:
 
-* Status: displays the status for the different stages the test run will go through after it has finished. It also displays the expiry date for the test run. Read moren on test run expiry [here](https://perfana.github.io/perfana-docs/docs/administration/administration.html#data-retention-and-test-run-expiry)
-* Manage Grafana snapshots: create, delete, update en view Grafana snapshots for the test run. To keep the snapshots from being deleted after the configured retention period, use `save snapshot`. If a report is generated for the test run (by opening the report tab), the snapshots are automatically saved.
-* Manage test run:  This section can be used to delete a test run or to set it as `fixed baseline`. Users with the `admin` role are also allowed to edit the test run properties.
-* Manage checks: This section can be used to manually re-evaluate the configured checks
-* Manage Report: This section can be used to delete the persisted report
+* **Status**: displays the status for the different stages the test run will go through after it has finished. It also displays the expiry date for the test run. Read moren on test run expiry [here](https://perfana.github.io/perfana-docs/docs/administration/administration.html#data-retention-and-test-run-expiry)
+* **Manage Grafana snapshots**: create, delete, update en view Grafana snapshots for the test run. To keep the snapshots from being deleted after the configured retention period, use `save snapshot`. If a report is generated for the test run (by opening the report tab), the snapshots are automatically saved.
+* **Manage test run**:  This section can be used to delete a test run or to set it as `fixed baseline`. Users with the `admin` role are also allowed to edit the test run properties.
+* **Manage checks**: This section can be used to manually re-evaluate the configured checks
+* **Manage Report**: This section can be used to delete the persisted report

@@ -82,10 +82,10 @@ Perfana can produce a test run report can be used to share test results with sta
 
 To add a `panel` to the report template click the `Add panel` button. This will open the `Add report panel` form, with the following fields:
 
-* System under test
-* Workload
-* Test environment
-* Grafana: select Grafana instance
-* Dashboard label: Select dashboard to select metric from
-* Panel: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). 
-* Annotation: add a default annotation to be displayed next to the graph
+* **System under test**
+* **Workload**
+* **Test environment**
+* **Grafana**: select Grafana instance
+* **Dashboard label**: Select dashboard to select metric from
+* **Panel**: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). 
+* **Annotation**: add a default annotation to be displayed next to the graph
