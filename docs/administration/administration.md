@@ -51,9 +51,17 @@ To mantain the configured `Teams` an `admin` user can open the `Teams` item from
 
 A new `Team` can be added by clicking the `Add team` button, this will open the `Add team` from with these fields:
 
-* Organisation
+* Organisation: select Organisation
 * Name
 * Description
+
+Click the `team` row to view the team members and the systems under test linked to this team.
+
+A team has one or more `team members` and `users` can be member of one or more `teams`. To add `team members` click on the select box to select one or more users.
+
+A `team` can be responsible for one or more `systems under test`, but a `system under test` is linked to one `team` only. To link `system under tests` to the selected team, select one or more via the select box.
+
+> When you link a `system under test` to a `team` that was already linked to another team, it will no longer be linked to the other team!
 
 ## Profiles configuration
 
