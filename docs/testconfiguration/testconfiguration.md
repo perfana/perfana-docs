@@ -1,10 +1,10 @@
 ---
-title: Test configuration
+title: Test run configuration
 has_children: true
 nav_order: 3
 ---
 
-# Test configuration
+# Test run configuration
 {: .no_toc }
 
 ## Table of contents
