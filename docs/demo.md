@@ -107,13 +107,14 @@ In the home page click on `Afterburner` under `Your systems under test`. In the 
 
 ![Running test](images/running-test.png)
 
+Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#running-tests) to learn more about the `Running tests` section.
+ 
 
-
-The Key metrics and Grafana dashboards can be viewed and configured via the items in the `settings` section in the sidebar.
-
-When the test has finished the test run will be displayed in the `recent test runs` section and a numbers of event will be triggered:
+When the test has finished the test run will be displayed in the `Recent runs` section and a numbers of event will be triggered:
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
 * Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
+
+Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
 View test run details
 
