@@ -9,8 +9,6 @@ permalink: /
 # Perfana documentation
 {: .fs-9 }
 
-Source
-{: .fs-6 .fw-300 }
 
 [View it on GitHub](https://github.com/perfana/perfana-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
 
