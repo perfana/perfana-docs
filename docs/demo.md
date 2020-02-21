@@ -146,6 +146,6 @@ These alert rules can be found in the [prometheus.rules.yml](https://github.com/
 
 In [alertmanager.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/alertmanager.yml) Perfana has been set up as [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
 
-If one of the alerts triggers, Perfana will try to map alert labels to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) on all linked Grafana dashboards in each graph. This can track down root causes for bottleneck in you test runs.
+If one of the alerts triggers, Perfana will try to map alert labels to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) on all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
 
 Learn more on alerting [here](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html)
