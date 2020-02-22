@@ -76,10 +76,10 @@ Select test run to use as baseline. This can be any test run, executed prior to 
 
 ### Settings
 {: .no_toc } 
-* Exclude ramp up time: if checked, the configured ramp up time will be excluded when comapring the metrics
-* Average all metrics per panel: When comparing, metrics are matched on the series names. Sometimes the series names contain dynamic parts that vary between test runs and cannot be mapped. In that case this option can be used as workaround. In that case an average over all series will be compared.
-* Metric aggregation: configure what aggregation to use when comparing the metrics
-* Evaluate comparison results: This option can be used to flag comparison results if they do need meet the specified condition. 
+* **Exclude ramp up time**: if checked, the configured ramp up time will be excluded when comapring the metrics
+* **Average all metrics per panel**: When comparing, metrics are matched on the series names. Sometimes the series names contain dynamic parts that vary between test runs and cannot be mapped. In that case this option can be used as workaround. In that case an average over all series will be compared.
+* **Metric aggregation**: configure what aggregation to use when comparing the metrics
+* **Evaluate comparison results**: This option can be used to flag comparison results if they do need meet the specified condition. 
 
 ### Select dashboards
 {: .no_toc } 
