@@ -79,10 +79,11 @@ To start, stop or remove containers individually use `docker-compose` and the se
 docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
 ```
 
-To pull the most recent images, use 
+> The `perfana-demo` repository is updated frequently, so to get the latest and greatest pull repo and images.
+
 
 ```
-docker-compose pull
+git pull && docker-compose pull
 ```
 
 ## Exploring the demo environment
