@@ -32,7 +32,8 @@ Perfana provides a demo environment that can be used to try out all the features
   git clone https://github.com/perfana/perfana-demo.git
   ```
   or download [here](https://github.com/perfana/perfana-demo/archive/master.zip)
-  > If you use the download option, extract the zip to a directory named `perfana-demo`!
+
+  > If you use the download option, make sure to extract the zip to a directory named `perfana-demo`!
 
 * Inside the repository root run
   ```
