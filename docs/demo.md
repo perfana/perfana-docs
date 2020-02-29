@@ -109,6 +109,11 @@ The Perfana demo environment comes with a Jenkins instance preconfigured with tw
 
 To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `perfana-gatling-afterburner` job and click `Build Now`. When you open the console log, you can see the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin) is building and executing the test.
 
+--- 
+
+> If the job is running for the first time it will take some time to start up because Maven has to download all dependencies. Check the build log via `Console Output` to see the progress.
+--- 
+
 ## View test runs in Perfana
 
 To have a look at the test results in Perfana open [http://localhost:4000](http://localhost:4000)  and use `admin@perfana.io` as user with password `admin` to log in.
