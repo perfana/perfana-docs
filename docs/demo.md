@@ -32,6 +32,8 @@ Perfana provides a demo environment that can be used to try out all the features
   git clone https://github.com/perfana/perfana-demo.git
   ```
   or download [here](https://github.com/perfana/perfana-demo/archive/master.zip)
+  > If you use the download option, extract the zip to a directory named `perfana-demo`!
+
 * Inside the repository root run
   ```
   ./start.sh
@@ -76,6 +78,11 @@ To start, stop or remove containers individually use `docker-compose` and the se
 docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
 ```
 
+To pull the most recent images, use 
+
+```
+docker-compose pull
+```
 
 ## Exploring the demo environment
 
