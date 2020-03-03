@@ -118,9 +118,10 @@ To start a test, go to [http://localhost:8090](http://localhost:8090), log in, c
 The demo contains three workload examples to demonstrate some use cases for Perfana:
 
 * **load test**: a steady state load on Afterburner. Run this workload a few times to view the automatic analysis feature in action, that can be used as quality gate in a CI/CD setup. 
-* **stress test**: an increasing load on Afterburner, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags]()
+* **stress test**: an increasing load on Afterburner, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
+* **slow back end test**: a steady state load on Afterburner. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for Afterburner. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
 
- When you open the console log, you can see the [perfana-gatling-maven-plugin](https://github.com/perfana/perfana-gatling-maven-plugin) is building and executing the test.
+ When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test.
 
 --- 
 
