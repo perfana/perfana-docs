@@ -123,11 +123,12 @@ The demo contains three workload examples to demonstrate some use cases for Perf
 
  When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test. 
 
+
 --- 
 
 > If the job is running for the first time it will take some time to start up because Maven has to download all dependencies. Check the build log via `Console Output` to see the progress.
---- 
 
+--- 
 
 ## View test runs in Perfana
 
