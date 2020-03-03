@@ -1,6 +1,6 @@
 ---
 title: Test run configuration
-has_children: true
+has_children: false
 nav_order: 3
 ---
 
