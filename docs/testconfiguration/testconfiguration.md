@@ -96,3 +96,11 @@ To add a `panel` to the report template click the `Add panel` button. This will 
 * **Dashboard label**: Select dashboard to select metric from
 * **Panel**: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). 
 * **Annotation**: add a default annotation to be displayed next to the graph
+
+## Abort alert tags 
+
+--- 
+
+> The `abort alert tags` are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
+
+--- 
