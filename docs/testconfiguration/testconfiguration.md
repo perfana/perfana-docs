@@ -104,3 +104,14 @@ To add a `panel` to the report template click the `Add panel` button. This will 
 > The `abort alert tags` are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
 
 --- 
+
+Perfana can automatically abort a test run based on specified tag of [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) received during the test.
+
+To add an `abort alert tag` click `Add alert tag`, this will open the `Add abort alert tag` form with the following fields:
+
+* **System under test**
+* **Workload**
+* **Test environment**
+* **Alert source**: select the alert source, AlertManager, Kapacitor or Grafana
+* **Tag key**: provide the tag key you want to trigger a test run abort
+* **Tag value**: provide the tag value you want to trigger a test run abort
