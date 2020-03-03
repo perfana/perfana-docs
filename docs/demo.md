@@ -122,12 +122,12 @@ The demo contains three workload examples to demonstrate some use cases for Perf
 * **slow back end test**: a steady state load on Afterburner. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for Afterburner. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
 
  When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test. 
- 
 
 --- 
 
 > If the job is running for the first time it will take some time to start up because Maven has to download all dependencies. Check the build log via `Console Output` to see the progress.
 --- 
+
 
 ## View test runs in Perfana
 
