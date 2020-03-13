@@ -75,7 +75,9 @@ The form has the following fields:
 * **Comparison**: the allowed deviation between test run 
 * **Update existing test runs**: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
 
-### Edit key metrics
+### Edit key metric
+{: .no_toc }
+
 
 A key metric can be edited by clicking the `pencil` icon in the row. 
 
