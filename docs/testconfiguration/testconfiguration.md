@@ -77,6 +77,13 @@ The form has the following fields:
 * **Comparison**: the allowed deviation between test run 
 * **Update existing test runs**: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
 
+### Regular expression helper
+{: .no_toc }
+In the key metrics view it is possible to use the `regular expression helper` to update the `Only apply to metrics matching regex pattern` property for a key metric by clicking the `settings` icon in the end of a key metric row.. If there is metric data available for a key metric the `regular expression helper` can be used to preview the results of a regular expression applied to a set of metrics.
+
+![Regex helper](../images/regex-helper.png)
+
+
 ## Reporting template 
 
 --- 
