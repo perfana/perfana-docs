@@ -71,9 +71,13 @@ To remove all containers, use
 ./clean.sh
 ``` 
 
----
+--- 
+
 > When you use the `clean.sh` script, all of the data inside the containers will be lost!
+
 ---
+
+
 To start, stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
 
 ```
