@@ -52,8 +52,6 @@ Two types of checks can be configured for a `key metric`:
 * **Requirement**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
 * **Comparison**: Check if the `delta` between test runs is within allowed thresholds. Example: "Allow a positve deviation of 20% between test runs for the 99th percentile response times"
 
-If `key metrics` have been configured via [profiles](https://perfana.github.io/perfana-docs/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `key metrics` will display the originating `profile` in the last column of the table.
-
 ### Add key metric
 {: .no_toc }
 
@@ -76,6 +74,12 @@ The form has the following fields:
 * **Requirement**: the requirment to check
 * **Comparison**: the allowed deviation between test run 
 * **Update existing test runs**: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
+
+### Edit key metrics
+
+A key metric can be edited by clicking the `pencil` icon in the row. 
+
+If `key metrics` have been configured via [profiles](https://perfana.github.io/perfana-docs/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `key metrics` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
 
 ### Regular expression helper
 {: .no_toc }
