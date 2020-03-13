@@ -69,7 +69,8 @@ To remove all containers, use
 
 ```
 ./clean.sh
-```
+``` 
+
 ---
 > When you use the `clean.sh` script, all of the data inside the containers will be lost!
 ---
