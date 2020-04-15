@@ -15,7 +15,6 @@ nav_order: 7
 
 ---
 
-
 {: .fs-6 }
 
 ## events-gatling-maven-plugin

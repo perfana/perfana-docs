@@ -63,8 +63,7 @@ The table has a number of columns:
 * If the test run has comments, the number will be displayed in the `comments` icon. The icon will be blue when there are unread comments.
 * If the user is allowed to delete test runs for the system under test, a `delete` icon will be available to delete the test run, or the checkboxes can be used to delete multiple test runs at once.
 
-### Trends
-{: .no_toc }
+## Trends
 
 When there are multiple test runs available with the same `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured `key metrics` over time. You can select a period (1 week only in the demo version, due to retention limits) and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
 
