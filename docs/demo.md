@@ -152,6 +152,8 @@ When the test has finished the test run will be displayed in the `Recent runs` s
 
 Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
+If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `key metrics`. [Read more on trends](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#trends)
+
 ### View test run details
 {: .no_toc }
 
@@ -169,8 +171,6 @@ To view more details for the test run you can click on the test run row, The tes
 [Report](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#report)
 
 [Compare](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#compare)
-
-[Trends](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#trends)
 
 [Manage](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#manage)
 

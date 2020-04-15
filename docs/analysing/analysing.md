@@ -94,14 +94,6 @@ Provide a description for the comparison result and click `Compare`
 
 ![Compare results](../images/compare-results.png)
 
-
-## Trends
-
-When there are multiple test runs available with the samen `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured key metrics over time. You can select a period (1 week only in the demo version, due to retention limits) and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
-
-![Trends](../images/trends.png)
-
-
 ## Manage
 
 The `Manage` is only available for users that have a `team-admin` role for the team reponsible for the system under test and users with `admin` role. It has a number of sections for managing the test run:
