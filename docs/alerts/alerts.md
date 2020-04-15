@@ -36,3 +36,29 @@ Then create one ore more [alerting rules](https://prometheus.io/docs/prometheus/
 ## Kapacitor
 
 ## Grafana alerts
+
+It is possible to create [alerts in Grafana](https://grafana.com/docs/grafana/latest/alerting/rules/). In order to integrate these alerts with Perfana a [notifications channel](https://grafana.com/docs/grafana/latest/alerting/notifications/) has to be configured.
+
+The channel type should be `webhook`, the url `http://<perfana-host>/grafana-alerts` and the httpMethod `POST`
+
+![Notications channel](../images/notifications-channel.png)
+
+Then create an alert on a panel in one of your dashboards. To do so, choose `edit` from the panel menu an go to the `Alert` section.
+
+The follwoing properties should be set:
+
+No Data & Error Handling:
+* **If no data or all values are null** SET STATE TO `Ok`
+* **If execution error or timeout** SET STATE TO `Keep Last State`
+
+Notications:
+
+* **Send to**: Select the `Perfana` notification channel you have created earlier. 
+* **Message**: Add a descriptive message, this will be displayed in Perfana.
+* **Tags**: 
+  * **system_under_test**: *Required* should match the `system_under_test` for your test  
+  * **test_environment**: *Required*  should match the `test_environment` for your test
+  * **test run abort tag**: *Optional* [tag to use to abort a test run](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)  
+  
+
+![Alert](../images/alert.png)
