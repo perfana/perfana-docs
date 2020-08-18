@@ -115,9 +115,25 @@ A `profile` can also be used to specify a reporting template for test runs with 
 --- 
 To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
 
-## Data retention and test run expiry
 
-## Quality gate
+## Notifications channels
 
-## Settings
+Perfana can use [Slack](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#slack) or [Teams](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#teams) channels to notify your team of specified events. 
 
+### System under test notification channel
+
+In order to setup a nofication channel for your `sytem under test` click on the `Notifications channels` item in the `Settings` section of the side bar.
+
+This will open the `Add notification channel` dialog with the following fields:
+* **System under test**
+* **Channel type**: Select `Slack` or `Teams`
+* **Channel name**: Provide channel name
+* **Channel description**: Provide channel description
+* **Webhook url**: Provide Webhook url
+* **Send notification when a test run has finished** When this option is checked a notification will be sent to the channel when a test runs has finished
+* **Send notification for failed test runs only** When this option is checked a notification will be sent to the channel only when a test run has failed
+* **Send notification to this channel if any of the team members are mentioned in comments** When this option is checked a notification will be sent to the channel when any of your team members is mentioned in comment
+* **Include user mentions** Select additional users to trigger a notification when mentioned.
+
+### Admin notification channel
+As an Admin user, you can setup notification channels that are not linked to a `system under test`. A typical use case for this would be a "performance engineering support channel" that can be included in comments by users to ask the community for help. To setup a such a channel, click on the `Admin notifications channel` item in the `Admin` section in the sidebar.

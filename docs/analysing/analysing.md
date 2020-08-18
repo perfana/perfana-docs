@@ -46,6 +46,18 @@ In the comments tab, comments on the test are displayed. Comments can be added f
 
 ![Comments](../images/comments.png)
 
+### Adding comments
+
+Adding comments to a test run can be done from different places:
+* From the `Comments` tab, by clicking `Add comment`
+* From the `Key metrics` tab, by cliking the `comment` icon in the top right of the metric panels
+* From the `Dashboards` tab, by cliking the `comment` icon in the top right of the dashboard panels
+
+The `Add comment` dialog has the following fields:
+* **Comment**: Use this field to add your comment. You can mentions users by entering a `@` and selecting the user from the drop down list
+* **Select notification channels**: If one or more notification channels have been configured for the `system under test` you can can select them here. This will send a notification of the comment to the selected channels
+* **Select dashboard**: [Optional, based on from where dialog has been triggered] Select dashboard to comment on 
+* **Select panel**: [Optional, based on from where dialog has been triggered] Select panel to comment on. when selected the panel will be shown in the dialog 
 
 ## Key metrics
 
@@ -93,6 +105,19 @@ Provide a description for the comparison result and click `Compare`
 
 
 ![Compare results](../images/compare-results.png)
+
+## Tracing
+
+Perfana can be [integrated with Jaeger](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#jaeger) to include tracing information in your test run results. If tracing has been setup the `Traces` tab will be visible. From this tab you will be able to deeplink into the Jaeger UI based on a number of filters:
+
+* **Only show traces that fail to meet requirement**: If a requirement has been specified for response times metrics, the reqirement values can be used to filter traces.
+* **Only show traces with duration longer than**: Can be used to filter on minimum duration of the traces
+* **Only show traces with duration shorte than**: Can be used to filter on maximum duration of the traces
+* **Request name**: Filter on request name
+
+To deeplink into the Jager UI based on the filters, click on the request names. 
+
+![Traces](../images/traces.png)
 
 ## Manage
 
