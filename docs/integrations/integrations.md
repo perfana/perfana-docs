@@ -109,8 +109,8 @@ Perfana will create a `Only show traces that fail to meet requirement` filter wh
 
 ## Slack
 
-To configure your Slack channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://api.slack.com/messaging/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#notifications-channel)
+To configure your Slack channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://api.slack.com/messaging/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://perfana.github.io/perfana-docs/docs/administration/administration.html#notifications-channels)
 
 ## Teams
 
-To configure your Teams channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook). Use the `Webhook URL` when setting up your [notifications channel](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#notifications-channel)
+To configure your Teams channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook). Use the `Webhook URL` when setting up your [notifications channel](https://perfana.github.io/perfana-docs/docs/administration/administration.html#notifications-channels)

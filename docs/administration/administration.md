@@ -82,7 +82,7 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 * **Grafana**: Select the Grafan instance that hosts the template dashboard
 * **Dashboard name**: select the template dashboard
 * **Remove templating variables and replace them with values**: if set to true, templating variables in the created instance of the template dashboard will be replaced by hardcoded values. This is useful if you want to integrate [Grafana alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html#grafana-alerts) with Perfana. Unfortunately Grafana alerts cannot be created on templated dashboards.
-* **Create separate dashboard for variable**: *optional* if a templating variable is selected, a separate Grafana dashboard will be created for each distinct value that is found for that templating variable.
+* **Create separate dashboard for variable**: *optional* if a templating variable is selected, a separate Grafana >>oard will be created for each distinct value that is found for that templating variable.
 
 --- 
 
