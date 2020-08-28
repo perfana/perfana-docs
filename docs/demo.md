@@ -35,6 +35,13 @@ Perfana provides a demo environment that can be used to try out all the features
 
   > If you use the download option, make sure to extract the zip to a directory named `perfana-demo`!
 
+* Add this to your hosts file
+  ```
+  127.0.1.1  perfana
+  127.0.1.1  jenkins  
+  127.0.1.1  grafana
+  ```
+
 * Inside the repository root run
   ```
   ./start.sh
@@ -55,8 +62,9 @@ This will spin up a number of containers
 | influxdb        | InfluxDb metrics datastore | 8086 / 2003  |
 | telegraf        | Telegraf metrics agent | n/a  |
 | prometheus      | Prometheus metrics datastore| 9090  |
-| alertmanager    | Aletmanager handles alerts from Prometheus | 9093  |
-| afterburner     | Springboot test application  | 8080  |
+| alertmanager    | Alertmanager handles alerts from Prometheus | 9093  |
+| optimus-prime-fe     | Springboot test application  | 8080  |
+| optimus-prime-be     | Springboot test application  | 8080  | 
 
 
 To stop all containers, run
@@ -110,11 +118,11 @@ To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use
 
 ## Start a test
 
-The Perfana demo environment comes with a Jenkins instance preconfigured with a job that will trigger a Gatling script to execute a load test on [Afterburner](https://github.com/stokpop/afterburner), a springboot test application. The job is configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
+The Perfana demo environment comes with a Jenkins instance preconfigured with a job that will trigger a Gatling script to execute a load test on two instances of [Afterburner](https://github.com/stokpop/afterburner), a springboot test application, deployed as `optimus-prime-fe` and `optimus-prime-be`. The job is configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
 
-To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `perfana-gatling-afterburner` job and click `Build with paramaters`. The following parameters can be set:
+To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `OptimusPrime` job and click `Build with parameters`. The following parameters can be set:
 
-* **system_under_test**: Use this paramater to se the System Under Test property in Perfana. Default is set to `Afterburner`
+* **system_under_test**: Use this paramater to se the System Under Test property in Perfana. Default is set to `OptimusPrime`
 * **gatlingRepo**: Repository containing the Gatling script
 * **gatlingBranch**: Branch to use
 * **workload**: workload to use in the test, corresponds to the [workload profiles in the pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252)
@@ -122,9 +130,9 @@ To start a test, go to [http://localhost:8090](http://localhost:8090), log in, c
 
 The demo contains three workload examples to demonstrate some use cases for Perfana:
 
-* **load test**: a steady state load on Afterburner. Run this workload a few times to view the automatic analysis feature in action, that can be used as quality gate in a CI/CD setup. 
-* **stress test**: an increasing load on Afterburner, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
-* **slow back end test**: a steady state load on Afterburner. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for Afterburner. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
+* **load test**: a steady state load on OptimusPrime. Run this workload a few times to view the automatic analysis feature in action, that can be used as quality gate in a CI/CD setup. 
+* **stress test**: an increasing load on OptimusPrime, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
+* **slow back end test**: a steady state load on OptimusPrime. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for OptimusPrime. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
 
  When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test. 
 
