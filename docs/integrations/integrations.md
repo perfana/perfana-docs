@@ -105,7 +105,7 @@ In the Perfana demo setup [Spring Cloud Sleuth](https://docs.spring.io/spring-cl
 
 Perfana will create a `Only show traces that fail to meet requirement` filter when it finds a key metric with a requirement specified based a Grafana `panel` that has `perfana-response-times` in the description.
 
-![Panel description perfana-response-times](https://docs.perfana.io/docs/perfana-response-times.png)
+![Panel description perfana-response-times](https://docs.perfana.io/docs/images/perfana-response-times.png)
 
 ## Slack
 

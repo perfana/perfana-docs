@@ -52,7 +52,7 @@ The Key metrics and Grafana dashboards can be configured via the items in the `s
 
 The `Recent runs` section shows finished test runs matching the properties set in the `Test run selector` sorted on date. 
 
-![Recent runs](https://docs.perfana.io/docs/recent-runs.png)
+![Recent runs](https://docs.perfana.io/docs/images/recent-runs.png)
 
 The table has a number of columns:
 
@@ -67,4 +67,4 @@ The table has a number of columns:
 
 When there are multiple test runs available with the same `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured `key metrics` over time. You can select a period (1 week only in the demo version, due to retention limits) and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
 
-![Trends](https://docs.perfana.io/docs/trends.png)
+![Trends](https://docs.perfana.io/docs/images/trends.png)

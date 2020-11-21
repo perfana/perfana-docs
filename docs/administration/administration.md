@@ -34,7 +34,7 @@ It is possible to add multiple Grafana instances, to add one click on the `Add G
 
 The `Grafana configuration` view will show you one or more Grafana instances and for each dashboard the dashboards that have been registered in Perfana. To register a Grafana dashboard is Perfana is simple: just add a `perfana` tag to the dashboard:
 
-![Grafana dashboard tags](https://docs.perfana.io/docs/grafana-dashboard-tags.png)
+![Grafana dashboard tags](https://docs.perfana.io/docs/images/grafana-dashboard-tags.png)
 
 The `grafana-perfana` service will now automatically register the dashboard in Perfana and will update it when changes are made. If the dashboard is deleted from Grafana by mistake, the `grafana-perfana` will restore it. 
 
@@ -74,7 +74,7 @@ Perfana profiles can be used to automatically configure test runs. By passing `t
 
 Profiles can be used to automatically link Grafana dashboards to test runs. To use a Grafana dashboard for autoconfiguration it has to be tagged in Grafana as `perfana-template`
 
-![Perfana template tag](https://docs.perfana.io/docs/perfana-template-tag.png)
+![Perfana template tag](https://docs.perfana.io/docs/images/perfana-template-tag.png)
 
 To add a template dashboard to a `profile`, click on `Add dashboard` to open the form with these fields:
 
