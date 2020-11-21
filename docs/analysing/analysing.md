@@ -32,7 +32,8 @@ The test properties section shows all of the key-value pairs pairs passed by the
 
 The check result section shows the requirements check results and, if applicable, checks on the delta's for key metrics between this and earlier test runs.
 
-![Check results](../images/check-results.png)
+![Check results](https://docs.perfana.io/docs/images/
+check-results.png)
 
 Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
 
@@ -44,7 +45,8 @@ If any [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) 
 
 In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
 
-![Comments](../images/comments.png)
+![Comments](https://docs.perfana.io/docs/images/
+comments.png)
 
 ### Adding comments
 
@@ -104,7 +106,8 @@ Select per dashboard what panels to compare.
 Provide a description for the comparison result and click `Compare`
 
 
-![Compare results](../images/compare-results.png)
+![Compare results](https://docs.perfana.io/docs/images/
+compare-results.png)
 
 ## Tracing
 
@@ -117,7 +120,8 @@ Perfana can be [integrated with Jaeger](https://perfana.github.io/perfana-docs/d
 
 To deeplink into the Jager UI based on the filters, click on the request names. 
 
-![Traces](../images/traces.png)
+![Traces](https://docs.perfana.io/docs/images/
+traces.png)
 
 ## Manage
 
