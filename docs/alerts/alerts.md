@@ -41,8 +41,7 @@ It is possible to create [alerts in Grafana](https://grafana.com/docs/grafana/la
 
 The channel type should be `webhook`, the url `http://<perfana-host>/grafana-alerts` and the httpMethod `POST`
 
-![Notications channel](https://docs.perfana.io/docs/images/
-notifications-channel.png)
+![Notications channel](https://docs.perfana.io/docs/notifications-channel.png)
 
 Then create an alert on a panel in one of your dashboards. To do so, choose `edit` from the panel menu an go to the `Alert` section.
 
@@ -62,5 +61,4 @@ Notications:
   * **test run abort tag**: *Optional* [tag to use to abort a test run](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#abort-alert-tags)  
   
 
-![Alert](https://docs.perfana.io/docs/images/
-alert.png)
+![Alert](https://docs.perfana.io/docs/alert.png)

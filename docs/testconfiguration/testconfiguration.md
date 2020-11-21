@@ -69,8 +69,7 @@ The form has the following fields:
 * **Evaluate**: select the aggregation to be used on the data when evaluating: `Average` (default), `Maximum`, `Minimum` or `Last`
 * **Only apply to metrics matching regex pattern**: a panel could produce multiple series. A regular expression can be provided to filter the series that the configured checks apply to, e.g.
 
-![Match regex](https://docs.perfana.io/docs/images/
-match-regex.png)
+![Match regex](https://docs.perfana.io/docs/match-regex.png)
 
 * **Requirement**: the requirment to check
 * **Comparison**: the allowed deviation between test run 
@@ -88,8 +87,7 @@ If `key metrics` have been configured via [profiles](https://docs.perfana.io/doc
 {: .no_toc }
 In the key metrics view it is possible to use the `regular expression helper` to update the `Only apply to metrics matching regex pattern` property for a key metric by clicking the `settings` icon in the end of a key metric row.. If there is metric data available for a key metric the `regular expression helper` can be used to preview the results of a regular expression applied to a set of metrics.
 
-![Regex helper](https://docs.perfana.io/docs/images/
-regex-helper.png)
+![Regex helper](https://docs.perfana.io/docs/regex-helper.png)
 
 
 ## Reporting template 
