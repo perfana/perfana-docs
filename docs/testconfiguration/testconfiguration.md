@@ -4,7 +4,7 @@ has_children: false
 nav_order: 3
 ---
 
-# Test run configuration
+# Test configuration
 {: .no_toc }
 
 ## Table of contents

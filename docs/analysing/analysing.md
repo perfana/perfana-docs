@@ -4,7 +4,7 @@ has_children: false
 nav_order: 4
 ---
 
-# Test run details
+# Analyzing test runs
 {: .no_toc }
 
 ## Table of contents
