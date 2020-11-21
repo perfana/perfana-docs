@@ -35,11 +35,11 @@ The check result section shows the requirements check results and, if applicable
 ![Check results](https://docs.perfana.io/docs/images/
 check-results.png)
 
-Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
+Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Key metrics configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
 
 ### Alerts
 
-If any [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) were triggered during the test they will be displayed in this section.
+If any [alerts](https://docs.perfana.io/docs/alerts/alerts.html) were triggered during the test they will be displayed in this section.
 
 ## Comments
 
@@ -63,16 +63,16 @@ The `Add comment` dialog has the following fields:
 
 ## Key metrics
 
-In this tab all configured key metrics graphs can be inspected in one overview. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
+In this tab all configured key metrics graphs can be inspected in one overview. See [Key metrics configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
 
 
 ## Dashboards
 
-In this tab all [Grafana dashboards](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#grafana-dashboards) linked to this tes can be viewed. Click on the header rows to expand or collapse the dashboards. Use the filter (accepts regular expressions) to display a subset of the dashboards only. 
+In this tab all [Grafana dashboards](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards) linked to this tes can be viewed. Click on the header rows to expand or collapse the dashboards. Use the filter (accepts regular expressions) to display a subset of the dashboards only. 
 
 ## Report
 
-If a [reporting template](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#reporting-template) was configured, the `Report` tab will be available. The report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. Default descriptions can be configured in the template and can edited for each test run if necessary. The report is automatically persisted by opening the report tab.
+If a [reporting template](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#reporting-template) was configured, the `Report` tab will be available. The report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. Default descriptions can be configured in the template and can edited for each test run if necessary. The report is automatically persisted by opening the report tab.
 
 ## Compare
 
@@ -111,7 +111,7 @@ compare-results.png)
 
 ## Tracing
 
-Perfana can be [integrated with Jaeger](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#jaeger) to include tracing information in your test run results. If tracing has been setup the `Traces` tab will be visible. From this tab you will be able to deeplink into the Jaeger UI based on a number of filters:
+Perfana can be [integrated with Jaeger](https://docs.perfana.io/docs/integrations/integrations.html#jaeger) to include tracing information in your test run results. If tracing has been setup the `Traces` tab will be visible. From this tab you will be able to deeplink into the Jaeger UI based on a number of filters:
 
 * **Only show traces that fail to meet requirement**: If a requirement has been specified for response times metrics, the reqirement values can be used to filter traces.
 * **Only show traces with duration longer than**: Can be used to filter on minimum duration of the traces
@@ -127,7 +127,7 @@ traces.png)
 
 The `Manage` is only available for users that have a `team-admin` role for the team reponsible for the system under test and users with `admin` role. It has a number of sections for managing the test run:
 
-* **Status**: displays the status for the different stages the test run will go through after it has finished. It also displays the expiry date for the test run. Read moren on test run expiry [here](https://perfana.github.io/perfana-docs/docs/administration/administration.html#data-retention-and-test-run-expiry)
+* **Status**: displays the status for the different stages the test run will go through after it has finished. It also displays the expiry date for the test run. Read moren on test run expiry [here](https://docs.perfana.io/docs/administration/administration.html#data-retention-and-test-run-expiry)
 * **Manage Grafana snapshots**: create, delete, update en view Grafana snapshots for the test run. To keep the snapshots from being deleted after the configured retention period, use `save snapshot`. If a report is generated for the test run (by opening the report tab), the snapshots are automatically saved.
 * **Manage test run**:  This section can be used to delete a test run or to set it as `fixed baseline`. Users with the `admin` role are also allowed to edit the test run properties.
 * **Manage checks**: This section can be used to manually re-evaluate the configured checks

@@ -41,8 +41,8 @@ The test run selector can be used to filter test runs based on test run properti
 The `Running tests` section shows any currenty running tests matching the properties set in the `Test run selector`. 
 
 Clicking on the test run will open the running test view. The view has two tabs:
-* **Key metrics**: shows the configured key metrics for this test. See [Key metrics configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#key-metrics)
-* **Dashboard**: show the configured dashboards for this test. See [Grafana dashboards configuration](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
+* **Key metrics**: shows the configured key metrics for this test. See [Key metrics configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
+* **Dashboard**: show the configured dashboards for this test. See [Grafana dashboards configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
 
 The Key metrics and Grafana dashboards can be configured via the items in the `settings` section in the sidebar.
 

@@ -59,7 +59,7 @@ Notications:
 * **Tags**: 
   * **system_under_test**: *Required* should match the `system_under_test` for your test  
   * **test_environment**: *Required*  should match the `test_environment` for your test
-  * **test run abort tag**: *Optional* [tag to use to abort a test run](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)  
+  * **test run abort tag**: *Optional* [tag to use to abort a test run](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#abort-alert-tags)  
   
 
 ![Alert](https://docs.perfana.io/docs/images/

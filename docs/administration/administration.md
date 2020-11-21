@@ -83,7 +83,7 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 * **Profile**
 * **Grafana**: Select the Grafan instance that hosts the template dashboard
 * **Dashboard name**: select the template dashboard
-* **Remove templating variables and replace them with values**: if set to true, templating variables in the created instance of the template dashboard will be replaced by hardcoded values. This is useful if you want to integrate [Grafana alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html#grafana-alerts) with Perfana. Unfortunately Grafana alerts cannot be created on templated dashboards.
+* **Remove templating variables and replace them with values**: if set to true, templating variables in the created instance of the template dashboard will be replaced by hardcoded values. This is useful if you want to integrate [Grafana alerts](https://docs.perfana.io/docs/alerts/alerts.html#grafana-alerts) with Perfana. Unfortunately Grafana alerts cannot be created on templated dashboards.
 * **Create separate dashboard for variable**: *optional* if a templating variable is selected, a separate Grafana >>oard will be created for each distinct value that is found for that templating variable.
 
 --- 
@@ -104,7 +104,7 @@ For the any of the Grafana dashboards added to the `profile` it is possible to a
 
 --- 
 
-To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#add-key-metric) how to add a key metric.
+To add a `key-metric` to a `profile` click `Add metric`. Learn [here](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#add-key-metric) how to add a key metric.
 
 ### Reporting panel
 
@@ -115,12 +115,12 @@ A `profile` can also be used to specify a reporting template for test runs with 
 > This feature can be used to create a ***enterprise-wide uniform reporting standard***, for instance for formal release tests reports.
 
 --- 
-To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
+To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
 
 
 ## Notifications channels
 
-Perfana can use [Slack](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#slack) or [Teams](https://perfana.github.io/perfana-docs/docs/integrations/integrations.html#teams) channels to notify your team of specified events. 
+Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack) or [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) channels to notify your team of specified events. 
 
 ### System under test notification channel
 

@@ -23,11 +23,11 @@ The `Grafana dashboards` linked to a test run are configured for a combination  
 
 The `Key metrics` and `Reporting template` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
 
-Test run configuration can be set via [profiles](https://perfana.github.io/perfana-docs/docs/administration/administration.html#profiles-configuration) or manually.
+Test run configuration can be set via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) or manually.
 
 ## Grafana dashboards
 
-It is possible to link any Grafana dashboard that is [registered in Perfana](https://perfana.github.io/perfana-docs/docs/administration/administration.html#grafana-configuration) to a test run. In order to add a dashboard click `Add dashboard` and the `Add Grafana dashboard` will be showed.
+It is possible to link any Grafana dashboard that is [registered in Perfana](https://docs.perfana.io/docs/administration/administration.html#grafana-configuration) to a test run. In order to add a dashboard click `Add dashboard` and the `Add Grafana dashboard` will be showed.
 
 The form has the following fields:
 * **System under test**
@@ -46,7 +46,7 @@ When one or more Grafana dashboard have been linked to the test runs, it is poss
 > Key metrics are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
 
 --- 
-Key metrics can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://perfana.github.io/perfana-docs/docs/administration/ci-cd.html#quality-gate)
+Key metrics can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
 
 Two types of checks can be configured for a `key metric`:
 * **Requirement**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
@@ -82,7 +82,7 @@ match-regex.png)
 
 A key metric can be edited by clicking the `pencil` icon in the row. 
 
-If `key metrics` have been configured via [profiles](https://perfana.github.io/perfana-docs/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `key metrics` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
+If `key metrics` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `key metrics` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
 
 ### Regular expression helper
 {: .no_toc }
@@ -120,7 +120,7 @@ To add a `panel` to the report template click the `Add panel` button. This will 
 
 --- 
 
-Perfana can automatically abort a test run based on specified tag of [alerts](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html) received during the test.
+Perfana can automatically abort a test run based on specified tag of [alerts](https://docs.perfana.io/docs/alerts/alerts.html) received during the test.
 
 To add an `abort alert tag` click `Add alert tag`, this will open the `Add abort alert tag` form with the following fields:
 

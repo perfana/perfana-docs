@@ -131,7 +131,7 @@ To start a test, go to [http://localhost:8090](http://localhost:8090), log in, c
 The demo contains three workload examples to demonstrate some use cases for Perfana:
 
 * **load test**: a steady state load on OptimusPrime. Run this workload a few times to view the automatic analysis feature in action, that can be used as quality gate in a CI/CD setup. 
-* **stress test**: an increasing load on OptimusPrime, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://perfana.github.io/perfana-docs/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
+* **stress test**: an increasing load on OptimusPrime, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
 * **slow back end test**: a steady state load on OptimusPrime. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for OptimusPrime. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
 
  When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test. 
@@ -151,16 +151,16 @@ In the home page click on `Afterburner` under `Your systems under test`. In the 
 
 ![Running test](images/running-test.png)
 
-Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#running-tests) to learn more about the `Running tests` section.
+Click [here](https://docs.perfana.io/docs/navigating/navigating.html#running-tests) to learn more about the `Running tests` section.
  
 
 When the test has finished the test run will be displayed in the `Recent runs` section and a numbers of event will be triggered:
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
 * Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
 
-Click [here](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
+Click [here](https://docs.perfana.io/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
-If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `key metrics`. [Read more on trends](https://perfana.github.io/perfana-docs/docs/navigating/navigating.html#trends)
+If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `key metrics`. [Read more on trends](https://docs.perfana.io/docs/navigating/navigating.html#trends)
 
 ### View test run details
 {: .no_toc }
@@ -168,19 +168,19 @@ If more than one test run is available for a specific set of test run properties
 
 To view more details for the test run you can click on the test run row, The test run details view has a number of tabs:
 
-[Summary](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#summary)
+[Summary](https://docs.perfana.io/docs/analysing/analysing.html#summary)
 
-[Comments](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#comments)
+[Comments](https://docs.perfana.io/docs/analysing/analysing.html#comments)
 
-[Key metrics](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#key-metrics)
+[Key metrics](https://docs.perfana.io/docs/analysing/analysing.html#key-metrics)
 
-[Dashboards](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#dashboards)
+[Dashboards](https://docs.perfana.io/docs/analysing/analysing.html#dashboards)
 
-[Report](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#report)
+[Report](https://docs.perfana.io/docs/analysing/analysing.html#report)
 
-[Compare](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#compare)
+[Compare](https://docs.perfana.io/docs/analysing/analysing.html#compare)
 
-[Manage](https://perfana.github.io/perfana-docs/docs/analysing/analysing.html#manage)
+[Manage](https://docs.perfana.io/docs/analysing/analysing.html#manage)
 
 ## Alerts
 
@@ -194,4 +194,4 @@ The [Afterburner test application](https://github.com/stokpop/afterburner) has b
 
 If one of the alerts triggers, Perfana will try to map alert metric tags to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
 
-Learn more on alerting [here](https://perfana.github.io/perfana-docs/docs/alerts/alerts.html)
+Learn more on alerting [here](https://docs.perfana.io/docs/alerts/alerts.html)
