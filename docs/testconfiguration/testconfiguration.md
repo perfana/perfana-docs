@@ -50,15 +50,12 @@ Two types of checks can be configured for a `key metric`:
 * **Service Level Objective**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
 * **Comparison**: Check if the `delta` between test runs is within allowed thresholds. Example: "Allow a positve deviation of 20% between test runs for the 99th percentile response times"
 
-### Add key metric
+### Add Service Level Indicator
 {: .no_toc }
 
-To add a key metric, click `Add metric`. This will open the `Add Key Metric` form.
+To add a Service Level Indicator, click `Add metric`. This will open the `Add Service Level Indicator` form.
 
 The form has the following fields:
-* **System under test**
-* **Workload**
-* **Test environment**
 * **Grafana**: select Grafana instance
 * **Dashboard label**: Select dashboard to select metric from
 * **Panel**: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). Currently only [graph panels](https://grafana.com/docs/grafana/latest/features/panels/graph/) can be used as key metric.
@@ -69,17 +66,17 @@ The form has the following fields:
 
 ![Match regex](https://docs.perfana.io/docs/images/match-regex.png)
 
-* **Service Level Objective**: the requirment to check
-* **Comparison**: the allowed deviation between test run 
+* **Service Level Objective**: the Service Level Objective to check
+* **Comparison**: the allowed deviation between test runs 
 * **Update existing test runs**: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
 
-### Edit key metric
+### Edit Service Level Indicator
 {: .no_toc }
 
 
-A key metric can be edited by clicking the `pencil` icon in the row. 
+A Service Level Indicator can be edited by clicking the `pencil` icon in the row. 
 
-If `Service Level Indicators` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `Service Level Indicators` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
+If `Service Level Indicators` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `Service Level Indicators` will display the originating `profile` in the last column of the table. The only property that can be edited for these Service Level Indicators is the `Only apply to metrics matching regex pattern` property
 
 ### Regular expression helper
 {: .no_toc }
@@ -96,7 +93,7 @@ In the Service Level Indicators view it is possible to use the `regular expressi
 
 --- 
 
-Perfana can produce a test run report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. 
+Perfana can produce a test run report can be used to share test results with stakeholders by providing a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. 
 
 To add a `panel` to the report template click the `Add panel` button. This will open the `Add report panel` form, with the following fields:
 
