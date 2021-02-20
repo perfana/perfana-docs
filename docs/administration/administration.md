@@ -92,9 +92,9 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 * **Set hardcoded value for variables**: *optional* use this to set hardcoded values for the available templating variables (except for `system_under_test` and `test_environment`)
 * **Match regex for variables**: *optional* use this to only add the dashboard when a value for the selected templating value matches the provided regular expression.
 
-### Key metrics
+### Service Level Indicators
 
-For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `key metrics` to test runs that are tagged with the `profile` name.
+For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `Service Level Indicators` to test runs that are tagged with the `profile` name.
 
 --- 
 

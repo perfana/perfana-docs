@@ -156,11 +156,11 @@ Click [here](https://docs.perfana.io/docs/navigating/navigating.html#running-tes
 
 When the test has finished the test run will be displayed in the `Recent runs` section and a numbers of event will be triggered:
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
-* Perfana will evaluate all requirements and comparison thresholds set for key metrics for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
+* Perfana will evaluate all requirements and comparison thresholds set for Service Level Indicators for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
 
 Click [here](https://docs.perfana.io/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
-If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `key metrics`. [Read more on trends](https://docs.perfana.io/docs/navigating/navigating.html#trends)
+If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `Service Level Indicators`. [Read more on trends](https://docs.perfana.io/docs/navigating/navigating.html#trends)
 
 ### View test run details
 {: .no_toc }
@@ -172,7 +172,7 @@ To view more details for the test run you can click on the test run row, The tes
 
 [Comments](https://docs.perfana.io/docs/analysing/analysing.html#comments)
 
-[Key metrics](https://docs.perfana.io/docs/analysing/analysing.html#key-metrics)
+[Service Level Indicators](https://docs.perfana.io/docs/analysing/analysing.html#key-metrics)
 
 [Dashboards](https://docs.perfana.io/docs/analysing/analysing.html#dashboards)
 

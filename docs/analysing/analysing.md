@@ -30,11 +30,11 @@ The test properties section shows all of the key-value pairs pairs passed by the
 
 ### Check results
 
-The check result section shows the requirements check results and, if applicable, checks on the delta's for key metrics between this and earlier test runs.
+The check result section shows the requirements check results and, if applicable, checks on the delta's for Service Level Indicators between this and earlier test runs.
 
 ![Check results](https://docs.perfana.io/docs/images/check-results.png)
 
-Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Key metrics configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
+Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
 
 ### Alerts
 
@@ -42,7 +42,7 @@ If any [alerts](https://docs.perfana.io/docs/alerts/alerts.html) were triggered 
 
 ## Comments
 
-In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Key metrics` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
+In the comments tab, comments on the test are displayed. Comments can be added for selected graphs from this view, the `Service Level Indicators` view or the `Dashboards` view and can be used to share knowledge among team members and/or other users.
 
 ![Comments](https://docs.perfana.io/docs/images/comments.png)
 
@@ -50,7 +50,7 @@ In the comments tab, comments on the test are displayed. Comments can be added f
 
 Adding comments to a test run can be done from different places:
 * From the `Comments` tab, by clicking `Add comment`
-* From the `Key metrics` tab, by cliking the `comment` icon in the top right of the metric panels
+* From the `Service Level Indicators` tab, by cliking the `comment` icon in the top right of the metric panels
 * From the `Dashboards` tab, by cliking the `comment` icon in the top right of the dashboard panels
 
 The `Add comment` dialog has the following fields:
@@ -59,9 +59,9 @@ The `Add comment` dialog has the following fields:
 * **Select dashboard**: [Optional, based on from where dialog has been triggered] Select dashboard to comment on 
 * **Select panel**: [Optional, based on from where dialog has been triggered] Select panel to comment on. when selected the panel will be shown in the dialog 
 
-## Key metrics
+## Service Level Indicators
 
-In this tab all configured key metrics graphs can be inspected in one overview. See [Key metrics configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
+In this tab all configured Service Level Indicators graphs can be inspected in one overview. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
 
 
 ## Dashboards
@@ -83,7 +83,7 @@ To do a new comparison, click on `Compare`, this will launch the `Comparison wiz
 Select test run to use as baseline. This can be any test run, executed prior to or after the current test run
 ### Select comparison type
 {: .no_toc }
-* Key metrics only: Compare configured key metrics only and use comparison thresholds as specified
+* Service Level Indicators only: Compare configured Service Level Indicators only and use comparison thresholds as specified
 * Custom: Select what dashboards and metrics to compare 
 
 ### Settings

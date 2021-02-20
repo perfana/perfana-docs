@@ -21,7 +21,7 @@ In Perfana, test run configuration is set for a combination of test run properti
 
 The `Grafana dashboards` linked to a test run are configured for a combination  of `System under test` and `Test environment` properties.
 
-The `Key metrics` and `Reporting template` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
+The `Service Level Indicators` and `Reporting template` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
 
 Test run configuration can be set via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) or manually.
 
@@ -37,16 +37,16 @@ The form has the following fields:
 * **Dashboard label**: Add descriptive label, e.g. "Host metrics webserver 1"
 * **Variables**: If the Grafana dashboard has [templating values](https://grafana.com/docs/grafana/latest/reference/templating/), set variables and one or more values.
 
-## Key metrics  
+## Service Level Indicators  
 
-When one or more Grafana dashboard have been linked to the test runs, it is possible to select metrics from these dashboards as `key metrics`. 
-
---- 
-
-> Key metrics are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
+When one or more Grafana dashboard have been linked to the test runs, it is possible to select metrics from these dashboards as `Service Level Indicators`. 
 
 --- 
-Key metrics can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
+
+> Service Level Indicators are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
+
+--- 
+Service Level Indicators can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
 
 Two types of checks can be configured for a `key metric`:
 * **Requirement**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
@@ -81,11 +81,11 @@ The form has the following fields:
 
 A key metric can be edited by clicking the `pencil` icon in the row. 
 
-If `key metrics` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `key metrics` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
+If `Service Level Indicators` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `Service Level Indicators` will display the originating `profile` in the last column of the table. The only property that can be edited for these keys metrics is the `Only apply to metrics matching regex pattern` property
 
 ### Regular expression helper
 {: .no_toc }
-In the key metrics view it is possible to use the `regular expression helper` to update the `Only apply to metrics matching regex pattern` property for a key metric by clicking the `settings` icon in the end of a key metric row.. If there is metric data available for a key metric the `regular expression helper` can be used to preview the results of a regular expression applied to a set of metrics.
+In the Service Level Indicators view it is possible to use the `regular expression helper` to update the `Only apply to metrics matching regex pattern` property for a key metric by clicking the `settings` icon in the end of a key metric row.. If there is metric data available for a key metric the `regular expression helper` can be used to preview the results of a regular expression applied to a set of metrics.
 
 ![Regex helper](https://docs.perfana.io/docs/images/regex-helper.png)
 
