@@ -156,7 +156,7 @@ Click [here](https://docs.perfana.io/docs/navigating/navigating.html#running-tes
 
 When the test has finished the test run will be displayed in the `Recent runs` section and a numbers of event will be triggered:
 * Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
-* Perfana will evaluate all requirements and comparison thresholds set for Service Level Indicators for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
+* Perfana will evaluate all Service Level Objectives and comparison thresholds set for Service Level Indicators configured for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
 
 Click [here](https://docs.perfana.io/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 

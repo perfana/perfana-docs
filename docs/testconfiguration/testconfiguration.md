@@ -27,12 +27,10 @@ Test run configuration can be set via [profiles](https://docs.perfana.io/docs/ad
 
 ## Grafana dashboards
 
-It is possible to link any Grafana dashboard that is [registered in Perfana](https://docs.perfana.io/docs/administration/administration.html#grafana-configuration) to a test run. In order to add a dashboard click `Add dashboard` and the `Add Grafana dashboard` will be showed.
+It is possible to link any Grafana dashboard that is [registered in Perfana](https://docs.perfana.io/docs/administration/administration.html#grafana-configuration) to a test run. In order to add a dashboard click `Add dashboard` and the `Add Grafana dashboard` dialog will be showed.
 
 The form has the following fields:
-* **System under test**
-* **Test environment**
-* **Grafana**: select Grafana instance than
+* **Grafana**: select Grafana instance 
 * **Dashboard name**: Select Grafana dashboard
 * **Dashboard label**: Add descriptive label, e.g. "Host metrics webserver 1"
 * **Variables**: If the Grafana dashboard has [templating values](https://grafana.com/docs/grafana/latest/reference/templating/), set variables and one or more values.
@@ -46,10 +44,10 @@ When one or more Grafana dashboard have been linked to the test runs, it is poss
 > Service Level Indicators are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set.
 
 --- 
-Service Level Indicators can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when runing tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
+Service Level Indicators can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when running tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
 
 Two types of checks can be configured for a `key metric`:
-* **Requirement**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
+* **Service Level Objective**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
 * **Comparison**: Check if the `delta` between test runs is within allowed thresholds. Example: "Allow a positve deviation of 20% between test runs for the 99th percentile response times"
 
 ### Add key metric
@@ -71,7 +69,7 @@ The form has the following fields:
 
 ![Match regex](https://docs.perfana.io/docs/images/match-regex.png)
 
-* **Requirement**: the requirment to check
+* **Service Level Objective**: the requirment to check
 * **Comparison**: the allowed deviation between test run 
 * **Update existing test runs**: if checked, the checks will be evaluated for all existing test runs with matching `System under test`, `Test environment` and `Workload` properties.
 

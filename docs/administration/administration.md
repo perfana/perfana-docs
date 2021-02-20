@@ -98,7 +98,7 @@ For the any of the Grafana dashboards added to the `profile` it is possible to a
 
 --- 
 
-> This feature can be used to set ***enterprise-wide*** requirements for specific metrics. The check results are recorded and the results can be viewed over time aggregated by `team` and `system under test`
+> This feature can be used to set ***enterprise-wide*** Service Level Objectives for specific metrics. The check results are recorded and the results can be viewed over time aggregated by `team` and `system under test`
 
 --- 
 

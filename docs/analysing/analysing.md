@@ -30,7 +30,7 @@ The test properties section shows all of the key-value pairs pairs passed by the
 
 ### Check results
 
-The check result section shows the requirements check results and, if applicable, checks on the delta's for Service Level Indicators between this and earlier test runs.
+The check result section shows the Service Level Objectives check results and, if applicable, checks on the delta's for Service Level Indicators between this and earlier test runs.
 
 ![Check results](https://docs.perfana.io/docs/images/check-results.png)
 
@@ -110,7 +110,7 @@ Provide a description for the comparison result and click `Compare`
 
 Perfana can be [integrated with Jaeger](https://docs.perfana.io/docs/integrations/integrations.html#jaeger) to include tracing information in your test run results. If tracing has been setup the `Traces` tab will be visible. From this tab you will be able to deeplink into the Jaeger UI based on a number of filters:
 
-* **Only show traces that fail to meet requirement**: If a requirement has been specified for response times metrics, the reqirement values can be used to filter traces.
+* **Only show traces that fail to meet Service Level Objective**: If a Service Level Objective has been specified for response times metrics, the reqirement values can be used to filter traces.
 * **Only show traces with duration longer than**: Can be used to filter on minimum duration of the traces
 * **Only show traces with duration shorte than**: Can be used to filter on maximum duration of the traces
 * **Request name**: Filter on request name
