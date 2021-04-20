@@ -94,7 +94,7 @@ Adding users can be done only currently by:
 
 ```
   "public": {
-    "forbidClientAccountCreation": "false",
+    "forbidClientAccountCreation": false,
     ...
   },
 ```
