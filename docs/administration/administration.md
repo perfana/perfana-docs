@@ -206,8 +206,11 @@ Follow the wizard steps and finish by adding the Jira oauth configuration to the
 By default Perfana will show issue types and priorities that are configured for the selected Jira project. Is possible to limit the issue type and priorities options that can be used by adding the allowed options in the configuration section.
 
 --- 
+
 > Be aware by adding options here that do not exist for a specific project this could result in empty option lists in the `Add Jira issue` form!
+
 ---
+
 ### Configure Jira reporters 
 
 If the user that is used to login to Perfana does not exist in Jira, it is not possible to create issues. In the `Jira reporters` section one or more fallback users can be configured to be used as `reporter` in Jira issues. The configured users should ofcourse exist in the Jira instance!
