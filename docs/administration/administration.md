@@ -196,10 +196,7 @@ The first step is to click `Add Jira instance`, provide a host and description a
 
 ![Add Jira Instance](https://docs.perfana.io/docs/images/add-jira-instance.png)
 
-The next step is to click the `configure` link in the `Oauth configured` column:
-
-
-Follow the wizard steps and finish by adding the Jira oauth configuration to the `METEOR-SETTINGS` and restart Perfana.
+The next step is to click the `configure` link in the `Oauth configured` column. Follow the wizard steps and finish by adding the Jira oauth configuration to the `METEOR-SETTINGS` and restarting Perfana.
 
 ### Configure allowed issue types and priorities 
 
