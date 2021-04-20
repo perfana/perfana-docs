@@ -1,5 +1,5 @@
 ---
-title: Test run details
+title: Analyzing test runs
 has_children: false
 nav_order: 4
 ---
@@ -24,9 +24,9 @@ The test run summary view has a number of sections
 
 The test run information sections shows all the meta data for the test. It is possible to add annotations to the test run. If required, it is also possible to manually update the `Version` property by clicking it.
 
-### Test properties
+### Variables
 
-The test properties section shows all of the key-value pairs pairs passed by the performance test. This feature can for instance be used to describe a test setup used for the test.
+The variables section shows all of the key-value pairs pairs passed by the load test script. Variables can be used in [links](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#links)
 
 ### Check results
 
@@ -34,11 +34,25 @@ The check result section shows the Service Level Objectives check results and, i
 
 ![Check results](https://docs.perfana.io/docs/images/check-results.png)
 
-Exapnding the sections by clicking them will reveal more detailed information on the check results. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
+Expanding the sections by clicking them will reveal more detailed information on the check results. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
 
 ### Alerts
 
-If any [alerts](https://docs.perfana.io/docs/alerts/alerts.html) were triggered during the test they will be displayed in this section.
+If any [alerts](https://docs.perfana.io/docs/alerts/alerts.html) were triggered during the test they will be displayed in this section. The alerts will also be displayed in graphs as vertical lines. In case of Grafana events is possible to view the metric that triggered the alert by clicking the `eye` icon. By clicking the `settings` icon you can edit the alert configuration in Grafana.
+
+![Alerts](https://docs.perfana.io/docs/images/test-run-alerts.png)
+
+
+### Events
+
+If any events happened during the test they will be displayed in this section. The events will also be displayed in graphs as vertical lines.
+
+![Events](https://docs.perfana.io/docs/images/test-run-events.png)
+
+### Links
+
+If any [links have been configured](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#links) they will be displayed in this section. 
+
 
 ## Comments
 
@@ -61,16 +75,25 @@ The `Add comment` dialog has the following fields:
 
 ## Service Level Indicators
 
-In this tab all configured Service Level Indicators graphs can be inspected in one overview. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics)
+In this tab all configured Service Level Indicators graphs can be inspected in one overview. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#key-metrics).
 
 
 ## Dashboards
 
-In this tab all [Grafana dashboards](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards) linked to this tes can be viewed. Click on the header rows to expand or collapse the dashboards. Use the filter (accepts regular expressions) to display a subset of the dashboards only. 
+In this tab all [Grafana dashboards](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards) linked to this tes can be viewed. The dashboards are organised in tabs based on dashboard tags. Click on the header rows to expand or collapse the dashboards. You can use the filter (accepts regular expressions) to display a subset of the dashboards only. 
+
+![Test run dashboards](https://docs.perfana.io/docs/images/test-run-dashboards.png)
+
+
+> Based on the [configured datasource retention times](https://docs.perfana.io/docs/administration/administration.html#data-retention-and-test-run-expiry) either the dashboards with "live" data from the datasource or a [snapshot](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) of the dashboard will be shown
+
+
 
 ## Report
 
-If a [reporting template](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#reporting-template) was configured, the `Report` tab will be available. The report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. Default descriptions can be configured in the template and can edited for each test run if necessary. The report is automatically persisted by opening the report tab.
+If a [reporting template](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#reporting-template) was configured, the `Report` tab will be available. The report can be used to share test results with stakeholders by poviding a selection of relevant graphs with descriptions. The report will be generated automatically based on the configured reporting template. Default descriptions can be configured in the template and can edited for each test run if necessary. The report is automatically persisted by opening the report tab. 
+
+It is also possible to add comparisons (see next paragraph) to one or more test runs to the report. 
 
 ## Compare
 
@@ -119,6 +142,57 @@ To deeplink into the Jager UI based on the filters, click on the request names.
 
 ![Traces](https://docs.perfana.io/docs/images/traces.png)
 
+## Dynatrace (Enterprise feature)
+
+Perfana can be [integrated with Dynatrace](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace) to include tracing information in your test run results. If a Dynatrace integration has been setup the `Dynatrace` tab will be visible. 
+
+The Dynatrace view has the following sections:
+
+### Dynatrace entitiy
+
+Use the dropdown to select one of the [configured Dynatrace entities](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#system-under-test) for the `system under test`.
+### Problems
+
+The problem section will show if any "Problems" have been detected by the Dynatrace AI during the test.
+### Request filter
+
+In this section you can set a number of request filters:
+
+* **Only show traces that fail to meet Service Level Objective**: If a Service Level Objective has been specified for response times metrics, the reqirement values can be used to filter traces.
+* **Only show traces with duration longer than**: Can be used to filter on minimum duration of the traces
+* **Only show traces with duration shorte than**: Can be used to filter on maximum duration of the traces
+* **Request name**: Filter on request name
+
+### Multidimensional analysis
+
+This section has deeplinks, based on the selected Dynatrace entity and request filters, into the multidimensional analysis view in Dynatrace
+
+### Deeplinks
+
+This section has deeplinks, based on the selected Dynatrace entity and request filters, into miscellaneous views in Dynatrace that might help you analyse your test run results.
+
+### Compare 
+
+In the compare section you can select another test run as baseline and use the Dynatrace compare feature to compare several metrics for the test run.
+
+## Jira (Enterprise feature)
+
+Perfana can be [integrated with Jira](https://docs.perfana.io/docs/integrations/integrations.html#jira) to be able to create issues from Perfana and link them to a test run.
+
+If the [Jira integration has been setup](https://docs.perfana.io/docs/administration/administration.html#jira-configuration), the `Jira` tab will be visible. 
+
+### Create issue
+
+To create a Jira issue click `create issue` to bring up the `Create Jira issue` form. The form will show the fields that have been configured "required" for the selected project and issue type. 
+
+If any comments have been made for the  test run, there will be an option to include them in the Jira Issue.
+
+If the user that had logged in Perfana does not exist in Jira, there will be a `reporter` dropdown to pick a reporter for the issue. These reporters can be specified in the [Jira configuration](https://docs.perfana.io/docs/administration/administration.html#jira)
+
+### Link issue
+
+If there are issues allready linked to other test runs for the `system under test` a `Link to existing issue` that will start the `Add as comment to exisitng issue` dialog, to link the test run results as comment to an existing Jira issue.
+
 ## Manage
 
 The `Manage` is only available for users that have a `team-admin` role for the team reponsible for the system under test and users with `admin` role. It has a number of sections for managing the test run:
@@ -128,3 +202,4 @@ The `Manage` is only available for users that have a `team-admin` role for the t
 * **Manage test run**:  This section can be used to delete a test run or to set it as `fixed baseline`. Users with the `admin` role are also allowed to edit the test run properties.
 * **Manage checks**: This section can be used to manually re-evaluate the configured checks
 * **Manage Report**: This section can be used to delete the persisted report
+

@@ -1,5 +1,5 @@
 ---
-title: Test run configuration
+title: Test configuration
 has_children: false
 nav_order: 3
 ---
@@ -19,11 +19,44 @@ When a user has the `team-admin` role for a `team` that is responsible for  a `s
 
 In Perfana, test run configuration is set for a combination of test run properties. 
 
+The `System under test` settings and `Notifications channels`  are specified on selected `System under test` level.
+
 The `Grafana dashboards` linked to a test run are configured for a combination  of `System under test` and `Test environment` properties.
 
-The `Service Level Indicators` and `Reporting template` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
+The `Service Level Indicators`, `Reporting template`, `Abort alert tags` and `Links` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
 
-Test run configuration can be set via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) or manually.
+> Please refer to [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) for automated test run configuration.
+
+## System under test settings
+
+To open the `System under tests` settings click on the menu item in the `settings` section of the sidebar. 
+
+The following properties can be configured
+
+
+* **Jaeger service name**: if a [Jaeger integration](https://docs.perfana.io/docs/integrations/integrations.html#jaeger) has been set up, the service name to use as entrypoint can be set here
+* **Dynatrace entities**: if a [Dynatrace integration](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace) has been set up, one or more Dynatrace entities can be linked to the system under test
+* **Baseline test run id**: For each `test environment` - `workload` combination a baseline test run can be set that is used in the automated analysis of test runs.
+
+> The Jaeger and Dynatrace properties can be set on global level, test environment level or workload level, where workload level takes precedence over test environment and test environment over global.
+
+![System under test settings](https://docs.perfana.io/docs/images/system-under-test-settings.png)
+
+## Notifications channels
+
+Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat) channels to notify your team of specified events. 
+
+In order to setup a nofication channel for your `sytem under test` click on the `Notifications channels` item in the `Settings` section of the side bar.
+
+This will open the `Add notification channel` dialog with the following fields:
+* **System under test**
+* **Channel type**: Select `Slack`, `Teams` or `Google Chat`
+* **Channel name**: Provide channel name
+* **Webhook url**: Provide Webhook url
+* **Send notification when a test run has finished** When this option is checked a notification will be sent to the channel when a test runs has finished
+* **Send notification for failed test runs only** When this option is checked a notification will be sent to the channel only when a test run has failed
+* **Send notification to this channel if any of the team members are mentioned in comments** When this option is checked a notification will be sent to the channel when any of your team members is mentioned in comment
+* **Include user mentions** Select additional users,that will trigger a notification when mentioned.
 
 ## Grafana dashboards
 
@@ -80,7 +113,8 @@ If `Service Level Indicators` have been configured via [profiles](https://docs.p
 
 ### Regular expression helper
 {: .no_toc }
-In the Service Level Indicators view it is possible to use the `regular expression helper` to update the `Only apply to metrics matching regex pattern` property for a key metric by clicking the `settings` icon in the end of a key metric row.. If there is metric data available for a key metric the `regular expression helper` can be used to preview the results of a regular expression applied to a set of metrics.
+In the `Service Level Indicators` and `Check results` views it is possible to use the `Filter request helper` to set the `Only apply to metrics matching regex pattern` property for a SLI by clicking the `filter` icon in the end the row. 
+If there is check results data available the `Filter request helper` can be used to preview the results is a regular expression is used to filter the requests.
 
 ![Regex helper](https://docs.perfana.io/docs/images/regex-helper.png)
 
@@ -109,17 +143,33 @@ To add a `panel` to the report template click the `Add panel` button. This will 
 
 --- 
 
-> The `abort alert tags` are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
+> The `Abort alert tags` are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
 
 --- 
 
 Perfana can automatically abort a test run based on specified tag of [alerts](https://docs.perfana.io/docs/alerts/alerts.html) received during the test.
 
-To add an `abort alert tag` click `Add alert tag`, this will open the `Add abort alert tag` form with the following fields:
+To add an `Abort alert tag` click `Add alert tag`, this will open the `Add abort alert tag` form with the following fields:
 
 * **System under test**
 * **Workload**
 * **Test environment**
 * **Alert source**: select the alert source, AlertManager, Kapacitor or Grafana
 * **Tag key**: provide the tag key you want to trigger a test run abort
-* **Tag value**: provide the tag value you want to trigger a test run abort
+* **Tag value**: provide the tag value you want to trigger a test run abort## Abort alert tags 
+
+
+## Links 
+--- 
+
+> The `Links` are set on `workload` level, so this item in the sidebar will be active only when the `workload` property in the `Test run selector` has been set. 
+
+--- 
+
+With the `Links` feature you can create deep links from your test run results to any relevant url. In the url you can use dynamic values passed via the `variables` property in your test script. Also, for your convenience, start and end timestamps are available in several formats.
+
+To add a `link` click `Add link`, this will open the `Add link` form with the following fields:
+* **Name**: Name for the link, this will be displayed in the `test run summary` view
+* **Url**: Url for the link. To add one of the available variables to the url, type the "{" (open curly brace) character, this will display a dropdown menu of all the available variables. 
+
+

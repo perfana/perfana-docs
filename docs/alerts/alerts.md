@@ -33,8 +33,6 @@ receivers:
 
 Then create one ore more [alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/) like in [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml
 
-## Kapacitor
-
 ## Grafana alerts
 
 It is possible to create [alerts in Grafana](https://grafana.com/docs/grafana/latest/alerting/rules/). In order to integrate these alerts with Perfana a [notifications channel](https://grafana.com/docs/grafana/latest/alerting/notifications/) has to be configured.

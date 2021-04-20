@@ -85,9 +85,9 @@ The `perfana-request-name` header has to be added to each request separately, e.
  val call = exec(http("remote_call_delayed")
     .get("/remote/call?path=delay")
     .header("perfana-request-name", "remote_call_delayed")
-    .check(status.is(200)))
+    )
 ```
-> If your request names contains spaces, replace those with underscores in the `perfana-request-name` header value.
+> When using a Gatling script, if your request names contains spaces, replace those with underscores in the `perfana-request-name` header value.
 
 ### Configure baggage
 
@@ -109,8 +109,87 @@ Perfana will create a `Only show traces that fail to meet Service Level Objectiv
 
 ## Slack
 
-To configure your Slack channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://api.slack.com/messaging/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/administration/administration.html#notifications-channels)
+To configure your Slack channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://api.slack.com/messaging/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels)
 
 ## Teams
 
-To configure your Teams channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/administration/administration.html#notifications-channels)
+To configure your Teams channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels)
+
+## Teams
+
+To configure your Google Chats Room as a Perfana notification channel, create a `Incoming Webhook` for your room using [these instructions](https://developers.google.com/hangouts/chat/how-tos/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels)
+
+## Jira (Enterprise feature)
+
+Perfana can integrate with one or more Jira instances to create issues and link them to test run results. The [Jira configuration view](https://docs.perfana.io/docs/administration/administration.html#jira-configuration) can be used to setup the integration.
+
+## Dynatrace (Enterprise feature)
+
+Perfana can be integrated with Dynatrace to include tracing information in your test run results. To enable this integration, take the following steps:
+
+### Create Dynatrace API token
+
+In Dynatrace, go to `Settings -> Integration -> Dynatrace API` and click `Generate Token`. Name the token `perfana` and add the the following scopes:
+
+API v1:
+* Access problem and event feed, metrics, and topology
+* Read Configuration
+
+API v2:
+* Read entities
+* Read problems
+* Read settings
+
+Copy the generated API token. Next, click the `Dynatrace API explorer` link and copy the host from the url from the adress bar.
+
+Add API token and host to the `METEOR-SETTINGS` and restart Perfana:
+
+```
+  "dynatraceApiToken": "<Dynatrace API token>",
+  "dynatraceHost": "https://somehost.live.dynatrace.com",
+```
+
+
+### Add headers to (Gatling) script
+In order to be able to filter traces in Dynatrace based on test run id and request names in your (Gatling) script, two headers have to be added to each request in your script
+
+* `perfana-test-run-id`
+* `perfana-request-name`
+
+In Gatling you can the  `perfana-test-run-id` header at HttpProtocol level by adding a line to the HttpProtocolBuilder
+
+```
+ val httpProtocol: HttpProtocolBuilder = {
+    val protocol = http
+      .baseUrl(ApplicationConfiguration.host)
+      .inferHtmlResources()
+      .acceptHeader("*/*")
+      .acceptEncodingHeader("gzip, deflate, sdch")
+      .acceptLanguageHeader("en-US,en;q=0.8")
+      .contentTypeHeader("application/json")
+      .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36")
+      .shareConnections
+      .header("perfana-test-run-id",System.getProperty("testRunId"))
+```
+
+The `perfana-request-name` header has to be added to each request separately, e.g.
+
+```
+ val call = exec(http("remote_call_delayed")
+    .get("/remote/call?path=delay")
+    .header("perfana-request-name", "remote_call_delayed")
+    )
+```
+> When using a Gatling script, if your request names contains spaces, replace those with underscores in the `perfana-request-name` header value.
+
+### Adding request attributes
+
+In Dynatrace `request attributes` have to be set up to parse the Perfana headers from the incoming requests. Go to `Settings -> Server-side service monitoring -> Request attributes` and click `Define a new request attribute`
+
+* Add `perfana-test-run-id` as `Request attribute name`
+* Click on `Add new data source`
+* In the `Request attribute source` dropdown, select `HTTP request header`
+* Add `perfana-test-run-id` as `Parameter name` and click `Save`
+* Click `Save` in the top right to save the `request attribute`
+
+Repeat the same steps for `perfana-request-name`
