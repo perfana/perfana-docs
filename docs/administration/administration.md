@@ -18,9 +18,7 @@ nav_order: 6
 
 ## Grafana configuration
 
-As an `admin` user you can maintain the Grafana configuration in Perfana. To do so open the `Grafana configuration` from the `Admin` section of the sidebar.
-
-One or more Grafana instances can be configured via the `METEOR-SETTINGS` in the Perfana environment variables
+Perfana requires at least one Grafana instance to be configured. One or more Grafana instances can be configured via the `METEOR-SETTINGS` in the Perfana environment variables:
 
 ```
 "grafanaInstances": [
@@ -48,6 +46,9 @@ One or more Grafana instances can be configured via the `METEOR-SETTINGS` in the
 * **password**
 * **snapshotInstance**: if set to true this Grafana instance will be used to store snapshots.
 * **trendsInstance**: if set to true Perfana will use this instance for hosting Perfana dashboards for trends and profile check results.
+
+As an `admin` user you can maintain the Grafana dashboards that have been synced with Perfana. To do so open the `Grafana configuration` from the `Admin` section of the sidebar.
+
 
 The `Grafana configuration` view will show you one or more Grafana instances and for each dashboard the dashboards that have been registered in Perfana. To register a Grafana dashboard is Perfana is simple: just add a `perfana` tag to the dashboard:
 
@@ -83,7 +84,7 @@ A `team` can be responsible for one or more `systems under test`, but a `system 
 > When you link a `system under test` to a `team` that was already linked to another team, it will no longer be linked to the other team!
 
 ---
-## Users configuration
+## Users configuration 
 
 The `users` view show all the users known in Perfana, if they have the `admin` role or for what teams they have the `team-admin` role. Admin users can assign roles to users or delete users. 
 
@@ -101,11 +102,11 @@ Adding users can be done only currently by:
 > New users will have a `viewer` role by default, allowing them to view all test results
 ---
 
-## Profiles configuration
+## Profiles configuration 
 
 Perfana profiles can be used to automatically configure test runs. By passing `tags` via the Gatling script [pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252) profiles can be activated for test runs with the provide properties and the following configuration can automatically be added:
 
-### Grafana dashboards
+### Grafana dashboards 
 
 Profiles can be used to automatically link Grafana dashboards to test runs. To use a Grafana dashboard for autoconfiguration it has to be tagged in Grafana as `perfana-template`
 
@@ -113,12 +114,12 @@ Profiles can be used to automatically link Grafana dashboards to test runs. To u
 
 To add a template dashboard to a `profile`, click on `Add dashboard` to open the form with these fields:
 
-* **Profile**
-* **Grafana**: Select the Grafan instance that hosts the template dashboard
+* **Profile**: The selected profile
+* **Grafana**: Select the Grafana instance that hosts the template dashboard
 * **Dashboard name**: select the template dashboard
 * **Remove templating variables and replace them with values**: if set to true, templating variables in the created instance of the template dashboard will be replaced by hardcoded values. This is useful if you want to integrate [Grafana alerts](https://docs.perfana.io/docs/alerts/alerts.html#grafana-alerts) with Perfana. Unfortunately Grafana alerts cannot be created on templated dashboards.
 * **Create separate dashboard for variable**: *optional* if a templating variable is selected, a separate Grafana dashboard will be created for each distinct value that is found for that templating variable.
-* **Set hardcoded value for variables**: *optional* use this to set hardcoded values for the available templating variables (except for `system_under_test` and `test_environment`)
+* **Set hardcoded value for variables**: *optional* use this to set hardcoded values for the available templating variables
 * **Match regex for variables**: *optional* use this to only add the dashboard when a value for the selected templating value matches the provided regular expression.
 
 --- 
@@ -172,7 +173,7 @@ In the `license` view you can add and view your license. There are two ways to a
 Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat) channels to notify your team of specified events. 
 
 ### Admin notification channel
-As an Admin user, you can setup notification channels that are not linked to a `system under test`. A typical use case for this would be a "performance engineering support channel" that can be included in comments by users to ask the community for help. To setup a such a channel, click on the `Admin notifications channel` item in the `Admin` section in the sidebar.
+As an `admin` user, you can setup notification channels that are not linked to a `system under test`. A typical use case for this would be a "performance engineering support channel" that can be included in comments by users to ask the community for help. To set up a such a channel, click on the `Admin notifications channel` item in the `Admin` section in the sidebar.
 
 This will open the `Add notification channel` dialog with the following fields:
 * **Channel type**: Select `Slack`, `Teams` or `Google Chat`
@@ -198,17 +199,13 @@ The next step is to click the `configure` link in the `Oauth configured` column:
 
 Follow the wizard steps and finish by adding the Jira oauth configuration to the `METEOR-SETTINGS` and restart Perfana.
 
-### Configure allowed issue types and priorities
+### Configure allowed issue types and priorities 
 
 By default Perfana will show issue types and priorities that are configured for the selected Jira project. Is possible to limit the issue type and priorities options that can be used by adding the allowed options in the configuration section.
 
+--- 
 > Be aware by adding options here that do not exist for a specific project this could result in empty option lists in the `Add Jira issue` form!
+---
 ### Configure Jira reporters
 
 If the user that is used to login to Perfana does not exist in Jira, it is not possible to create issues. In the `Jira reporters` section one or more fallback users can be configured to be used as `reporter` in Jira issues. The configured users should ofcourse exist in the Jira instance!
-
-
-
-
-
-)

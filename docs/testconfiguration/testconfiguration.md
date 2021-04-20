@@ -25,7 +25,10 @@ The `Grafana dashboards` linked to a test run are configured for a combination  
 
 The `Service Level Indicators`, `Reporting template`, `Abort alert tags` and `Links` are configured for a combination  of `System under test`, `Test environment` and `Workload` properties.
 
+--- 
+
 > Please refer to [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) for automated test run configuration.
+--- 
 
 ## System under test settings
 
@@ -35,14 +38,15 @@ The following properties can be configured
 
 
 * **Jaeger service name**: if a [Jaeger integration](https://docs.perfana.io/docs/integrations/integrations.html#jaeger) has been set up, the service name to use as entrypoint can be set here
-* **Dynatrace entities**: if a [Dynatrace integration](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace) has been set up, one or more Dynatrace entities can be linked to the system under test
+* **Dynatrace entities**: if a [Dynatrace integration](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace-enterprise-feature) has been set up, one or more Dynatrace entities can be linked to the system under test
 * **Baseline test run id**: For each `test environment` - `workload` combination a baseline test run can be set that is used in the automated analysis of test runs.
 
-> The Jaeger and Dynatrace properties can be set on global level, test environment level or workload level, where workload level takes precedence over test environment and test environment over global.
-
+---
+> The Jaeger and Dynatrace properties can be set on **global** level, **test environment level** or **workload** level. Values specified on **workload** level override those on **test environment** level and values specified on **test environment** level override **global** values.
+---
 ![System under test settings](https://docs.perfana.io/docs/images/system-under-test-settings.png)
 
-## Notifications channels
+## Notifications channels (Enterprise feature)
 
 Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat) channels to notify your team of specified events. 
 
@@ -57,6 +61,7 @@ This will open the `Add notification channel` dialog with the following fields:
 * **Send notification for failed test runs only** When this option is checked a notification will be sent to the channel only when a test run has failed
 * **Send notification to this channel if any of the team members are mentioned in comments** When this option is checked a notification will be sent to the channel when any of your team members is mentioned in comment
 * **Include user mentions** Select additional users,that will trigger a notification when mentioned.
+* **Use as team notifications channel (for all systems under test for this team)**: If set to true, this notification channel will be used for all `systems under test` that are linked to this `team`
 
 ## Grafana dashboards
 
@@ -66,11 +71,11 @@ The form has the following fields:
 * **Grafana**: select Grafana instance 
 * **Dashboard name**: Select Grafana dashboard
 * **Dashboard label**: Add descriptive label, e.g. "Host metrics webserver 1"
-* **Variables**: If the Grafana dashboard has [templating values](https://grafana.com/docs/grafana/latest/reference/templating/), set variables and one or more values.
+* **Variables**: If the Grafana dashboard has [templating variables](https://grafana.com/docs/grafana/next/variables/#templates-and-variables), select variables and set one or more values.
 
 ## Service Level Indicators  
 
-When one or more Grafana dashboard have been linked to the test runs, it is possible to select metrics from these dashboards as `Service Level Indicators`. 
+When one or more Grafana dashboards have been linked to the test runs, it is possible to select metrics from these dashboards as `Service Level Indicators`. 
 
 --- 
 
@@ -79,8 +84,8 @@ When one or more Grafana dashboard have been linked to the test runs, it is poss
 --- 
 Service Level Indicators can be optionally configured to be automatically assessed after a test run has finished. The results can then be used to act as a `quality gate` when running tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](https://docs.perfana.io/docs/administration/ci-cd.html#quality-gate)
 
-Two types of checks can be configured for a `key metric`:
-* **Service Level Objective**: Check if the `key metric` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
+Two types of checks can be configured for a `servive level indicator`:
+* **Service Level Objective**: Check if the `servive level indicator` value is `greater than` or `smaller than` a specified value. An example check would be "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
 * **Comparison**: Check if the `delta` between test runs is within allowed thresholds. Example: "Allow a positve deviation of 20% between test runs for the 99th percentile response times"
 
 ### Add Service Level Indicator
@@ -91,7 +96,7 @@ To add a Service Level Indicator, click `Add metric`. This will open the `Add Se
 The form has the following fields:
 * **Grafana**: select Grafana instance
 * **Dashboard label**: Select dashboard to select metric from
-* **Panel**: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). Currently only [graph panels](https://grafana.com/docs/grafana/latest/features/panels/graph/) can be used as key metric.
+* **Panel**: Select [panel](https://grafana.com/docs/grafana/latest/features/panels/panels/). Currently only [graph panels](https://grafana.com/docs/grafana/latest/features/panels/graph/) and [table panels] (https://grafana.com/docs/grafana/next/panels/visualizations/table/) can be used as `service level indicator`.
 * **Exclude ramp up time when evaluating test run**: When this option is checked the configured `rampUpTime` will be excluded from evaluation data.
 * **Average all panel series when comparing test runs**: if this option is checked all series produced by the panel will be averaged before evaluating the data.
 * **Evaluate**: select the aggregation to be used on the data when evaluating: `Average` (default), `Maximum`, `Minimum` or `Last`
@@ -109,7 +114,7 @@ The form has the following fields:
 
 A Service Level Indicator can be edited by clicking the `pencil` icon in the row. 
 
-If `Service Level Indicators` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed. These `Service Level Indicators` will display the originating `profile` in the last column of the table. The only property that can be edited for these Service Level Indicators is the `Only apply to metrics matching regex pattern` property
+If `Service Level Indicators` have been configured via [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) they can't be edited or removed (only by an user with the `admin` role). These `Service Level Indicators` will display the originating `profile` in the last column of the table. The only property that can be edited for these Service Level Indicators is the `Only apply to metrics matching regex pattern` property
 
 ### Regular expression helper
 {: .no_toc }

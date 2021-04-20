@@ -42,7 +42,7 @@ The `Running tests` section shows any currenty running tests matching the proper
 
 Clicking on the test run will open the running test view. The view has two tabs:
 * **Service Level Indicators**: shows the configured Service Level Indicators for this test. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators)
-* **Dashboard**: show the configured dashboards for this test. See [Grafana dashboards configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
+* **Dashboards**: show the configured dashboards for this test. See [Grafana dashboards configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
 
 The Service Level Indicators and Grafana dashboards can be configured via the items in the `settings` section in the sidebar.
 
@@ -65,6 +65,6 @@ The table has a number of columns:
 
 ## Trends
 
-When there are multiple test runs available with the same `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured `Service Level Indicators` over time. You can select a period (1 week only in the demo version, due to retention limits) and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
+When there are multiple test runs available with the same `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured `Service Level Indicators` over time. You can select a period and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
 
 ![Trends](https://docs.perfana.io/docs/images/trends.png)
