@@ -173,7 +173,7 @@ In the `license` view you can add and view your license. There are two ways to a
 
 ## Notifications channels
 
-Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat) channels to notify your team of specified events. 
+Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack-enterprise-feature), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams-enterprise-feature) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat-enterprise-feature) channels to notify your team of specified events. 
 
 ### Admin notification channel
 As an `admin` user, you can setup notification channels that are not linked to a `system under test`. A typical use case for this would be a "performance engineering support channel" that can be included in comments by users to ask the community for help. To set up a such a channel, click on the `Admin notifications channel` item in the `Admin` section in the sidebar.

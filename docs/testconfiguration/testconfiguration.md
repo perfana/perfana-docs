@@ -48,7 +48,7 @@ The following properties can be configured
 
 ## Notifications channels (Enterprise feature)
 
-Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat) channels to notify your team of specified events. 
+Perfana can use [Slack](https://docs.perfana.io/docs/integrations/integrations.html#slack-enterprise-feature), [Teams](https://docs.perfana.io/docs/integrations/integrations.html#teams-enterprise-feature) or [Google Chat](https://docs.perfana.io/docs/integrations/integrations.html#google-chat-enterprise-feature) channels to notify your team of specified events. 
 
 In order to setup a nofication channel for your `sytem under test` click on the `Notifications channels` item in the `Settings` section of the side bar.
 

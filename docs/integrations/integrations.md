@@ -107,15 +107,15 @@ Perfana will create a `Only show traces that fail to meet Service Level Objectiv
 
 ![Panel description perfana-response-times](https://docs.perfana.io/docs/images/perfana-response-times.png)
 
-## Slack
+## Slack (Enterprise feature)
 
 To configure your Slack channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://api.slack.com/messaging/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels-enterprise-feature)
 
-## Teams
+## Teams (Enterprise feature)
 
 To configure your Teams channel as a Perfana notification channel, create a `Incoming Webhook` for your channel using [these instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels-enterprise-feature)
 
-## Google Chat
+## Google Chat (Enterprise feature)
 
 To configure your Google Chats Room as a Perfana notification channel, create a `Incoming Webhook` for your room using [these instructions](https://developers.google.com/hangouts/chat/how-tos/webhooks). Use the `Webhook URL` when setting up your [notifications channel](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#notifications-channels-enterprise-feature)
 
