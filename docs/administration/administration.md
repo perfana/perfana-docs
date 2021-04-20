@@ -99,7 +99,9 @@ Adding users can be done only currently by:
   },
 ```
 --- 
+
 > New users will have a `viewer` role by default, allowing them to view all test results
+
 ---
 
 ## Profiles configuration 
@@ -125,6 +127,7 @@ To add a template dashboard to a `profile`, click on `Add dashboard` to open the
 --- 
 
 > The easiest way to use this feature is to label metric data with tags `system_under_test` and `test_environment` and in your template Grafana dashboard use these properties as templating variables. Perfana will automatically match these to the test run properties. If for some reason this is not possible, use the `Match regex for variables` to determine what metrics to add to your test. 
+
 ---
 
 You can use dynamic variables passed by the load test script variables. The variable name should have the format `perfana-.*` e.g.
