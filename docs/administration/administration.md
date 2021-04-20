@@ -185,7 +185,7 @@ This will open the `Add notification channel` dialog with the following fields:
 
 Perfana can integrate with one or more Jira instances to create issues and link them to test run results. The `Jira configuration` view can be used to setup the integration.
 
-### Setting up an AppLink
+### Setting up an AppLink 
 
 To use Jira from Perfana an [AppLink](https://confluence.atlassian.com/adminjiraserver073/using-applinks-to-link-to-other-applications-861253079.html) is used. Perfana has a wizard that will guide you through the process. You will require a Jira user that has sufficient rights to set up AppLinks.
 
@@ -195,7 +195,6 @@ The first step is to click `Add Jira instance`, provide a host and description a
 
 The next step is to click the `configure` link in the `Oauth configured` column:
 
-![Configure Jira oauth](https://docs.perfana.io/docs/images/jira-configure-oauth.png
 
 Follow the wizard steps and finish by adding the Jira oauth configuration to the `METEOR-SETTINGS` and restart Perfana.
 
@@ -206,6 +205,6 @@ By default Perfana will show issue types and priorities that are configured for 
 --- 
 > Be aware by adding options here that do not exist for a specific project this could result in empty option lists in the `Add Jira issue` form!
 ---
-### Configure Jira reporters
+### Configure Jira reporters 
 
 If the user that is used to login to Perfana does not exist in Jira, it is not possible to create issues. In the `Jira reporters` section one or more fallback users can be configured to be used as `reporter` in Jira issues. The configured users should ofcourse exist in the Jira instance!
