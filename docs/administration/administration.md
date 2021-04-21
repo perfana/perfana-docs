@@ -18,7 +18,7 @@ nav_order: 6
 
 ## Grafana configuration
 
-Perfana requires at least one Grafana instance to be configured. One or more Grafana instances can be configured via the `METEOR-SETTINGS` in the Perfana environment variables:
+Perfana requires at least one Grafana instance to be configured. One or more Grafana instances can be configured via the `METEOR_SETTINGS` environment variable:
 
 ```
 "grafanaInstances": [
@@ -211,3 +211,4 @@ By default Perfana will show issue types and priorities that are configured for 
 ### Configure Jira reporters 
 
 If the user that is used to login to Perfana does not exist in Jira, it is not possible to create issues. In the `Jira reporters` section one or more fallback users can be configured to be used as `reporter` in Jira issues. The configured users should ofcourse exist in the Jira instance!
+
