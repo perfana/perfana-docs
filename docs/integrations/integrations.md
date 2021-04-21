@@ -146,7 +146,7 @@ Add API token and host to the `METEOR-SETTINGS` and restart Perfana:
 
 ```
   "dynatraceApiToken": "<Dynatrace API token>",
-  "dynatraceHost": "https://somehost.live.dynatrace.com",
+  "dynatraceUrl": "https://somehost.live.dynatrace.com",
 ```
 
 

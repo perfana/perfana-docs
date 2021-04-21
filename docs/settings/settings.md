@@ -173,10 +173,10 @@ To integrate with Jira, add oauth settings for one or more Jira instances. Refer
 
 To integrate with Dynatrace, add these properties, refer to [here](https://docs.perfana.io/docs/integrations/integrations.html#create-dynatrace-api-token) for more details
 
-#### dynatraceHost
+#### dynatraceUrl
 
 ```
-    "dynatraceHost": "<Dynatrace host>"
+    "dynatraceUrl": "<Dynatrace host>"
 ```
 #### dynatraceApiToken
 
