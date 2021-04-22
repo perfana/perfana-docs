@@ -13,7 +13,6 @@ nav_order: 3
 1. TOC
 {:toc}
 
----
 
 When a user has the `team-admin` role for a `team` that is responsible for  a `system under test`, the side bar in the `test runs view` will have a `settings` section.
 
@@ -28,8 +27,8 @@ The `Service Level Indicators`, `Reporting template`, `Abort alert tags` and `Li
 --- 
 
 > Please refer to [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) for automated test run configuration.
---- 
 
+--- 
 ## System under test settings 
 
 To open the `System under tests` settings click on the menu item in the `settings` section of the sidebar. 
@@ -43,8 +42,8 @@ The following properties can be configured:
 --- 
 
 > The Jaeger and Dynatrace properties can be set on **global** level, **test environment level** or **workload** level. Values specified on **workload** level override those on **test environment** level and values specified on **test environment** level override **global** values.
---- 
 
+--- 
 ![System under test settings](https://docs.perfana.io/docs/images/system-under-test-settings.png)
 
 ## Notifications channels (Enterprise feature)
