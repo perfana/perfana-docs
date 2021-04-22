@@ -76,7 +76,7 @@ The `Add comment` dialog has the following fields:
 In this tab all configured Service Level Indicators graphs can be inspected in one overview. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators).
 
 
-## Dashboards 
+## Dashboards
 
 In this tab all [Grafana dashboards](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards) linked to this tes can be viewed. The dashboards are organised in tabs based on dashboard tags. Click on the header rows to expand or collapse the dashboards. You can use the filter (accepts regular expressions) to display a subset of the dashboards only. 
 
