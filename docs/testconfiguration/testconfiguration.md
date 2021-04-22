@@ -30,12 +30,11 @@ The `Service Level Indicators`, `Reporting template`, `Abort alert tags` and `Li
 > Please refer to [profiles](https://docs.perfana.io/docs/administration/administration.html#profiles-configuration) for automated test run configuration.
 --- 
 
-## System under test settings
+## System under test settings 
 
 To open the `System under tests` settings click on the menu item in the `settings` section of the sidebar. 
 
-The following properties can be configured
-
+The following properties can be configured:
 
 * **Jaeger service name**: if a [Jaeger integration](https://docs.perfana.io/docs/integrations/integrations.html#jaeger) has been set up, the service name to use as entrypoint can be set here
 * **Dynatrace entities**: if a [Dynatrace integration](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace-enterprise-feature) has been set up, one or more Dynatrace entities can be linked to the system under test
