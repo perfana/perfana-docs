@@ -40,9 +40,11 @@ The following properties can be configured:
 * **Dynatrace entities**: if a [Dynatrace integration](https://docs.perfana.io/docs/integrations/integrations.html#dynatrace-enterprise-feature) has been set up, one or more Dynatrace entities can be linked to the system under test
 * **Baseline test run id**: For each `test environment` - `workload` combination a baseline test run can be set that is used in the automated analysis of test runs.
 
----
+--- 
+
 > The Jaeger and Dynatrace properties can be set on **global** level, **test environment level** or **workload** level. Values specified on **workload** level override those on **test environment** level and values specified on **test environment** level override **global** values.
----
+--- 
+
 ![System under test settings](https://docs.perfana.io/docs/images/system-under-test-settings.png)
 
 ## Notifications channels (Enterprise feature)
