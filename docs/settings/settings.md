@@ -121,7 +121,11 @@ Metrics retention in seconds
 ```
 
 #### snapshotExpires
-This setting is used to specify how long snapshots will be stored in Grafana in seconds. If omitted, snapshots will not expire
+This setting is used to specify how long snapshots will be stored in Grafana in seconds. If omitted, snapshots will not expire.
+
+```
+  "snapshotExpires": "7776000"  // 90 days
+```
 
 --- 
 
