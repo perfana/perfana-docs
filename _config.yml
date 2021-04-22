@@ -1,5 +1,5 @@
 title: Perfana documentation
-description: Documentation for Perfana, the continous performance testing dashboard
+description: Documentation for Perfana, performance for agile teams
 #baseurl: "/perfana-docs" # the subpath of your site, e.g. /blog
 url: "https://docs.perfana.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -38,16 +38,16 @@ search:
 heading_anchors: true
 
 # Aux links for the upper right navigation
-aux_links:
-  "Perfana.io":
-    - "//perfana.io"
+# aux_links:
+#   "perfana.io":
+#     - "//perfana.io"
 
 # Footer content appears at the bottom of every page's main content
-footer_content: "Copyright &copy; 2019-2020 Perfana Software BV"
+footer_content: "Copyright &copy; 2019-2021 Perfana Software BV"
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-ga_tracking: UA-2709176-10
+# ga_tracking: UA-2709176-10
 
 plugins:
   - jekyll-seo-tag
