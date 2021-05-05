@@ -1,5 +1,6 @@
 ---
 title: Settings
+layout: default
 has_children: false
 nav_order: 8
 ---
@@ -24,38 +25,38 @@ The following configuration can be set:
 #### adminEmail
 If, at startup of Perfana, no users are found with the `admin` role, a user with the `admin` role is created with this email address. Default value: "admin@perfana.io"
 
-```
+```json
   "adminEmail": "admin@mycomapny.com"
 ```    
 #### adminPassword
 If, at startup of Perfana, no users are found with the `admin` role, a user with the `admin` role is created with this password.  Default value: "perfana"
 
-```
+```json
   "adminPassword": "secret"
 ```    
 #### perfanaUrl
 Client facing url of Perfana, default value `http://localhost:4000`
 
-```
+```json
   "perfanaUrl": "https://perfana.myhost.com"
 ```    
 #### perfanaCheckUrl
 Url used by Perfana to connect to `perfana-check` service, default value `http://localhost:9191`
 
-```
+```json
   "perfanaCheckUrl": "http://perfana-check:9191"
 ```    
 #### influxDbHost
 Hostname used by Perfana to connect to InfluxDB, default value `localhost`
 
-```
+```json
   "influxDbHost": "influxDB"
 ```    
 
 #### allowedFrameSrc
 Perfana uses iframes to display the Grafana and Jaeger UI. To allow iframing these locations the client facing url patterns of the Grafana and Jaeger UI should be added here, e.g. if the client facing url would be `https://grafana.myhost.com` and `https://jaeger.myhost.com`:
 
-```
+```json
   "allowedFrameSrc": [
     "https://*.myhost.com"
   ],
@@ -67,7 +68,7 @@ Perfana uses iframes to display the Grafana and Jaeger UI. To allow iframing the
 #### authenticationServices
 If an external service is used to authenticate Perfana users, add settings here.
 
-```
+```json
  "authenticationServices": {
     "keycloak": {
       "realm": "perfana",
@@ -85,7 +86,7 @@ If an external service is used to authenticate Perfana users, add settings here.
 #### loginExpirationInDays
 Defines after how many days the user has to sign in again, default value is 1 day. It is possible to use decimal values, e.g. 
 
-```
+```json
   "loginExpirationInDays": 0.5
 ```    
 ### Retention settings
@@ -95,35 +96,35 @@ Perfana decides based on these datasource retention settings to show "live" Graf
 #### prometheusRetention
 Metrics retention in seconds
 
-```
+```json
   "prometheusRetention": "43200"  // 12 hours
 ```
 
 #### graphiteRetention
 Metrics retention in seconds
 
-```
+```json
   "graphiteRetention": "86400"  // 24 hours
 ```
 
 #### influxDbRetention
 Metrics retention in seconds
 
-```
+```json
   "influxDbRetention": "604800"  // 1 week
 ```
 
 #### elasticSearchRetention
 Metrics retention in seconds
 
-```
+```json
   "elasticSearchRetention": "2592000"  // 30 days
 ```
 
 #### snapshotExpires
 This setting is used to specify how long snapshots will be stored in Grafana in seconds. If omitted, snapshots will not expire.
 
-```
+```json
   "snapshotExpires": "7776000"  // 90 days
 ```
 
@@ -139,7 +140,7 @@ Perfana requires at least one Grafana instance to be configured, refer to [here]
 
 #### grafanaInstances
 
-```
+```json
 "grafanaInstances": [
     {
       "label": "Demo",
@@ -159,7 +160,7 @@ Perfana requires at least one Grafana instance to be configured, refer to [here]
 To integrate with Jira, add oauth settings for one or more Jira instances. Refer to [here](https://docs.perfana.io/docs/administration/administration.html#jira-configuration-enterprise-feature) for more details
 
 #### jiraInstances
-```
+```json
     "jiraInstances": [ 	
         { 		
             "host": "jira.mycompany.com", 		
@@ -179,12 +180,12 @@ To integrate with Dynatrace, add these properties, refer to [here](https://docs.
 
 #### dynatraceUrl
 
-```
+```json
     "dynatraceUrl": "<Dynatrace host>"
 ```
 #### dynatraceApiToken
 
-```
+```json
     "dynatraceApiToken": "<Dynatrace token>",
 ```
 ### Public settings
@@ -208,7 +209,7 @@ Client facing url of Jaeger, default value `http://localhost:16686`
 #### jaegerLimit
 Maximum number of traces to show in Jaeger UI, default value `500`
 
-```
+```json
 "public": {
     "forbidClientAccountCreation": true,
     "perfanaUrl": "http://localhost:4000",
@@ -225,7 +226,7 @@ Maximum number of traces to show in Jaeger UI, default value `500`
 
 If alerts do not have `system_under_test` and `test_environment` labels to allow Perfana to map alerts to test runs, you can specify custom tags and (dynamic) values to be used for mapping.
 
-```
+```json
  "customAlertTags": [
     {
         "key": "application",
@@ -241,7 +242,7 @@ If alerts do not have `system_under_test` and `test_environment` labels to allow
 By default, Perfana passes on all tags set on incoming alerts. If you want to omit specific tags, add them here.
 
 
-```
+```json
 "omitAlertTags": [
     {
         "alertSource": "alertmanager",
