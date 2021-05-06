@@ -63,7 +63,7 @@ The `grafana-perfana` service will now automatically register the dashboard in P
 
 ---
 
-## Teams
+## Teams (Enterprise feature)
 
 Admin users can create `Teams` to efficiently organise the test run data in Perfana. `Teams` consist of one or more `team members` and a `system under test` is linked to one `team`.
 
@@ -141,7 +141,7 @@ You can use dynamic variables passed by the load test script variables. The vari
 ```
 ![Template dashboard configuration](/docs/images/template-dashboard.png)
 
-### Service Level Indicators
+### Service Level Indicators (Enterprise feature)
 
 For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `Service Level Indicators` to test runs that are tagged with the `profile` name.
 
@@ -173,7 +173,7 @@ In the `license` view you can add and view your license. There are two ways to a
 * Add offline license key: add offline license key when no internet connection is available
 
 
-## Notifications channels
+## Notifications channels (Enterprise feature)
 
 Perfana can use [Slack](/docs/integrations/integrations.html#slack-enterprise-feature), [Teams](/docs/integrations/integrations.html#teams-enterprise-feature) or [Google Chat](/docs/integrations/integrations.html#google-chat-enterprise-feature) channels to notify your team of specified events. 
 

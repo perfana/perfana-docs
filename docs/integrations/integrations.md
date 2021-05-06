@@ -2,7 +2,7 @@
 title: Integrations
 layout: default
 has_children: false
-nav_order: 7
+nav_order: 8
 ---
 
 # Integrations
@@ -104,7 +104,7 @@ In the Perfana demo setup [Spring Cloud Sleuth](https://docs.spring.io/spring-cl
 
 ### Tag metrics 
 
-Perfana creates an `Only show traces that fail to meet Service Level Objective` filter when it finds a key metric with a Service Level Objective specified based a Grafana `panel` that has `perfana-response-times` in the description.
+Perfana creates an `Only show traces that fail to meet Service Level Objective` filter when it finds a Service Level Objective specified based a Grafana `panel` that has `perfana-response-times` in the description, in a dashboard that is tagged with `perfana-performance-test-tool`.
 
 ![Panel description perfana-response-times](/docs/images/perfana-response-times.png)
 

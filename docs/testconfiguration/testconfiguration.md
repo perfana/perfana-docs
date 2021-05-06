@@ -25,7 +25,7 @@ In Perfana, different configurations can be defined for a specific combination o
 For selected `System under test`: 
 
 * the `System under test` settings
-* the `Notifications channels` settings
+* the `Notifications channels` settings (Enterprise feature)
 
 For selected `System under test` and `Test environment`: 
 
@@ -52,7 +52,7 @@ Click the `System under tests` menu item under the `Settings` section in the sid
 The following properties can be configured:
 
 * **Jaeger service name**: if a [Jaeger integration](/docs/integrations/integrations.html#jaeger) is available, the service name to use as entrypoint can be set here
-* **Dynatrace entities**: if a [Dynatrace integration](/docs/integrations/integrations.html#dynatrace-enterprise-feature) is available, one or more Dynatrace entities can be linked to the system under test
+* **Dynatrace entities**: if a [Dynatrace integration](/docs/integrations/integrations.html#dynatrace-enterprise-feature) (Enterprise feature) is available, one or more Dynatrace entities can be linked to the system under test
 * **Baseline test run id**: for each `test environment` - `workload` combination set a baseline test that is used in the automated analysis of test runs.
 
 --- 
@@ -88,7 +88,7 @@ This dialog has the following fields:
 * **Dashboard name**: Select a Grafana dashboard.
 * **Dashboard label**: Add descriptive label, e.g. "Host metrics webserver 1".
 * **Variables**: If the Grafana dashboard has [templating variables](https://grafana.com/docs/grafana/next/variables/#templates-and-variables), select variables and set one or more values.
-* **Time for taking snapshots (s)**: The number of seconds to take a snapshot. TODO: why?
+* **Time for taking snapshots (s)**: The number of seconds to take a snapshot. You may need to configure the timeout value if it takes a long time to collect your dashboard's metrics.
 
 ## Service Level Indicators
 
@@ -96,10 +96,10 @@ When one or more Grafana dashboards are linked to the test runs, you can select 
 
 --- 
 
-> `Service Level Indicators` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` _and_ `Workload` in the `Test run selector`.
+> `Service Level Indicators` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` and `Workload` in the `Test run selector`.
 
 --- 
-There is an option to automatically assess `Service Level Indicators` after a test run finishes. This can act as a `quality gate` when running tests from a CI/CD pipeline. See [Setting up Perfana as quality gate](/docs/administration/ci-cd.html#quality-gate)
+There is an option to automatically assess `Service Level Indicators` after a test run finishes. The results can be used as a `quality gate` when running tests from a CI/CD pipeline.
 
 Two types of checks exist for a Service Level Indicator:
 * **Service Level Objective**: Check if the `Service Level Indicators` value is `greater than` or `smaller than` a specified value. An example check is "Average CPU usage should be smaller than 70%" or "Maximum throughput should be higher than 1000 (rps)"
@@ -144,7 +144,7 @@ To help create regular expressions, click the `filter` icon in the end the row i
 
 --- 
 
-> The `Reporting template` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` _and_ `Workload` in the `Test run selector`. 
+> The `Reporting template` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` and `Workload` in the `Test run selector`. 
 
 --- 
 
@@ -161,7 +161,7 @@ Click the `Add panel` button to add a `panel` to the report template. This opens
 
 --- 
 
-> The `Abort alert tags` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` _and_ `Workload` in the `Test run selector`.
+> The `Abort alert tags` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` and `Workload` in the `Test run selector`.
 
 --- 
 
@@ -177,7 +177,7 @@ Click `Add alert tag` to add an `Abort alert tag`. The `Add abort alert tag` for
 ## Links 
 --- 
 
-> `Links` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` _and_ `Workload` in the `Test run selector`.  
+> `Links` works on `Workload` level, so the sidebar item is only active when you select a `System under test`, `Test environment` and `Workload` in the `Test run selector`.  
 
 --- 
 

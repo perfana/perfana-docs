@@ -67,6 +67,5 @@ The table has a number of columns:
 
 The `Trends` tab in the Test runs page appears when multiple test runs are available with the same `Test environment` and `Workload` properties. There are trends for the defined `Service Level Indicators`. Select a period and each test run in that time frame is marked as a vertical line. Hover over the base of the line to see the test run id and the version. Click on version number link in the hover to go directly to the test run details.
 
-Press the `Update trend points` button to update the trend points. TODO: what happens?
 
 ![Trends](/docs/images/trends.png)

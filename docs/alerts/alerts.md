@@ -50,6 +50,12 @@ No Data & Error Handling:
 * **If no data or all values are null** SET STATE TO `Ok`
 * **If execution error or timeout** SET STATE TO `Keep Last State`
 
+--- 
+
+> Make sure interval used in the query `query(A, 10s, now)` is larger than the write interval for the metric, to prevent the alerting engine to set state to `Ok` unintentionally when `null` values are returned!
+
+---
+
 Notications:
 
 * **Send to**: Select the `Perfana` notification channel you have created earlier. 
