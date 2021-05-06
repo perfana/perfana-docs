@@ -141,6 +141,7 @@ You can use dynamic variables passed by the load test script variables. The vari
 ```
 ![Template dashboard configuration](/docs/images/template-dashboard.png)
 
+
 ### Service Level Indicators (Enterprise feature)
 
 For the any of the Grafana dashboards added to the `profile` it is possible to automatically add `Service Level Indicators` to test runs that are tagged with the `profile` name.
