@@ -17,7 +17,7 @@ nav_order: 9
 
 ## Demo environment
 
-Perfana provides a demo environment that can be used to try out all the features. It is based on Docker compose and has a all components to emulate live-like environment for Perfana, including an application to performance test.
+The Perfana demo environment can be used to try out all the features. It uses Docker compose and has a all components to emulate a live-like environment for Perfana, including an application to run a performance test.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Perfana provides a demo environment that can be used to try out all the features
 ## Getting started
 
 * Clone perfana-demo repository 
-  ```
+  ```sh
   git clone https://github.com/perfana/perfana-demo.git
   ```
   or download [here](https://github.com/perfana/perfana-demo/archive/master.zip)
@@ -36,18 +36,18 @@ Perfana provides a demo environment that can be used to try out all the features
   > If you use the download option, make sure to extract the zip to a directory named `perfana-demo`!
 
 * Add this to your hosts file
-  ```
+  ```sh
   127.0.1.1  perfana
   127.0.1.1  jenkins  
   127.0.1.1  grafana
   ```
 
 * Inside the repository root run
-  ```
+  ```sh
   ./start.sh
   ```
 
-This will spin up a number of containers
+This spins up a number of containers
 
 | Container       | Description          | local port |
 |:-------------   |:------------------|:------|
@@ -69,13 +69,13 @@ This will spin up a number of containers
 
 To stop all containers, run
 
-```
+```sh
 ./stop.sh
 ```
 
 To remove all containers, use
 
-```
+```sh
 ./clean.sh
 ``` 
 
@@ -86,16 +86,16 @@ To remove all containers, use
 ---
 
 
-To start, stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the perfana image is available
+To start, stop or remove containers individually use `docker-compose` and the service name as used in the `docker-compose.yml` file, e.g. when a newer version of the `perfana` image is available
 
-```
+```sh
 docker-compose stop perfana && docker-compose rm -f perfana && docker-compose up -d perfana
 ```
 
 > The `perfana-demo` repository is updated frequently, so to get the latest and greatest pull repo and images.
 
 
-```
+```sh
 git pull && docker-compose pull
 ```
 
@@ -118,28 +118,27 @@ To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use
 
 ## Start a test
 
-The Perfana demo environment comes with a Jenkins instance preconfigured with a job that will trigger a Gatling script to execute a load test on two instances of [Afterburner](https://github.com/stokpop/afterburner), a springboot test application, deployed as `optimus-prime-fe` and `optimus-prime-be`. The job is configured to checkout the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and trigger the test via the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin). When the job is started, this plugin will start sending meta data for the test, configured in the `pom.xml`, to Perfana.
+The Perfana demo environment comes with a Jenkins instance preconfigured with a job that will trigger a Gatling script to execute a load test on two instances of [Afterburner](https://github.com/stokpop/afterburner), a Spring Boot test application, deployed as `optimus-prime-fe` and `optimus-prime-be`. The job checks out the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and triggers the test via the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin). When the job is started, this plugin sends meta data for the test, as specified in the `pom.xml`, to Perfana.
 
 To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `OptimusPrime` job and click `Build with parameters`. The following parameters can be set:
 
-* **system_under_test**: Use this paramater to se the System Under Test property in Perfana. Default is set to `OptimusPrime`
-* **gatlingRepo**: Repository containing the Gatling script
-* **gatlingBranch**: Branch to use
-* **workload**: workload to use in the test, corresponds to the [workload profiles in the pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252)
-* **annotation**: can be used to add some annotation to the test run.
+* **system_under_test**: Use this parameter to set the System Under Test property in Perfana. Default is set to `OptimusPrime`
+* **gatlingRepo**: Repository containing the Gatling script.
+* **gatlingBranch**: Git branch to use.
+* **workload**: Workload to use in the test, corresponds to the [workload profiles in the pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252)
+* **annotation**: Can be used to add some annotation to the test run.
 
 The demo contains three workload examples to demonstrate some use cases for Perfana:
 
 * **load test**: a steady state load on OptimusPrime. Run this workload a few times to view the automatic analysis feature in action, that can be used as quality gate in a CI/CD setup. 
-* **stress test**: an increasing load on OptimusPrime, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
-* **slow back end test**: a steady state load on OptimusPrime. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for OptimusPrime. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is then used to increase the response times of the stub during the test. This test can be used to test resilience of a system under test.
+* **stress test**: an increasing load on OptimusPrime, until the test is automatically terminated when the system under test reaches a specified condition. Demonstrates the use of [abort alert tags](/docs/testconfiguration/testconfiguration.html#abort-alert-tags)
+* **slow back end test**: a steady state load on OptimusPrime. A [wiremock](http://wiremock.org/) stub is configured to emulate a back end service for OptimusPrime. The [test-events-wiremock plugin](https://github.com/stokpop/test-events-wiremock) is used to increase the response times of the stub during the test. This test can be used to test the resilience of a system under test.
 
  When the job has started, open the console log to see the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin) is building and executing the test. 
 
-
 --- 
 
-> If the job is running for the first time it will take some time to start up because Maven has to download all dependencies. Check the build log via `Console Output` to see the progress.
+> Note: when the job is running for the first time it will take some time to start up because Maven has to download all dependencies. Check the build log via `Console Output` to see the progress.
 
 --- 
 
@@ -151,47 +150,45 @@ In the home page click on `Afterburner` under `Your systems under test`. In the 
 
 ![Running test](images/running-test.png)
 
-Click [here](https://docs.perfana.io/docs/navigating/navigating.html#running-tests) to learn more about the `Running tests` section.
+Click [here](/docs/navigating/navigating.html#running-tests) to learn more about the `Running tests` section.
  
+When the test has finished the test run is displayed in the `Recent runs` section and a number of events are triggered:
+* Perfana creates [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards linked to the test run.
+* Perfana evaluates all Service Level Objectives and compares thresholds for the Service Level Indicators of the test run. After the evaluation the consolidated results are displayed in the `Results` column.
 
-When the test has finished the test run will be displayed in the `Recent runs` section and a numbers of event will be triggered:
-* Perfana will create [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards configured for the test run.
-* Perfana will evaluate all Service Level Objectives and comparison thresholds set for Service Level Indicators configured for the test run. When finished evaluating the consolidated results will be displayed in the `Results` column.
+Click [here](/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
-Click [here](https://docs.perfana.io/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
-
-If more than one test run is available for a specific set of test run properties, there will be a `Trends` tab visible. In this tab you can view trends over time for the specified `Service Level Indicators`. [Read more on trends](https://docs.perfana.io/docs/navigating/navigating.html#trends)
+If more than one test run is available for a specific set of test run properties, a `Trends` tab becomes visible. In this tab you can view trends over time for the specified `Service Level Indicators`. [Read more on trends](/docs/navigating/navigating.html#trends)
 
 ### View test run details
 {: .no_toc }
 
+To view more details for the test run you can click on the test run ID. The test run details view has a number of tabs:
 
-To view more details for the test run you can click on the test run row, The test run details view has a number of tabs:
+[Summary](/docs/analysing/analysing.html#summary)
 
-[Summary](https://docs.perfana.io/docs/analysing/analysing.html#summary)
+[Comments](/docs/analysing/analysing.html#comments)
 
-[Comments](https://docs.perfana.io/docs/analysing/analysing.html#comments)
+[Service Level Indicators](/docs/analysing/analysing.html#key-metrics)
 
-[Service Level Indicators](https://docs.perfana.io/docs/analysing/analysing.html#key-metrics)
+[Dashboards](/docs/analysing/analysing.html#dashboards)
 
-[Dashboards](https://docs.perfana.io/docs/analysing/analysing.html#dashboards)
+[Report](/docs/analysing/analysing.html#report)
 
-[Report](https://docs.perfana.io/docs/analysing/analysing.html#report)
+[Compare](/docs/analysing/analysing.html#compare)
 
-[Compare](https://docs.perfana.io/docs/analysing/analysing.html#compare)
-
-[Manage](https://docs.perfana.io/docs/analysing/analysing.html#manage)
+[Manage](/docs/analysing/analysing.html#manage)
 
 ## Alerts
 
-In the demo environment two Alertmanager alerts have been specified, as you can see in the [Prometheus UI](http://localhost:9090/alerts). 
+In the demo environment two Alertmanager alerts are defined, as you can see in the [Prometheus UI](http://localhost:9090/alerts). 
 
 These alert rules can be found in the [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml) file in the [perfana-demo repo](https://github.com/perfana/perfana-demo)
 
 In [alertmanager.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/alertmanager.yml) Perfana has been set up as [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
 
-The [Afterburner test application](https://github.com/stokpop/afterburner) has been [set up to expose JVM metrics via actuator](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/production-ready-metrics.html#production-ready-metrics-export-prometheus) and two [metric tags have been added](https://github.com/perfana/perfana-demo/blob/master/docker-compose.yml#L113) `system_under_test` and `test_environment`. 
+The [Afterburner test application](https://github.com/stokpop/afterburner) has been set up to [expose JVM metrics via actuator](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/production-ready-metrics.html#production-ready-metrics-export-prometheus) and two [metric tags have been added](https://github.com/perfana/perfana-demo/blob/master/docker-compose.yml#L113) `system_under_test` and `test_environment`.
 
-If one of the alerts triggers, Perfana will try to map alert metric tags to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
+If one of the alerts is triggered, Perfana tries to map alert metric tags to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
 
-Learn more on alerting [here](https://docs.perfana.io/docs/alerts/alerts.html)
+Learn more on alerts [here](/docs/alerts/alerts.html)

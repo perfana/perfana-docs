@@ -1,5 +1,6 @@
 ---
 title: Navigating
+layout: default
 has_children: false
 nav_order: 2
 ---
@@ -19,52 +20,52 @@ nav_order: 2
 
 ## Landing page
 
-After logging in the user is redirected to his or her personal landig page. It contains deeplinks to the `Test runs view` with preset filters on either the team(s) the user is member of or the systems under test that those teams are responsible for.
+After logging in the user is redirected to his or her personal landig page. It contains deeplinks to the `Test runs view` with preset filters on either the team(s) of the user or the systems under test that those teams are responsible for.
 
-It also has a section called `Test runs that may require your attention` that will show test runs with failed checks not visited yet by the user.
+The `Test runs that may require your attention` section shows test runs with failed checks not yet visited by the user.
 
 In the top right of the screens there are notifications for the user that are created on several events, like test runs with failed checks and new comments on test runs.
 
 ## Test runs 
 
-The `Test runs view` can be opened from the sidebar by clicking on the `rocket` icon.
+Click the `rocket` icon in the sidebar to open the `Test runs` view.
 
 ### Test run selector
 {: .no_toc }
 
-The test run selector can be used to filter test runs based on test run properties `System under test`, `Test environment` and `Workload`. When the selector is switched to `team mode` a `Team` filter option is added.
-
+Use the `Test run selector` to filter test runs on `System under test`, `Test environment` and `Workload`. Switch to `Team mode` to filter on `Team`.
 
 ### Running tests
 {: .no_toc }
 
-The `Running tests` section shows any currenty running tests matching the properties set in the `Test run selector`. 
+The `Running tests` section shows any currenty running tests matching the filters in the `Test run selector`. 
 
-Clicking on the test run will open the running test view. The view has two tabs:
-* **Service Level Indicators**: shows the configured Service Level Indicators for this test. See [Service Level Indicators configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators)
-* **Dashboards**: show the configured dashboards for this test. See [Grafana dashboards configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
+Click the `Test run ID` to open the running test view. This view has two tabs:
+* **Service Level Indicators**: shows the configured Service Level Indicators for this test. See [Service Level Indicators configuration](/docs/testconfiguration/testconfiguration.html#service-level-indicators)
+* **Dashboards**: shows the configured dashboards for this test. See [Grafana dashboards configuration](/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
 
-The Service Level Indicators and Grafana dashboards can be configured via the items in the `settings` section in the sidebar.
+Configure the `Service Level Indicators` and `Grafana Dashboards` via the items under the `Settings` section in the sidebar.
 
 
 ### Recent runs
 {: .no_toc }
 
-The `Recent runs` section shows finished test runs matching the properties set in the `Test run selector` sorted on date. 
+The `Recent runs` section shows finished test runs matching the filters in the `Test run selector`. The runs are sorted on date, the most recent on top. 
 
-![Recent runs](https://docs.perfana.io/docs/images/recent-runs.png)
+![Recent runs](/docs/images/recent-runs.png)
 
 The table has a number of columns:
 
 * Test run meta data like `System under test`, `Version`, `Workload`, `Test environment`, `Test run ID`, `Start`, `End` and `Duration`
-* If annotations were added to the test run the `info` icon will be displayed, hover it to see the annotation.
-* If a report has been persisted the `report` icon will be displayed, clicking the icon will deeplink to the report.
-* If checks are configured for the test run, the consolidated result will be displayed in the `Result` column
-* If the test run has comments, the number will be displayed in the `comments` icon. The icon will be blue when there are unread comments.
-* If the user is allowed to delete test runs for the system under test, a `delete` icon will be available to delete the test run, or the checkboxes can be used to delete multiple test runs at once.
+* The `info` icon is displayed when annotations are added to the test run. Hover over the icon to see the annotations.
+* The `report` icon is shown when a report has been created. Click the icon to see the report.
+* The `result` column displays the (consolidated) result, but only when checks are created for the test runs.
+* The `comments` icon shows the number of comments, if comments exist. The icon is blue when there are unread comments.
+* A `trashcan` icon shows when the user is allowed to delete test runs for the system under test. Delete multiple test runs at once using the checkboxes and by clicking the trashcan in the table header.
 
 ## Trends
 
-When there are multiple test runs available with the same `environment` and `workload` properties, the `Trends` tab will be available. This tab will display the trends for the configured `Service Level Indicators` over time. You can select a period and each test run is marked as a vertical line. When you hover the base of the line you can see the test run id and the version. From here you can deeplink into the test run details view.
+The `Trends` tab in the Test runs page appears when multiple test runs are available with the same `Test environment` and `Workload` properties. There are trends for the defined `Service Level Indicators`. Select a period and each test run in that time frame is marked as a vertical line. Hover over the base of the line to see the test run id and the version. Click on version number link in the hover to go directly to the test run details.
 
-![Trends](https://docs.perfana.io/docs/images/trends.png)
+
+![Trends](/docs/images/trends.png)

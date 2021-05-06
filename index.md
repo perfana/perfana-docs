@@ -9,14 +9,14 @@ permalink: /
 # Perfana documentation
 {: .fs-9 }
 
-1. [Navigating](https://docs.perfana.io/docs/navigating/navigating.html)
-2. [Test configuration](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html)
-3. [Analyzing test runs](https://docs.perfana.io/docs/analysing/analysing.html)
-4. [Alerting](https://docs.perfana.io/docs/alerts/alerts.html)
-5. [Administration](https://docs.perfana.io/docs/administration/administration.html) 
-6. [Settings](https://docs.perfana.io/docs/settings/settings.html)
-7. [Integrations](https://docs.perfana.io/docs/integrations/integrations.html)
-8. [Demo environment](https://docs.perfana.io/docs/demo.html)
+1. [Navigating](/docs/navigating/navigating.html)
+2. [Test configuration](/docs/testconfiguration/testconfiguration.html)
+3. [Analyzing test runs](/docs/analysing/analysing.html)
+4. [Alerting](/docs/alerts/alerts.html)
+5. [Administration](/docs/administration/administration.html) 
+6. [Settings](/docs/settings/settings.html)
+7. [Integrations](/docs/integrations/integrations.html)
+8. [Demo environment](/docs/demo.html)
 
 
 
