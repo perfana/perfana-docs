@@ -138,7 +138,7 @@ Perfana can be [integrated with Jaeger](https://docs.perfana.io/docs/integration
 * **Only show traces with duration shorter than**: Can be used to filter on maximum duration of the traces
 * **Request name**: Filter on request name
 
-To deeplink into the Jager UI based on the filters, click on the request names. 
+To deeplink into the Jaeger UI based on the filters, click on the request names. 
 
 ![Traces](https://docs.perfana.io/docs/images/traces.png)
 
