@@ -92,7 +92,7 @@ This tab shows all [Grafana dashboards](/docs/testconfiguration/testconfiguratio
 
 ## Reports
 
-The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The report is automatically saved by opening the report tab.
+The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The test run snapshots are automatically set not to expire by opening the report tab, so graphs used in the report will be available indefinitely.
 
 It is also possible to add comparisons (see next paragraph) to one or more test runs to the report. 
 
