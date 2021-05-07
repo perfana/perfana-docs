@@ -1,10 +1,11 @@
 ---
-title: Alerting
+title: Alerts
+layout: default
 has_children: false
 nav_order: 5
 ---
 
-# Alerting
+# Alerts
 {: .no_toc }
 
 ## Table of contents
@@ -16,13 +17,13 @@ nav_order: 5
 
 ---
 
-Perfana integrates with a number of tools that can emit alerts based on rules. If an integrated alerting tool triggers an alert, Perfana will try to map alert tags to properties of a running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph for that test run. This can help you track down root causes for bottlenecks in your test.
+Perfana integrates with a number of tools that emit alerts based on rules. If an integrated alerting tool triggers an alert, Perfana tries to map alert tags to properties of a running test. If it finds a match, it creates an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph for that test run. This helps you to track down root causes for bottlenecks in your test.
 
 ## Alertmanager
 
-In order to integrate Alertmanager alerts with Perfana, Perfana has to be set up as a [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
+To integrate Alertmanager alerts with Perfana, Perfana has to be set up as a Prometheus [receiver](https://prometheus.io/docs/alerting/configuration/#receiver).
 
-```
+```yaml
 receivers:
 - name: default-receiver
   webhook_configs:
@@ -31,23 +32,29 @@ receivers:
 
 ``` 
 
-Then create one ore more [alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/) like in [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml
+Next, create one ore more [alerting rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/) like the ones in [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml).
 
 ## Grafana alerts
 
-It is possible to create [alerts in Grafana](https://grafana.com/docs/grafana/latest/alerting/rules/). In order to integrate these alerts with Perfana a [notifications channel](https://grafana.com/docs/grafana/latest/alerting/notifications/) has to be configured.
+You can also create [alerts in Grafana](https://grafana.com/docs/grafana/latest/alerting/rules/). To integrate these alerts with Perfana create a [notifications channel](https://grafana.com/docs/grafana/latest/alerting/notifications/) in Grafana.
 
 The channel type should be `webhook`, the url `http://<perfana-host>/grafana-alerts` and the httpMethod `POST`
 
-![Notications channel](https://docs.perfana.io/docs/images/notifications-channel.png)
+![Notications channel](/docs/images/notifications-channel.png)
 
-Then create an alert on a panel in one of your dashboards. To do so, choose `edit` from the panel menu an go to the `Alert` section.
+Then create an alert on a panel in one of your dashboards. To do so, choose `edit` from the panel menu and find the `Alert` section.
 
-The follwoing properties should be set:
+Set the following properties:
 
 No Data & Error Handling:
 * **If no data or all values are null** SET STATE TO `Ok`
 * **If execution error or timeout** SET STATE TO `Keep Last State`
+
+--- 
+
+> Make sure interval used in the query `query(A, 10s, now)` is larger than the write interval for the metric, to prevent the alerting engine to set state to `Ok` unintentionally when `null` values are returned!
+
+---
 
 Notications:
 
@@ -56,7 +63,6 @@ Notications:
 * **Tags**: 
   * **system_under_test**: *Required* should match the `system_under_test` for your test  
   * **test_environment**: *Required*  should match the `test_environment` for your test
-  * **test run abort tag**: *Optional* [tag to use to abort a test run](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#abort-alert-tags)  
+  * **test run abort tag**: *Optional* See [tag to use to abort a test run](/docs/testconfiguration/testconfiguration.html#abort-alert-tags). In the example screenshot below this is `maximum_response_time_abort`. 
   
-
-![Alert](https://docs.perfana.io/docs/images/alert.png)
+![Alert](/docs/images/alert.png)
