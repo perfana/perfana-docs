@@ -86,7 +86,7 @@ This tab shows all [Grafana dashboards](/docs/testconfiguration/testconfiguratio
 
 --- 
 
-> Based on the [datasource retention times](/docs/administration/administration.html#data-retention-and-test-run-expiry) this tab shows either the dashboards with "live" data from the datasource or a [snapshot](https://grafana.com/docs/grafana/next/sharing/share-dashboard/#publish-a-snapshot) of the dashboard.
+> Based on the [datasource retention times](/docs/settings/settings.html#retention-settings) this tab shows either the dashboards with "live" data from the datasource or a [snapshot](https://grafana.com/docs/grafana/next/sharing/share-dashboard/#publish-a-snapshot) of the dashboard.
 
 ---
 
@@ -199,7 +199,7 @@ If there are issues already created and linked to other test runs for the `syste
 
 The `Manage` tab is only available for `team-admin` users for the team reponsible for the system under test and `admin` users. It has the following sections for managing the test run:
 
-* **Test run status**: displays the status for the different stages the test run goes through after it has finished. It also displays the expiry date for the test run. Read more on test run expiry [here](/docs/administration/administration.html#data-retention-and-test-run-expiry).
+* **Test run status**: displays the status for the different stages the test run goes through after it has finished. It also displays the expiry date for the test run. Read more on test run expiry [here](/docs/settings/settings.html#retention-settings).
 * **Manage Grafana snapshots**: create, delete, update and view Grafana snapshots for the test run. To prevent snapshots from being deleted after the retention period, use `Set to never expire` using the `disk` icon. Note: if a report is generated for the test run (by opening the `Report` tab), the snapshots are automatically saved.
 * **Manage test run**:  This section has a button to `Delete test run` or to set it as `fixed baseline`. `Admin` users are also allowed to edit the test run properties.
 * **Manage checks**: Contains a button to manually re-evaluate the configured checks, for example after having changed the check requirements. 
