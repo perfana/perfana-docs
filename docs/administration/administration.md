@@ -108,7 +108,29 @@ Adding users can currently be done by:
 
 ## Profiles 
 
-Perfana profiles can be used to automatically configure test runs. By passing `tags` via the Gatling script [pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252) profiles can be activated for test runs with the provided properties and the following configuration can automatically be added:
+Perfana profiles can be used to automatically configure test runs. By passing `tags` via the (Gatling) script profiles can be activated for test runs.
+
+```xml
+<profile>
+    <id>test-type-load</id>
+    <activation>
+        <activeByDefault>false</activeByDefault>
+    </activation>
+    <properties>
+        <workload>loadTest</workload>
+        <initialUsersPerSecond>1</initialUsersPerSecond>
+        <targetUsersPerSecond>2</targetUsersPerSecond>
+        <rampupTimeInSeconds>30</rampupTimeInSeconds>
+        <constantLoadTimeInSeconds>240</constantLoadTimeInSeconds>
+        <perfanaEnabled>true</perfanaEnabled>
+        <testRunId>${systemUnderTest}-${version}-${workload}-${testEnvironment}-${build.timestamp}</testRunId>
+        <eventsEnabled>true</eventsEnabled>
+        <tags>load-test,micro-service</tags>
+    </properties>
+</profile>
+ ```       
+
+The following can automatically be added via profiles:
 
 ### Grafana dashboards 
 
