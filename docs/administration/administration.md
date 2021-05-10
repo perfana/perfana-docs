@@ -88,7 +88,7 @@ A `team` can be responsible for one or more `systems under test`, but a `system 
 ---
 ## Users 
 
-The `users` view lists all users known in Perfana. For each user it shows if they have the `admin` role and for what teams they have the `team-admin` role. Admin users can assign roles to users or delete users. 
+The `users` view lists all users known in Perfana. For each user it shows if they have the `admin` role and for what teams they have the `team-member` role. Admin users can assign roles to users or delete users. 
 
 Adding users can currently be done by:
 * Using an external IDP via Keycloak

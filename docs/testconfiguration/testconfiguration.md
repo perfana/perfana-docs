@@ -18,7 +18,7 @@ layout: default
 
 ## Available settings
 
-The `Settings` section in the side bar is only present when a user has the `team-admin` role for a `team` that is responsible for a `system under test`. 
+The `Settings` section in the side bar is only present when a user has the `team-member` role for a `team` that is responsible for a `system under test`. 
 
 In Perfana, different configurations can be defined for a specific combination of test run properties. These properties are available in the `Test run selector` filter: `System under test`, `Test environment` and `Workload`. 
 

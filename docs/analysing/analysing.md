@@ -197,7 +197,7 @@ If there are issues already created and linked to other test runs for the `syste
 
 ## Manage
 
-The `Manage` tab is only available for `team-admin` users for the team reponsible for the system under test and `admin` users. It has the following sections for managing the test run:
+The `Manage` tab is only available for users with a `team-member` role for the team reponsible for the system under test and `admin` users. It has the following sections for managing the test run:
 
 * **Test run status**: displays the status for the different stages the test run goes through after it has finished. It also displays the expiry date for the test run. Read more on test run expiry [here](/docs/settings/settings.html#retention-settings).
 * **Manage Grafana snapshots**: create, delete, update and view Grafana snapshots for the test run. To prevent snapshots from being deleted after the retention period, use `Set to never expire` using the `disk` icon. Note: if a report is generated for the test run (by opening the `Report` tab), the snapshots are automatically saved.
