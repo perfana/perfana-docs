@@ -92,7 +92,7 @@ This tab shows all [Grafana dashboards](/docs/testconfiguration/testconfiguratio
 
 ## Reports
 
-The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The test run snapshots are automatically set not to expire by opening the report tab, so graphs used in the report will be available indefinitely.
+The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The report is available as long as the snapshots used in the report are not deleted. The banner on top of the report indicates how long the report will be available, based on the [snapshot expiry setting](/docs/settings/settings.html#snapshotexpires) If you want to keep the report click on the banner to persist snapshots used in the report indefinitely.
 
 It is also possible to add comparisons (see next paragraph) to one or more test runs to the report. 
 
@@ -127,7 +127,7 @@ Select per dashboard what panels to compare.
 {: .no_toc }  
 Provide a description for the comparison result and click `Compare`
 
-![Compare results](https://docs.perfana.io/docs/images/compare-results.png)
+![Compare results](/docs/images/compare-results.jpg)
 
 ## Open Tracing
 

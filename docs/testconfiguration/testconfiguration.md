@@ -137,7 +137,7 @@ Click the `pencil` icon in the row to edit a `Service Level Indicator`.
 
 To help create regular expressions, click the `filter` icon in the end the row in the `Service Level Indicators` and `Check results` views. The  `Filter request helper` dialog lets you create regular expressions for the `Only apply to metrics matching regex pattern` field of `Service Level Indicators`.  If check result data is available, the `Filter request helper` lets you preview the results of a regular expression in `Series matching pattern`, as shown below.
 
-![Regex helper](https://docs.perfana.io/docs/images/regex-helper.png)
+![Regex helper](/docs/images/regex-helper.png)
 
 
 ## Reporting template 

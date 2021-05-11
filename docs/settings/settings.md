@@ -153,7 +153,7 @@ This setting is used to specify how long snapshots will be stored in Grafana in 
 
 ### Grafana settings
 
-Perfana requires at least one Grafana instance to be configured, refer to [here](https://docs.perfana.io/docs/administration/administration.html#grafana-configuration) for more details.
+Perfana requires at least one Grafana instance to be configured, refer to [here](/docs/administration/administration.html#grafana-configuration) for more details.
 
 #### grafanaInstances
 
@@ -174,7 +174,7 @@ Perfana requires at least one Grafana instance to be configured, refer to [here]
 ```
 
 ### Jira settings
-To integrate with Jira, add oauth settings for one or more Jira instances. Refer to [here](https://docs.perfana.io/docs/administration/administration.html#jira-configuration-enterprise-feature) for more details
+To integrate with Jira, add oauth settings for one or more Jira instances. Refer to [here](/docs/administration/administration.html#jira-configuration-enterprise-feature) for more details
 
 #### jiraInstances
 ```json
@@ -193,7 +193,7 @@ To integrate with Jira, add oauth settings for one or more Jira instances. Refer
 
 ### Dynatrace settings
 
-To integrate with Dynatrace, add these properties, refer to [here](https://docs.perfana.io/docs/integrations/integrations.html#create-dynatrace-api-token) for more details
+To integrate with Dynatrace, add these properties, refer to [here](/docs/integrations/integrations.html#create-dynatrace-api-token) for more details
 
 #### dynatraceUrl
 
