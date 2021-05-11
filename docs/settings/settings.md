@@ -22,6 +22,23 @@ The following configuration can be set:
 
 ### General settings
 
+#### Organisations
+
+It is possible to add multiple organisations to Perfana to organise your teams by. 
+
+```json
+ "organisations": [
+    {
+      "name": "Org1",
+      "description": "Organisation 1"
+    },
+    {
+      "name": "Org2",
+      "description": "Organisation 2"
+    }
+  ],
+``` 
+If omitted, a default organisation named `Perfana` will be added.   
 #### adminEmail
 If, at startup of Perfana, no users are found with the `admin` role, a user with the `admin` role is created with this email address. Default value: "admin@perfana.io"
 
