@@ -111,39 +111,41 @@ Defines after how many days the user has to sign in again, default value is 1 da
 Perfana decides based on these datasource retention settings to show "live" Grafana dashboards, connecting to the datasources to fetch data or, if the data is no longer available, show [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) of the dashboards instead. If no retention has been configured for a datasource, Perfana will assume retention is 0 and will always show snapshots.
 
 #### prometheusRetention
-Metrics retention in seconds
+Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "prometheusRetention": "43200"  // 12 hours
 ```
 
 #### graphiteRetention
-Metrics retention in seconds
+Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "graphiteRetention": "86400"  // 24 hours
 ```
 
 #### influxDbRetention
-Metrics retention in seconds
+Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "influxDbRetention": "604800"  // 1 week
 ```
 
 #### elasticSearchRetention
-Metrics retention in seconds
+Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "elasticSearchRetention": "2592000"  // 30 days
 ```
 
 #### snapshotExpires
-This setting is used to specify how long snapshots will be stored in Grafana in seconds. If omitted, snapshots will not expire.
+This setting is used to specify how long snapshots will be stored in Grafana in seconds. Default value is `7776000` (90 days). 
 
 ```json
   "snapshotExpires": "7776000"  // 90 days
 ```
+
+If snapshotExpires is set to 0, snapshots will not expire.
 
 --- 
 
