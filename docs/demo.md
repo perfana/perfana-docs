@@ -23,7 +23,7 @@ The Perfana demo environment can be used to try out all the features. It uses Do
 
 * [Docker](https://docs.docker.com/get-started/)
 * [Docker compose](https://docs.docker.com/compose/gettingstarted/)
-* 8Gb of RAM allocated to docker daemon
+* A minimum 8Gb of RAM allocated to docker daemon, preferably more
 
 ## Getting started
 
@@ -49,22 +49,29 @@ The Perfana demo environment can be used to try out all the features. It uses Do
 
 This spins up a number of containers
 
-| Container       | Description          | local port |
+| Container       | Description          | exposed to local port |
 |:-------------   |:------------------|:------|
 | perfana         | Perfana front end  | 4000  |
 | perfana-grafana | Perfana - Grafana integration service   | n/a  |
 | perfana-snapshot| Perfana snapshot service | n/a   |
 | perfana-check   | Perfana results check service | n/a  |
 | perfana-fixture | Loads fixture data | n/a  |
-| perfana-jenkins | Jenkins with two performance test jobs pre-configured | 8090  |
-| mongoDb         | MongoDb replicaset to store Perfana configuration | 27011 / 27012 /27013 |
+| perfana-jenkins | Jenkins with two performance test jobs pre-configured | 8080  |
+| mongodb         | MongoDb replicaset to store Perfana configuration | 27011 / 27012 /27013 |
 | grafana         | Grafana graphing dashboard | 3000  |
 | influxdb        | InfluxDb metrics datastore | 8086 / 2003  |
 | telegraf        | Telegraf metrics agent | n/a  |
 | prometheus      | Prometheus metrics datastore| 9090  |
 | alertmanager    | Alertmanager handles alerts from Prometheus | 9093  |
-| optimus-prime-fe     | Springboot test application  | 8080  |
-| optimus-prime-be     | Springboot test application  | 8080  | 
+| optimus-prime-fe     | Springboot test application  | 8090  |
+| optimus-prime-be     | Springboot test application  | n/a  | 
+| mariadb     | Database used by test application  | n/a  | 
+| jaeger     | Distributed tracing  | 16686  | 
+| omnidb     | Online database management tool  | 8888  | 
+| logstash     | Logstash for parsing logs  | n/a  | 
+| elasticsearch     | Logs storage / serarch engine  | n/a  | 
+| kibana     | Kibana Elasticsearch UI  | 5601  | 
+| wiremock     | Mocking tool  | 8060  | 
 
 
 To stop all containers, run
@@ -109,7 +116,7 @@ To log into Perfana, open [http://localhost:4000](http://localhost:4000) and use
 ### Jenkins
 {: .no_toc }
 
-To log into Jenkins, open [http://localhost:8090](http://localhost:8090) and use `perfana` as user with password `perfana` 
+To log into Jenkins, open [http://localhost:8080](http://localhost:8080) and use `perfana` as user with password `perfana` 
 
 ### Grafana
 {: .no_toc }
@@ -120,12 +127,11 @@ To log into Grafana, open [http://localhost:3000](http://localhost:3000) and use
 
 The Perfana demo environment comes with a Jenkins instance preconfigured with a job that will trigger a Gatling script to execute a load test on two instances of [Afterburner](https://github.com/stokpop/afterburner), a Spring Boot test application, deployed as `optimus-prime-fe` and `optimus-prime-be`. The job checks out the [perfana-gatling-afterburner](https://github.com/perfana/perfana-gatling-afterburner) repository and triggers the test via the [events-gatling-maven-plugin](https://github.com/stokpop/events-gatling-maven-plugin). When the job is started, this plugin sends meta data for the test, as specified in the `pom.xml`, to Perfana.
 
-To start a test, go to [http://localhost:8090](http://localhost:8090), log in, click on the `OptimusPrime` job and click `Build with parameters`. The following parameters can be set:
+To start a test, go to [http://localhost:8080](http://localhost:8080), click on the `OptimusPrime` job and click `Build with parameters`. The following parameters can be set:
 
 * **system_under_test**: Use this parameter to set the System Under Test property in Perfana. Default is set to `OptimusPrime`
-* **gatlingRepo**: Repository containing the Gatling script.
-* **gatlingBranch**: Git branch to use.
-* **workload**: Workload to use in the test, corresponds to the [workload profiles in the pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/master/pom.xml#L252)
+* **gatlingRepo**: Repository containing the Gatling script. By default the job is using https://github.com/perfana/perfana-gatling-afterburner/tree/OptimusPrime
+* **workload**: Workload to use in the test, corresponds to the [workload profiles in the pom.xml](https://github.com/perfana/perfana-gatling-afterburner/blob/OptimusPrime/pom.xml#L279)
 * **annotation**: Can be used to add some annotation to the test run.
 
 The demo contains three workload examples to demonstrate some use cases for Perfana:
@@ -144,7 +150,7 @@ The demo contains three workload examples to demonstrate some use cases for Perf
 
 ## View test runs in Perfana
 
-To have a look at the test results in Perfana open [http://localhost:4000](http://localhost:4000)  and use `admin@perfana.io` as user with password `admin` to log in.
+To have a look at the test results in Perfana open [http://localhost:4000](http://localhost:4000)  and use `admin@perfana.io` as user with password `perfana` to log in.
 
 In the home page click on `Afterburner` under `Your systems under test`. In the `Running tests` section you will see the test you have just triggered.
 
@@ -154,7 +160,7 @@ Click [here](/docs/navigating/navigating.html#running-tests) to learn more about
  
 When the test has finished the test run is displayed in the `Recent runs` section and a number of events are triggered:
 * Perfana creates [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) for all of the Grafana dashboards linked to the test run.
-* Perfana evaluates all Service Level Objectives and compares thresholds for the Service Level Indicators of the test run. After the evaluation the consolidated results are displayed in the `Results` column.
+* Perfana evaluates all Service Level Objectives (read [here](/docs/testconfiguration/testconfiguration.html#service-level-indicators) how to configure) and compares thresholds for the Service Level Indicators of the test run. After the evaluation the consolidated results are displayed in the `Results` column.
 
 Click [here](/docs/navigating/navigating.html#recent-runs) to learn more about the `Recent runs` section.
 
@@ -169,25 +175,27 @@ To view more details for the test run you can click on the test run ID. The test
 
 [Comments](/docs/analysing/analysing.html#comments)
 
-[Service Level Indicators](/docs/analysing/analysing.html#key-metrics)
+[Service Level Indicators](/docs/analysing/analysing.html#service-level-indicators)
 
 [Dashboards](/docs/analysing/analysing.html#dashboards)
 
-[Report](/docs/analysing/analysing.html#report)
+[Report](/docs/analysing/analysing.html#reports)
 
 [Compare](/docs/analysing/analysing.html#compare)
+
+[Jaeger](/docs/analysing/analysing.html#open-tracing)
 
 [Manage](/docs/analysing/analysing.html#manage)
 
 ## Alerts
 
-In the demo environment two Alertmanager alerts are defined, as you can see in the [Prometheus UI](http://localhost:9090/alerts). 
+In the demo environment three Alertmanager alerts are defined, as you can see in the [Prometheus UI](http://localhost:9090/alerts). 
 
 These alert rules can be found in the [prometheus.rules.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/prometheus.rules.yml) file in the [perfana-demo repo](https://github.com/perfana/perfana-demo)
 
 In [alertmanager.yml](https://github.com/perfana/perfana-demo/blob/master/prometheus-config/alertmanager.yml) Perfana has been set up as [receiver](https://prometheus.io/docs/alerting/configuration/#receiver)
 
-The [Afterburner test application](https://github.com/stokpop/afterburner) has been set up to [expose JVM metrics via actuator](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/production-ready-metrics.html#production-ready-metrics-export-prometheus) and two [metric tags have been added](https://github.com/perfana/perfana-demo/blob/master/docker-compose.yml#L113) `system_under_test` and `test_environment`.
+The [Afterburner test application](https://github.com/stokpop/afterburner) has been set up to [expose JVM metrics via actuator](https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/production-ready-metrics.html#production-ready-metrics-export-prometheus) and two [metric tags have been added](https://github.com/perfana/perfana-demo/blob/master/docker-compose.yml#L164) `system_under_test` and `test_environment`.
 
 If one of the alerts is triggered, Perfana tries to map alert metric tags to properties of any running test. If it finds a match, it will create an [annotation](https://grafana.com/docs/grafana/latest/reference/annotations/) for all linked Grafana dashboards in each graph. This can help you track down root causes for bottleneck in your test runs.
 
