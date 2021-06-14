@@ -166,7 +166,7 @@ Perfana requires at least one Grafana instance to be configured, refer to [here]
       "clientUrl": "http://localhost:3000",
       "serverUrl": "http://grafana:3000",
       "orgId": "1",
-      "apiKey": "eyJrIjoiM3lqdHE2UzB4OTRJbnZBRVpncnZnaFBwb3lkbEloYWciLCJuIjoiYmxhIiwiaWQiOjF9",
+      "apiKey": "[apiKey]",
       "username": "perfana",
       "password": "perfana",
       "snapshotInstance": true,
