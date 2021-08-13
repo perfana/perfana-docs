@@ -16,7 +16,7 @@ nav_order: 7
 
 ---
 
-Perfana was build using the [Meteor framework](https://www.meteor.com/). Perfana are passed to the application in JSON format via the [METEOR_SETTINGS environment variable](https://docs.meteor.com/environment-variables.html#METEOR-SETTINGS)
+Perfana was built using the [Meteor framework](https://www.meteor.com/). Perfana are passed to the application in JSON format via the [METEOR_SETTINGS environment variable](https://docs.meteor.com/environment-variables.html#METEOR-SETTINGS)
 
 The following configuration can be set:
 
@@ -39,38 +39,38 @@ It is possible to add multiple organisations to Perfana to organise your teams b
   ],
 ``` 
 If omitted, a default organisation named `Perfana` will be added.   
-#### adminEmail
+#### admin Email
 If, at startup of Perfana, no users are found with the `admin` role, a user with the `admin` role is created with this email address. Default value: "admin@perfana.io"
 
 ```json
-  "adminEmail": "admin@mycomapny.com"
+  "adminEmail": "admin@mycompany.com"
 ```    
-#### adminPassword
+#### admin Password
 If, at startup of Perfana, no users are found with the `admin` role, a user with the `admin` role is created with this password.  Default value: "perfana"
 
 ```json
   "adminPassword": "secret"
 ```    
-#### perfanaUrl
+#### perfana Url
 Client facing url of Perfana, default value `http://localhost:4000`
 
 ```json
   "perfanaUrl": "https://perfana.myhost.com"
 ```    
-#### perfanaCheckUrl
+#### perfana Check Url
 Url used by Perfana to connect to `perfana-check` service, default value `http://localhost:9191`
 
 ```json
   "perfanaCheckUrl": "http://perfana-check:9191"
 ```    
-#### influxDbHost
+#### influxDb Host
 Hostname used by Perfana to connect to InfluxDB, default value `localhost`
 
 ```json
   "influxDbHost": "influxDB"
 ```    
 
-#### allowedFrameSrc
+#### allowed Frame Src
 Perfana uses iframes to display the Grafana and Jaeger UI. To allow iframing these locations the client facing url patterns of the Grafana and Jaeger UI should be added here, e.g. if the client facing url would be `https://grafana.myhost.com` and `https://jaeger.myhost.com`:
 
 ```json
@@ -82,7 +82,7 @@ Perfana uses iframes to display the Grafana and Jaeger UI. To allow iframing the
 
 ### Authentication settings
 
-#### authenticationServices
+#### authentication Services
 If an external service is used to authenticate Perfana users, add settings here.
 
 ```json
@@ -100,7 +100,7 @@ If an external service is used to authenticate Perfana users, add settings here.
     }
   },
   ```
-#### loginExpirationInDays
+#### login Expiration In Days
 Defines after how many days the user has to sign in again, default value is 1 day. It is possible to use decimal values, e.g. 
 
 ```json
@@ -110,35 +110,35 @@ Defines after how many days the user has to sign in again, default value is 1 da
 
 Perfana decides based on these datasource retention settings to show "live" Grafana dashboards, connecting to the datasources to fetch data or, if the data is no longer available, show [snapshots](https://grafana.com/docs/grafana/latest/reference/share_dashboard/#dashboard-snapshot) of the dashboards instead. If no retention has been configured for a datasource, Perfana will assume retention is 0 and will always show snapshots.
 
-#### prometheusRetention
+#### prometheus Retention
 Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "prometheusRetention": "43200"  // 12 hours
 ```
 
-#### graphiteRetention
+#### graphite Retention
 Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "graphiteRetention": "86400"  // 24 hours
 ```
 
-#### influxDbRetention
+#### influxDb Retention
 Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "influxDbRetention": "604800"  // 1 week
 ```
 
-#### elasticSearchRetention
+#### elasticSearch Retention
 Metrics retention in seconds. Default value is `2592000` (30 days). 
 
 ```json
   "elasticSearchRetention": "2592000"  // 30 days
 ```
 
-#### snapshotExpires
+#### snapshot Expires
 This setting is used to specify how long snapshots will be stored in Grafana in seconds. Default value is `7776000` (90 days). 
 
 ```json
@@ -157,7 +157,7 @@ If snapshotExpires is set to 0, snapshots will not expire.
 
 Perfana requires at least one Grafana instance to be configured, refer to [here](/docs/administration/administration.html#grafana-configuration) for more details.
 
-#### grafanaInstances
+#### grafana Instances
 
 ```json
 "grafanaInstances": [
@@ -178,7 +178,7 @@ Perfana requires at least one Grafana instance to be configured, refer to [here]
 ### Jira settings
 To integrate with Jira, add oauth settings for one or more Jira instances. Refer to [here](/docs/administration/administration.html#jira-configuration-enterprise-feature) for more details
 
-#### jiraInstances
+#### jira Instances
 ```json
     "jiraInstances": [ 	
         { 		
@@ -197,12 +197,12 @@ To integrate with Jira, add oauth settings for one or more Jira instances. Refer
 
 To integrate with Dynatrace, add these properties, refer to [here](/docs/integrations/integrations.html#create-dynatrace-api-token) for more details
 
-#### dynatraceUrl
+#### dynatrace Url
 
 ```json
     "dynatraceUrl": "<Dynatrace host>"
 ```
-#### dynatraceApiToken
+#### dynatrace Api Token
 
 ```json
     "dynatraceApiToken": "<Dynatrace token>",
@@ -211,21 +211,21 @@ To integrate with Dynatrace, add these properties, refer to [here](/docs/integra
 
 Settings that need to be exposed to the client are in the `public` section
 
-#### forbidClientAccountCreation
+#### forbid Client Account Creation
 Set this value to true if you want to disable the option to register new users from the login screen. Defaults to `false`
 
-#### overrideLoginButtonText
+#### override Login Button Text
 If you are using Keycloak as authentication service, this property can be used to set the login button text.
-#### googleSignIn
+#### google Sign In
 If you are using Google as authentication service, setting this property to `true` will show a Google branded login button
 
-#### perfanaUrl
+#### perfana Url
 Client facing url of Perfana, default value `http://localhost:4000`
 
-#### jaegerUrl
+#### jaeger Url
 Client facing url of Jaeger, default value `http://localhost:16686`
 
-#### jaegerLimit
+#### jaeger Limit
 Maximum number of traces to show in Jaeger UI, default value `500`
 
 ```json
@@ -241,7 +241,7 @@ Maximum number of traces to show in Jaeger UI, default value `500`
 
 ### Alert settings
 
-#### customAlertTags
+#### custom Alert Tags
 
 If alerts do not have `system_under_test` and `test_environment` labels to allow Perfana to map alerts to test runs, you can specify custom tags and (dynamic) values to be used for mapping.
 
@@ -257,7 +257,7 @@ If alerts do not have `system_under_test` and `test_environment` labels to allow
     }
  ],
 ```    
-#### omitAlertTags
+#### omit Alert Tags
 By default, Perfana passes on all tags set on incoming alerts. If you want to omit specific tags, add them here.
 
 
