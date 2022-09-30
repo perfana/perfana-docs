@@ -154,7 +154,7 @@ Provide a description for the comparison result and click `Compare`
 
 ## Jaeger
 
-Perfana [integrates with Jaeger](docs/integrations/integrations.html#jaeger) to include distributed tracing information of your test run results. If tracing is set up, the `Jaeger` tab is visible. From this tab you can deeplink into the Jaeger UI using a number of filters:
+Perfana [integrates with Jaeger](/docs/integrations/integrations.html#jaeger) to include distributed tracing information of your test run results. If tracing is set up, the `Jaeger` tab is visible. From this tab you can deeplink into the Jaeger UI using a number of filters:
 
 To configure what entrypoint to use, go to the [system under test settings](/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
 
@@ -169,7 +169,7 @@ To deeplink into the Jaeger UI based on the filters, click on the request names.
 
 ## Pyroscope
 
-Perfana [integrates with Pyroscope](docs/integrations/integrations.html#pyroscope) to view profiling flamegraphs of your system under test.
+Perfana [integrates with Pyroscope](/docs/integrations/integrations.html#pyroscope) to view profiling flamegraphs of your system under test.
 
 To configure the Pyroscope application name to use, go to the [system under test settings](/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
 
