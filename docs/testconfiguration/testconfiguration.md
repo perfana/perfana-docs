@@ -62,8 +62,8 @@ The following properties can be configured:
 
 --- 
 
-On the `workload` level you can enable / disable Perfana to automatically compare test runs if any [Service Level Indicators](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds` 
-The default for this setting be be set through the [settings](https://docs.perfana.io/docs/settings/settings.html#auto-compare-testruns)
+On the `workload` level you can enable / disable Perfana to automatically compare test runs if any [Service Level Indicators](/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds` 
+The default for this setting be be set through the [settings](/docs/settings/settings.html#auto-compare-testruns)
 
 With the `Re-evaluate checks` button you can trigger all test runs for the specific `workload` to be re-evaluate. Beware that this could take some time if there is a large number of test runs.
 

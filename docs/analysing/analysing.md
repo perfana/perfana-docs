@@ -89,7 +89,7 @@ This tab shows all [Grafana dashboards](/docs/testconfiguration/testconfiguratio
 
 ## Configuration
 
-The `Configuration` tab shows configuration key-value pairs that have been added by the [maven plugins](https://docs.perfana.io/docs/integrations/integrations.html#test-events-test-run-config-command) to enrich the test run with configuration data of the system under test.
+The `Configuration` tab shows configuration key-value pairs that have been added by the [maven plugins](/docs/integrations/integrations.html#test-events-test-run-config-command) to enrich the test run with configuration data of the system under test.
 
 The first sub tab `Configuration` shows the configuration items for the test run. You can find items by filtering on `keys` or `tags`.  
 The `Compared to previous test run` by default shows diffs in configuration items between the current and previous test run. To view all items, uncheck the `Show diffs only` checkbox. 
@@ -115,7 +115,7 @@ The `Compared to baseline test run` and `Compared to selected test run` show sim
 
 ## Reports
 
-The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The report is available as long as the snapshots used in the report are not deleted. The banner on top of the report indicates how long the report will be available, based on the [snapshot expiry setting](/docs/settings/settings.html#snapshotexpires) If you want to keep the report click on the banner to persist snapshots used in the report indefinitely. When a report is persisted it will be available in the [report explorer](https://docs.perfana.io/docs/navigating/navigating.html#reports)
+The `Report` tab is available when a [reporting template](/docs/testconfiguration/testconfiguration.html#reporting-template) is configured. The report contains a selection of relevant graphs with descriptions and can be used to share test results with stakeholders. The report is generated automatically based on the reporting template definition. Default descriptions can be added to the template and can be edited for each test run, if necessary. The report is available as long as the snapshots used in the report are not deleted. The banner on top of the report indicates how long the report will be available, based on the [snapshot expiry setting](/docs/settings/settings.html#snapshotexpires) If you want to keep the report click on the banner to persist snapshots used in the report indefinitely. When a report is persisted it will be available in the [report explorer](/docs/navigating/navigating.html#reports)
 
 It is also possible to add comparisons (see next paragraph) to one or more test runs to the report. 
 
@@ -156,7 +156,7 @@ Provide a description for the comparison result and click `Compare`
 
 Perfana [integrates with Jaeger](docs/integrations/integrations.html#jaeger) to include distributed tracing information of your test run results. If tracing is set up, the `Jaeger` tab is visible. From this tab you can deeplink into the Jaeger UI using a number of filters:
 
-To configure what entrypoint to use, go to the [system under test settings](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
+To configure what entrypoint to use, go to the [system under test settings](/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
 
 * **Only show traces that fail to meet Service Level Objective**: If a Service Level Objective has been specified for response times metrics, the requirement values can be used to filter traces.
 * **Only show traces with duration longer than**: Filters on minimum duration of the traces.
@@ -171,7 +171,7 @@ To deeplink into the Jaeger UI based on the filters, click on the request names.
 
 Perfana [integrates with Pyroscope](docs/integrations/integrations.html#pyroscope) to view profiling flamegraphs of your system under test.
 
-To configure the Pyroscope application name to use, go to the [system under test settings](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
+To configure the Pyroscope application name to use, go to the [system under test settings](/docs/testconfiguration/testconfiguration.html#system-under-test-settings)
 
 The `Pyroscope`tab has three sub-tabs:
 * Single view: shows a Pyroscope flamegraph for the current test run

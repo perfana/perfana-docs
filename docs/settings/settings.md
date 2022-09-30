@@ -79,7 +79,7 @@ Url used by Perfana to connect to `perfana-check` service, default value `http:/
 ```
 
 #### auto Compare TestRuns
-If set to true, Perfana will automatically compare test runs if any [Service Level Indicators](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds`
+If set to true, Perfana will automatically compare test runs if any [Service Level Indicators](/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds`
 Default value is `false`
 ```json
   "autoCompareTestRuns": true

@@ -43,11 +43,11 @@ The `Running tests` section shows any currenty running tests matching the filter
 Click the `Test run ID` to open the running test view. This view has two tabs:
 * **Service Level Indicators**: shows the configured Service Level Indicators for this test. See [Service Level Indicators configuration](/docs/testconfiguration/testconfiguration.html#service-level-indicators)
 * **Dashboards**: shows the configured dashboards for this test. See [Grafana dashboards configuration](/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
-* **Configuration**: shows the configuration items for this running test and comaprisons with previous tests. See [Configuration](https://docs.perfana.io/docs/analysing/analysing.html#configuration)
-* **Jaeger**: shows the Jaeger UI for this running test. See [Jaeger](https://docs.perfana.io/docs/analysing/analysing.html#jaeger)
-* **Pyroscope**: shows the Pyroscope UI for this running test. See [Pyroscope](https://docs.perfana.io/docs/analysing/analysing.html#pyroscope)
-* **Links**: shows the configuration items for this test. See [Links](https://docs.perfana.io/docs/analysing/analysing.html#links)
-* **Dynatrace (Enterprise feature)**: shows the Dynatrace view for this running test. See [Dynatrace](https://docs.perfana.io/docs/analysing/analysing.html#dynatrace-enterprise-feature)
+* **Configuration**: shows the configuration items for this running test and comaprisons with previous tests. See [Configuration](/docs/analysing/analysing.html#configuration)
+* **Jaeger**: shows the Jaeger UI for this running test. See [Jaeger](/docs/analysing/analysing.html#jaeger)
+* **Pyroscope**: shows the Pyroscope UI for this running test. See [Pyroscope](/docs/analysing/analysing.html#pyroscope)
+* **Links**: shows the configuration items for this test. See [Links](/docs/analysing/analysing.html#links)
+* **Dynatrace (Enterprise feature)**: shows the Dynatrace view for this running test. See [Dynatrace](/docs/analysing/analysing.html#dynatrace-enterprise-feature)
 
 
 ### Recent runs
@@ -75,6 +75,6 @@ The `Trends` tab in the Test runs page appears when multiple test runs are avail
 
 ## Reports
 
-If a [report for a test run](https://docs.perfana.io/docs/analysing/analysing.html#reports) is persisted it will be available in the `Reports explorer` that can be opened by clicking the `REPORTS` item in the sidebar.
+If a [report for a test run](/docs/analysing/analysing.html#reports) is persisted it will be available in the `Reports explorer` that can be opened by clicking the `REPORTS` item in the sidebar.
 
 You can use the `System under test`, `Test environment`, `workload` and `Tags` filters to find reports.

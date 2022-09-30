@@ -187,7 +187,7 @@ To add a `report panel` to the `reporting template` fo a `profile` click `Add pa
 
 ### Links
 
-A `profile` can be used to automatically add [links](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#links) for test runs with matching tags.
+A `profile` can be used to automatically add [links](/docs/testconfiguration/testconfiguration.html#links) for test runs with matching tags.
 
 
 ## License

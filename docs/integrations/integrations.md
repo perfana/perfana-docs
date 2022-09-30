@@ -130,7 +130,7 @@ Perfana creates an `Only show traces that fail to meet Service Level Objective` 
 
 ## Pyroscope
 
-Perfana can integrate with [Pyroscope](https://pyroscope.io/) to do continuous profiling on your system under test. Read [here](https://pyroscope.io/docs/installing-pyroscope-overview/) how to install Pyroscope. See [settings section](https://docs.perfana.io/docs/settings/settings.html#pyroscope-url) how to configure Pyroscope integration in Perfana. 
+Perfana can integrate with [Pyroscope](https://pyroscope.io/) to do continuous profiling on your system under test. Read [here](https://pyroscope.io/docs/installing-pyroscope-overview/) how to install Pyroscope. See [settings section](/docs/settings/settings.html#pyroscope-url) how to configure Pyroscope integration in Perfana. 
 
 ## Slack (Enterprise feature)
 
