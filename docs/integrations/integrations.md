@@ -18,21 +18,51 @@ nav_order: 8
 
 {: .fs-6 }
 
+## event-scheduler-maven-plugin
+
+[View on GitHub](https://github.com/perfana/event-scheduler-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+A plain event-scheduler to generate events during a load test
+
 ## events-gatling-maven-plugin
 
-[View on GitHub](https://github.com/stokpop/events-gatling-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View on GitHub](https://github.com/perfana/events-gatling-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-Gatling Maven Test Events Extension
+Integrate Gatling load test with Perfana, triggered via Maven with event-scheduler build-in
 
-## event-scheduler
+## events-jmeter-maven-plugin
 
-[View on GitHub](https://github.com/stokpop/event-scheduler){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View on GitHub](https://github.com/perfana/events-jmeter-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-library to generate timed events
+Integrate Jmeter load test with Perfana, triggered via Maven with event-scheduler build-in 
+
+## test-events-loadrunner-cloud
+
+[View on GitHub](https://github.com/perfana/test-events-loadrunner-cloud){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+Integrate LoadRunner Cloud load test with Perfana, triggered via Maven with event-scheduler build-in
+
+## test-events-command-runner
+
+[View on GitHub](https://github.com/perfana/test-events-command-runner){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+Maven plugin to run a command at certain events
+
+## test-events-springboot
+
+[View on GitHub](https://github.com/perfana/test-events-springboot){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+Fetch configuration information from SpringBoot apps via actuator and send it to Perfana
+
+## test-events-test-run-config-command
+
+[View on GitHub](https://github.com/perfana/test-events-test-run-config-command){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+Fetch configuration information using a shell command and send it to Perfana
 
 ## test-events-wiremock
 
-[View on GitHub](https://github.com/stokpop/test-events-wiremock){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View on GitHub](https://github.com/perfana/test-events-wiremock){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 Events to load and change wiremock stubs during load tests.
 
@@ -42,17 +72,7 @@ Events to load and change wiremock stubs during load tests.
 
 Java library to integrate with Perfana
 
-## perfana-gatling-maven-plugin
 
-[View on GitHub](https://github.com/perfana/perfana-gatling-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
-
-Maven plugin to integrate Gatling with Perfana.
-
-## perfana-jmeter-maven-plugin
-
-[View on GitHub](https://github.com/perfana/perfana-jmeter-maven-plugin){: .btn .fs-5 .mb-4 .mb-md-0 }
-
-Maven plugin to integrate Jmeter with Perfana.
 
 ## Jaeger
 
@@ -107,6 +127,10 @@ In the Perfana demo setup [Spring Cloud Sleuth](https://docs.spring.io/spring-cl
 Perfana creates an `Only show traces that fail to meet Service Level Objective` filter when it finds a Service Level Objective specified based a Grafana `panel` that has `perfana-response-times` in the description, in a dashboard that is tagged with `perfana-performance-test-tool`.
 
 ![Panel description perfana-response-times](/docs/images/perfana-response-times.png)
+
+## Pyroscope
+
+Perfana can integrate with [Pyroscope](https://pyroscope.io/) to do continuous profiling on your system under test. Read [here](https://pyroscope.io/docs/installing-pyroscope-overview/) how to install Pyroscope. See [settings section](https://docs.perfana.io/docs/settings/settings.html#pyroscope-url) how to configure Pyroscope integration in Perfana. 
 
 ## Slack (Enterprise feature)
 

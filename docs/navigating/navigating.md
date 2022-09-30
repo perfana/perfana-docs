@@ -38,13 +38,16 @@ Use the `Test run selector` to filter test runs on `System under test`, `Test en
 ### Running tests
 {: .no_toc }
 
-The `Running tests` section shows any currenty running tests matching the filters in the `Test run selector`. 
+The `Running tests` section shows any currenty running tests matching the filters in the `Test run selector`. A running test can be stopped by clicking the `abort` icon next to the progress bar
 
 Click the `Test run ID` to open the running test view. This view has two tabs:
 * **Service Level Indicators**: shows the configured Service Level Indicators for this test. See [Service Level Indicators configuration](/docs/testconfiguration/testconfiguration.html#service-level-indicators)
 * **Dashboards**: shows the configured dashboards for this test. See [Grafana dashboards configuration](/docs/testconfiguration/testconfiguration.html#grafana-dashboards)
-
-Configure the `Service Level Indicators` and `Grafana Dashboards` via the items under the `Settings` section in the sidebar.
+* **Configuration**: shows the configuration items for this running test and comaprisons with previous tests. See [Configuration](https://docs.perfana.io/docs/analysing/analysing.html#configuration)
+* **Jaeger**: shows the Jaeger UI for this running test. See [Jaeger](https://docs.perfana.io/docs/analysing/analysing.html#jaeger)
+* **Pyroscope**: shows the Pyroscope UI for this running test. See [Pyroscope](https://docs.perfana.io/docs/analysing/analysing.html#pyroscope)
+* **Links**: shows the configuration items for this test. See [Links](https://docs.perfana.io/docs/analysing/analysing.html#links)
+* **Dynatrace (Enterprise feature)**: shows the Dynatrace view for this running test. See [Dynatrace](https://docs.perfana.io/docs/analysing/analysing.html#dynatrace-enterprise-feature)
 
 
 ### Recent runs
@@ -65,7 +68,13 @@ The table has a number of columns:
 
 ## Trends
 
-The `Trends` tab in the Test runs page appears when multiple test runs are available with the same `Test environment` and `Workload` properties. There are trends for the defined `Service Level Indicators`. Select a period and each test run in that time frame is marked as a vertical line. Hover over the base of the line to see the test run id and the version. Click on version number link in the hover to go directly to the test run details.
+The `Trends` tab in the Test runs page appears when multiple test runs are available with the same `Test environment` and `Workload` properties. There are trends for the defined `Service Level Indicators`. Select a period and each test run in that time frame is marked as a vertical line. Hover over the base of the line to see the test run id and the version. Click on version number link in the hover to go directly to the test run details. You can use the tag filter to only display test runs with a specific tag.
 
 
 ![Trends](/docs/images/trends.png)
+
+## Reports
+
+If a [report for a test run](https://docs.perfana.io/docs/analysing/analysing.html#reports) is persisted it will be available in the `Reports explorer` that can be opened by clicking the `REPORTS` item in the sidebar.
+
+You can use the `System under test`, `Test environment`, `workload` and `Tags` filters to find reports.

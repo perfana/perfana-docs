@@ -52,14 +52,21 @@ Click the `System under tests` menu item under the `Settings` section in the sid
 The following properties can be configured:
 
 * **Jaeger service name**: if a [Jaeger integration](/docs/integrations/integrations.html#jaeger) is available, the service name to use as entrypoint can be set here
+* **Pyroscope application name**: if a [Pyroscope integration](/docs/integrations/integrations.html#pyroscope) is available, the application name as used in Pyroscope can be set here
 * **Dynatrace entities**: if a [Dynatrace integration](/docs/integrations/integrations.html#dynatrace-enterprise-feature) (Enterprise feature) is available, one or more Dynatrace entities can be linked to the system under test
 * **Baseline test run id**: for each `test environment` - `workload` combination set a baseline test that is used in the automated analysis of test runs.
 
 --- 
 
-> The Jaeger and Dynatrace properties can be set on **global** level, **test environment level** or **workload** level. Values specified on **workload** level override those on **test environment** level and values specified on **test environment** level override **global** values.
+> The Jaeger, Pyroscope and Dynatrace properties can be set on **global** level, **test environment level** or **workload** level. Values specified on **workload** level override those on **test environment** level and values specified on **test environment** level override **global** values.
 
 --- 
+
+On the `workload` level you can enable / disable Perfana to automatically compare test runs if any [Service Level Indicators](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds` 
+The default for this setting be be set through the [settings](https://docs.perfana.io/docs/settings/settings.html#auto-compare-testruns)
+
+With the `Re-evaluate checks` button you can trigger all test runs for the specific `workload` to be re-evaluate. Beware that this could take some time if there is a large number of test runs.
+
 ![System under test settings](/docs/images/system-under-test-settings.png)
 
 ## Notifications channels (Enterprise feature)
@@ -181,10 +188,27 @@ Click `Add alert tag` to add an `Abort alert tag`. The `Add abort alert tag` for
 
 --- 
 
-With the `Links` feature you can create deep links from your test run results to any relevant url. In the url you can use dynamic values passed via the `variables` property in your test script. Also, for your convenience, start and end timestamps are available in several formats. The dynamic variables in the link are surrounded by curly braces, for example: {my_variable}.
+With the `Links` feature you can create deep links from your test run results to any relevant url. In the url you can use a number of predefined Perfana variables, like:
+* perfana-system-under-test
+* perfana-test-environment
+* perfana-workload
+* perfana-test-run-id 
+* perfana-previous-test-run-id 
+* perfana-baseline-test-run-id
+* perfana-build-result-url
+* perfana-start-epoch-milliseconds
+* perfana-start-epoch-seconds
+* perfana-end-epoch-milliseconds
+* perfana-end-epoch-seconds
+* perfana-start-elasticsearch
+* perfana-end-elasticsearch
+
+You can also use any key available in the test run configuration items as a variable in your url.
+
+The dynamic variables in the link are surrounded by curly braces, for example: `https://externa.url/interesting/data/{perfana-system-under-test}`
 
 To add a `link` click `Add link`, this will open the `Add link` form with the following fields:
 * **Name**: Name for the link, this will be displayed in the `test run summary` view.
-* **Url**: Url for the link. To add one of the available variables to the url, type the "{" (open curly brace) character, this will display a dropdown menu of all the available variables. 
+* **Url**: Url for the link. To add one of the available variables to the url, type the "{" (open curly brace) character, this will display a dropdown menu of all the available variables. Type to filter the available items. 
 
 

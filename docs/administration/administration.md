@@ -28,7 +28,6 @@ Perfana requires at least one Grafana instance to be present. One or more Grafan
       "clientUrl": "http://localhost:3000",
       "serverUrl": "http://grafana:3000",
       "orgId": "1",
-      "apiKey": "eyJrIjoiM3lqdHE2UzB4OTRJbnZBRVpncnZnaFBwb3lkbEloYWciLCJuIjoiYmxhIiwiaWQiOjF9",
       "username": "perfana",
       "password": "perfana",
       "snapshotInstance": true,
@@ -42,8 +41,7 @@ Perfana requires at least one Grafana instance to be present. One or more Grafan
 * **clientUrl**: The grafana url that your browser uses to connect to the Grafana instances.
 * **serverUrl**: *Optional* Url to connect to Grafana instance from Perfana server side. For instance the service name when both Perfana and Grafana are running in Kubernetes.
 * **orgId**: Grafana Organisation ID
-* **apiKey**: API key with `admin` role, see [Grafana documentation](https://grafana.com/docs/grafana/latest/http_api/auth/#create-api-token)
-* **username**: Username for Grafana admin user
+* **username**: Username for Grafana **admin** user
 * **password**
 * **snapshotInstance**: If `true` this Grafana instance is used to store snapshots.
 * **trendsInstance**: If `true` Perfana uses this instance for hosting Perfana dashboards for trends and profile check results.
@@ -125,7 +123,7 @@ Perfana profiles can be used to automatically configure test runs. By passing `t
         <perfanaEnabled>true</perfanaEnabled>
         <testRunId>${systemUnderTest}-${version}-${workload}-${testEnvironment}-${build.timestamp}</testRunId>
         <eventsEnabled>true</eventsEnabled>
-        <tags>load-test,micro-service</tags>
+        <tags>gatling,micro-service</tags>
     </properties>
 </profile>
  ```       
@@ -186,6 +184,10 @@ A `profile` can also be used to specify a reporting template for test runs with 
 
 --- 
 To add a `report panel` to the `reporting template` fo a `profile` click `Add panel`. Learn [here](/docs/testconfiguration/testconfiguration.html#reporting-template) how to add a `report panel`.
+
+### Links
+
+A `profile` can be used to automatically add [links](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#links) for test runs with matching tags.
 
 
 ## License

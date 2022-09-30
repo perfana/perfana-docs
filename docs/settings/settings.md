@@ -57,28 +57,52 @@ Client facing url of Perfana, default value `http://localhost:4000`
 ```json
   "perfanaUrl": "https://perfana.myhost.com"
 ```    
+
+#### perfana Api User
+Client facing url of Perfana, defaults to value of `adminEmail`
+
+```json
+  "perfanaApiUser": "perfana-api-user"
+```    
+
+#### perfana Api Password
+Client facing url of Perfana, defaults to value of `adminPassword`
+
+```json
+  "perfanaApiPassword": "secret"
+```    
 #### perfana Check Url
 Url used by Perfana to connect to `perfana-check` service, default value `http://localhost:9191`
 
 ```json
   "perfanaCheckUrl": "http://perfana-check:9191"
-```    
-#### influxDb Host
-Hostname used by Perfana to connect to InfluxDB, default value `localhost`
-
-```json
-  "influxDbHost": "influxDB"
-```    
-
-#### allowed Frame Src
-Perfana uses iframes to display the Grafana and Jaeger UI. To allow iframing these locations the client facing url patterns of the Grafana and Jaeger UI should be added here, e.g. if the client facing url would be `https://grafana.myhost.com` and `https://jaeger.myhost.com`:
-
-```json
-  "allowedFrameSrc": [
-    "https://*.myhost.com"
-  ],
 ```
 
+#### auto Compare TestRuns
+If set to true, Perfana will automatically compare test runs if any [Service Level Indicators](https://docs.perfana.io/docs/testconfiguration/testconfiguration.html#service-level-indicators) have been configured with `compare thresholds`
+Default value is `false`
+```json
+  "autoCompareTestRuns": true
+```
+
+#### auto Set Baseline TestRun
+If set to `true` and `autoCompareTestRuns: true` Perfana will set the first test run with a specific `System under test`, `Test environment` and `Workload` combination as fixed baseline test run.
+Default value is `false`
+```json
+  "autoSetBaselineTestRun": true
+```
+
+#### helmet frameSrc
+Perfana uses iframes to display the Grafana, Jaeger and Pyroscope UI's. To allow iframing these locations the client facing url patterns of the these UI's should be added here, e.g. if the client facing url would be `https://grafana.myhost.com`, `https://jaeger.myhost.com` and `https://pyrocsope.myhost.com`:
+
+```json
+
+"helmet": {
+    "frameSrc": [
+      "https://*.myhost.com"
+    ]
+},
+```
 
 ### Authentication settings
 
@@ -216,6 +240,7 @@ Set this value to true if you want to disable the option to register new users f
 
 #### override Login Button Text
 If you are using Keycloak as authentication service, this property can be used to set the login button text.
+
 #### google Sign In
 If you are using Google as authentication service, setting this property to `true` will show a Google branded login button
 
@@ -223,17 +248,23 @@ If you are using Google as authentication service, setting this property to `tru
 Client facing url of Perfana, default value `http://localhost:4000`
 
 #### jaeger Url
-Client facing url of Jaeger, default value `http://localhost:16686`
+Client facing url of Jaeger
 
 #### jaeger Limit
 Maximum number of traces to show in Jaeger UI, default value `500`
 
+#### pyroscope Url
+Client facing url of Pyrocope
+
+
+
 ```json
 "public": {
     "forbidClientAccountCreation": true,
-    "perfanaUrl": "http://localhost:4000",
+    "perfanaUrl": "https://perfana.myhost.com",
     "jaegerUrl": "https://jaeger.myhost.com",
     "jaegerLimit": 500,
+    "pyroscopeUrl": "https://pyroscope.myhost.com",    
     "overrideLoginButtonText": "My company Login",
     "googleSignIn": "true"
   },
