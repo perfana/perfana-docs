@@ -65,6 +65,8 @@ Are all SLI/SLO validations applicable to each type of test? No, certainly not. 
 hits limits like high cpu usage or failing transactions. The __workload__ defines which set of SLI’s are used for automatically 
 validating the test result.
 
+![Getting started overview - part 1](/docs/images/getting-started-overview-1-large.jpg)
+
 Last but not least, each test run has a __start time__ and an __end time__. Perfana dashboards show the
 metrics for the duration of the test run. SLI/SLO validations optionally leave out ramp up time, 
 which is what you expect and want most of the time, unless you have a stress test that is essentially
@@ -85,6 +87,8 @@ for designated test runs for ever, for instance for a baseline runs you want to 
 
 During the test run dashboards show the live data as it is being generated. After a test run the
 snapshot data is shown in a dashboard.
+
+![Getting started overview - part 2](/docs/images/getting-started-overview-2.jpg)
 
 As soon as snapshots are created after the test run, the automatic analysis is done and the checks
 appear. There are __check results__ and __compare results__. Check results are for the current test, 
