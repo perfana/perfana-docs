@@ -43,7 +43,7 @@ heading_anchors: true
 #     - "//perfana.io"
 
 # Footer content appears at the bottom of every page's main content
-footer_content: "Copyright &copy; 2019-2022 Perfana Software BV"
+footer_content: "Copyright &copy; 2019-2024 Perfana Software BV"
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89

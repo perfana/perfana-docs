@@ -77,13 +77,13 @@ tags in the Maven configuration that "wraps" the load script.
 
 ## Snapshots and retention
 
-A lot of metrics are collected all of the time. To limit the amount of storage needed to keep all
+A lot of metrics are collected all the time. To limit the amount of storage needed to keep all
 this data, most of the data is compressed over time and/or deleted. Sometimes even after just hours
 or days after a test run.
 
 Perfana uses __snapshots__ to keep hold of the uncompressed data of a test run. After each test run,
 snapshots are created and stored to be kept for several months. You can choose to store snapshots
-for designated test runs for ever, for instance for a baseline runs you want to keep.
+for designated test runs forever, for instance for a baseline runs you want to keep.
 
 During the test run dashboards show the live data as it is being generated. After a test run the
 snapshot data is shown in a dashboard.
@@ -95,4 +95,4 @@ appear. There are __check results__ and __compare results__. Check results are f
 for instance, the 90 percentile response time must be below 1 second. Compare results show and 
 check the difference between the current test run and the __previous__ test run, or a test run that
 is marked as __baseline__. An example of a compare requirement is: the 90 percentile response time
-must not be higher that 10 percent compared to the previous or baseline test run.
+must not be higher than 10 percent compared to the previous or baseline test run.
