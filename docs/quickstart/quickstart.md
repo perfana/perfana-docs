@@ -65,7 +65,7 @@ Are all SLI/SLO validations applicable to each type of test? No, certainly not. 
 hits limits like high cpu usage or failing transactions. The __workload__ defines which set of SLI’s are used for automatically 
 validating the test result.
 
-![Getting started overview - part 1](/docs/images/getting-started-overview-1-large.jpg)
+![Getting started overview - part 1](/docs/images/getting-started-overview-1.jpg)
 
 Last but not least, each test run has a __start time__ and an __end time__. Perfana dashboards show the
 metrics for the duration of the test run. SLI/SLO validations optionally leave out ramp up time, 
