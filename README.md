@@ -1,7 +1,12 @@
 # Perfana Docs
 
-## Local testing
+## Local env
+1. install ruby 2.7.8; use a ruby virtual environment such as ``chruby`` or ``rbenv`` and a ruby installer such as ``ruby-install`` or ``ruby-build``
+   Note: don't use the Mac system version of Ruby in ``/usr/bin/ruby`` or `/usr/local/bin/ruby`
+2. In the root of the project: ``gem install bundler:2.4.22``
+3. Next: `bundler install`. Just like `npm install` this will install all the project's dependencies such as *jekyll*.  
 
+## Local testing
 To run locally, first edit the `_config.yml` file to use `theme:` instead of `remote_theme`:
 
 ```yml
@@ -21,12 +26,4 @@ bundle exec jekyll serve
 # for mac
 
 Follow these steps to use specific Ruby version
-
-```sh
-brew install rbenv
-eval "$(rbenv init -)"
-rbenv install 2.7.8
-rbenv global 2.7.8
-gem install jekyll
-```
 
