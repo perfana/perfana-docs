@@ -17,3 +17,16 @@ To run locally, use bundle:
 ```sh
 bundle exec jekyll serve
 ```
+
+# for mac
+
+Follow these steps to use specific Ruby version
+
+```sh
+brew install rbenv
+eval "$(rbenv init -)"
+rbenv install 2.7.8
+rbenv global 2.7.8
+gem install jekyll
+```
+
